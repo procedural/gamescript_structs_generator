@@ -1,0 +1,1536 @@
+fn RedAlias(
+  structPointer, // Number structPointer
+  barrierSplit, // Number barrierSplit
+  oldResourceHandle, // Number oldResourceHandle
+  newResourceHandle, // Number newResourceHandle
+  setTo0 // Number setTo0
+)
+{
+  pointerSetAtOffset_RedBarrierSplit(structPointer, RedAlias_offsetof_barrierSplit, barrierSplit)
+  pointerSetAtOffset_uint64_t(structPointer, RedAlias_offsetof_oldResourceHandle, oldResourceHandle)
+  pointerSetAtOffset_uint64_t(structPointer, RedAlias_offsetof_newResourceHandle, newResourceHandle)
+}
+
+fn RedArray(
+  structPointer, // Number structPointer
+  handle, // Number handle
+  memoryBytesAlignment, // Number memoryBytesAlignment
+  memoryBytesCount, // Number memoryBytesCount
+  memoryTypesSupported, // Number memoryTypesSupported
+  setTo0 // Number setTo0
+)
+{
+  pointerSetAtOffset_RedHandleArray(structPointer, RedArray_offsetof_handle, handle)
+  pointerSetAtOffset_uint64_t(structPointer, RedArray_offsetof_memoryBytesAlignment, memoryBytesAlignment)
+  pointerSetAtOffset_uint64_t(structPointer, RedArray_offsetof_memoryBytesCount, memoryBytesCount)
+  pointerSetAtOffset_unsigned(structPointer, RedArray_offsetof_memoryTypesSupported, memoryTypesSupported)
+}
+
+fn RedCalls(
+  structPointer, // Number structPointer
+  handle, // Number handle
+  memory, // Number memory
+  reusable, // Number reusable
+  setTo0 // Number setTo0
+)
+{
+  pointerSetAtOffset_RedHandleCalls(structPointer, RedCalls_offsetof_handle, handle)
+  pointerSetAtOffset_RedHandleCallsMemory(structPointer, RedCalls_offsetof_memory, memory)
+  pointerSetAtOffset_RedBool32(structPointer, RedCalls_offsetof_reusable, reusable)
+}
+
+fn RedColorsClearValuesFloat(
+  structPointer, // Number structPointer
+  r, // Number r [8]
+  g, // Number g [8]
+  b, // Number b [8]
+  a, // Number a [8]
+  setTo0 // Number setTo0
+)
+{
+  for (var i = 0; i < len(r); i += 1) {
+    pointerSetAtOffset_float(structPointer, RedColorsClearValuesFloat_offsetof_r + (float_sizeof * i), r)
+  }
+  for (var i = 0; i < len(g); i += 1) {
+    pointerSetAtOffset_float(structPointer, RedColorsClearValuesFloat_offsetof_g + (float_sizeof * i), g)
+  }
+  for (var i = 0; i < len(b); i += 1) {
+    pointerSetAtOffset_float(structPointer, RedColorsClearValuesFloat_offsetof_b + (float_sizeof * i), b)
+  }
+  for (var i = 0; i < len(a); i += 1) {
+    pointerSetAtOffset_float(structPointer, RedColorsClearValuesFloat_offsetof_a + (float_sizeof * i), a)
+  }
+}
+
+fn RedColorsClearValuesSint(
+  structPointer, // Number structPointer
+  r, // Number r [8]
+  g, // Number g [8]
+  b, // Number b [8]
+  a, // Number a [8]
+  setTo0 // Number setTo0
+)
+{
+  for (var i = 0; i < len(r); i += 1) {
+    pointerSetAtOffset_int(structPointer, RedColorsClearValuesSint_offsetof_r + (int_sizeof * i), r)
+  }
+  for (var i = 0; i < len(g); i += 1) {
+    pointerSetAtOffset_int(structPointer, RedColorsClearValuesSint_offsetof_g + (int_sizeof * i), g)
+  }
+  for (var i = 0; i < len(b); i += 1) {
+    pointerSetAtOffset_int(structPointer, RedColorsClearValuesSint_offsetof_b + (int_sizeof * i), b)
+  }
+  for (var i = 0; i < len(a); i += 1) {
+    pointerSetAtOffset_int(structPointer, RedColorsClearValuesSint_offsetof_a + (int_sizeof * i), a)
+  }
+}
+
+fn RedColorsClearValuesUint(
+  structPointer, // Number structPointer
+  r, // Number r [8]
+  g, // Number g [8]
+  b, // Number b [8]
+  a, // Number a [8]
+  setTo0 // Number setTo0
+)
+{
+  for (var i = 0; i < len(r); i += 1) {
+    pointerSetAtOffset_unsigned(structPointer, RedColorsClearValuesUint_offsetof_r + (unsigned_sizeof * i), r)
+  }
+  for (var i = 0; i < len(g); i += 1) {
+    pointerSetAtOffset_unsigned(structPointer, RedColorsClearValuesUint_offsetof_g + (unsigned_sizeof * i), g)
+  }
+  for (var i = 0; i < len(b); i += 1) {
+    pointerSetAtOffset_unsigned(structPointer, RedColorsClearValuesUint_offsetof_b + (unsigned_sizeof * i), b)
+  }
+  for (var i = 0; i < len(a); i += 1) {
+    pointerSetAtOffset_unsigned(structPointer, RedColorsClearValuesUint_offsetof_a + (unsigned_sizeof * i), a)
+  }
+}
+
+fn RedContextOptionalSettings0(
+  structPointer, // Number structPointer
+  settings, // Number settings
+  next, // Number next
+  skipCheckingContextLayers, // Number skipCheckingContextLayers
+  skipCheckingContextExtensions, // Number skipCheckingContextExtensions
+  gpusExposeOnlyOneQueue, // Number gpusExposeOnlyOneQueue
+  setTo0 // Number setTo0
+)
+{
+  pointerSetAtOffset_RedContextOptionalSettings(structPointer, RedContextOptionalSettings0_offsetof_settings, settings)
+  pointerSetAtOffset_const_void_p(structPointer, RedContextOptionalSettings0_offsetof_next, next)
+  pointerSetAtOffset_RedBool32(structPointer, RedContextOptionalSettings0_offsetof_skipCheckingContextLayers, skipCheckingContextLayers)
+  pointerSetAtOffset_RedBool32(structPointer, RedContextOptionalSettings0_offsetof_skipCheckingContextExtensions, skipCheckingContextExtensions)
+  pointerSetAtOffset_RedBool32(structPointer, RedContextOptionalSettings0_offsetof_gpusExposeOnlyOneQueue, gpusExposeOnlyOneQueue)
+}
+
+fn RedContextOptionalSettingsIterator(
+  structPointer, // Number structPointer
+  settings, // Number settings
+  next, // Number next
+  setTo0 // Number setTo0
+)
+{
+  pointerSetAtOffset_unsigned(structPointer, RedContextOptionalSettingsIterator_offsetof_settings, settings)
+  pointerSetAtOffset_const_void_p(structPointer, RedContextOptionalSettingsIterator_offsetof_next, next)
+}
+
+fn RedCopyArrayImageRange(
+  structPointer, // Number structPointer
+  arrayBytesFirst, // Number arrayBytesFirst
+  arrayTexelsCountToNextRow, // Number arrayTexelsCountToNextRow
+  arrayTexelsCountToNextLayerOr3DDepthSliceDividedByTexelsCountToNextRow, // Number arrayTexelsCountToNextLayerOr3DDepthSliceDividedByTexelsCountToNextRow
+  imagePartsAllParts, // Number imagePartsAllParts
+  imagePartsLevel, // Number imagePartsLevel
+  imagePartsLayersFirst, // Number imagePartsLayersFirst
+  imagePartsLayersCount, // Number imagePartsLayersCount
+  imageOffsetTexelX, // Number imageOffsetTexelX
+  imageOffsetTexelY, // Number imageOffsetTexelY
+  imageOffsetTexelZ, // Number imageOffsetTexelZ
+  imageExtentTexelsCountWidth, // Number imageExtentTexelsCountWidth
+  imageExtentTexelsCountHeight, // Number imageExtentTexelsCountHeight
+  imageExtentTexelsCountDepth, // Number imageExtentTexelsCountDepth
+  setTo0 // Number setTo0
+)
+{
+  pointerSetAtOffset_uint64_t(structPointer, RedCopyArrayImageRange_offsetof_arrayBytesFirst, arrayBytesFirst)
+  pointerSetAtOffset_unsigned(structPointer, RedCopyArrayImageRange_offsetof_arrayTexelsCountToNextRow, arrayTexelsCountToNextRow)
+  pointerSetAtOffset_unsigned(structPointer, RedCopyArrayImageRange_offsetof_arrayTexelsCountToNextLayerOr3DDepthSliceDividedByTexelsCountToNextRow, arrayTexelsCountToNextLayerOr3DDepthSliceDividedByTexelsCountToNextRow)
+  pointerSetAtOffset_RedImagePartBitflags(structPointer, RedCopyArrayImageRange_offsetof_imageParts + (RedCopyImageParts_sizeof * 0) + RedCopyImageParts_offsetof_allParts, imagePartsAllParts)
+  pointerSetAtOffset_unsigned(structPointer, RedCopyArrayImageRange_offsetof_imageParts + (RedCopyImageParts_sizeof * 0) + RedCopyImageParts_offsetof_level, imagePartsLevel)
+  pointerSetAtOffset_unsigned(structPointer, RedCopyArrayImageRange_offsetof_imageParts + (RedCopyImageParts_sizeof * 0) + RedCopyImageParts_offsetof_layersFirst, imagePartsLayersFirst)
+  pointerSetAtOffset_unsigned(structPointer, RedCopyArrayImageRange_offsetof_imageParts + (RedCopyImageParts_sizeof * 0) + RedCopyImageParts_offsetof_layersCount, imagePartsLayersCount)
+  pointerSetAtOffset_int(structPointer, RedCopyArrayImageRange_offsetof_imageOffset + (RedCopyImageOffset_sizeof * 0) + RedCopyImageOffset_offsetof_texelX, imageOffsetTexelX)
+  pointerSetAtOffset_int(structPointer, RedCopyArrayImageRange_offsetof_imageOffset + (RedCopyImageOffset_sizeof * 0) + RedCopyImageOffset_offsetof_texelY, imageOffsetTexelY)
+  pointerSetAtOffset_int(structPointer, RedCopyArrayImageRange_offsetof_imageOffset + (RedCopyImageOffset_sizeof * 0) + RedCopyImageOffset_offsetof_texelZ, imageOffsetTexelZ)
+  pointerSetAtOffset_unsigned(structPointer, RedCopyArrayImageRange_offsetof_imageExtent + (RedCopyImageExtent_sizeof * 0) + RedCopyImageExtent_offsetof_texelsCountWidth, imageExtentTexelsCountWidth)
+  pointerSetAtOffset_unsigned(structPointer, RedCopyArrayImageRange_offsetof_imageExtent + (RedCopyImageExtent_sizeof * 0) + RedCopyImageExtent_offsetof_texelsCountHeight, imageExtentTexelsCountHeight)
+  pointerSetAtOffset_unsigned(structPointer, RedCopyArrayImageRange_offsetof_imageExtent + (RedCopyImageExtent_sizeof * 0) + RedCopyImageExtent_offsetof_texelsCountDepth, imageExtentTexelsCountDepth)
+}
+
+fn RedCopyArrayRange(
+  structPointer, // Number structPointer
+  arrayRBytesFirst, // Number arrayRBytesFirst
+  arrayWBytesFirst, // Number arrayWBytesFirst
+  bytesCount, // Number bytesCount
+  setTo0 // Number setTo0
+)
+{
+  pointerSetAtOffset_uint64_t(structPointer, RedCopyArrayRange_offsetof_arrayRBytesFirst, arrayRBytesFirst)
+  pointerSetAtOffset_uint64_t(structPointer, RedCopyArrayRange_offsetof_arrayWBytesFirst, arrayWBytesFirst)
+  pointerSetAtOffset_uint64_t(structPointer, RedCopyArrayRange_offsetof_bytesCount, bytesCount)
+}
+
+fn RedCopyImageExtent(
+  structPointer, // Number structPointer
+  texelsCountWidth, // Number texelsCountWidth
+  texelsCountHeight, // Number texelsCountHeight
+  texelsCountDepth, // Number texelsCountDepth
+  setTo0 // Number setTo0
+)
+{
+  pointerSetAtOffset_unsigned(structPointer, RedCopyImageExtent_offsetof_texelsCountWidth, texelsCountWidth)
+  pointerSetAtOffset_unsigned(structPointer, RedCopyImageExtent_offsetof_texelsCountHeight, texelsCountHeight)
+  pointerSetAtOffset_unsigned(structPointer, RedCopyImageExtent_offsetof_texelsCountDepth, texelsCountDepth)
+}
+
+fn RedCopyImageOffset(
+  structPointer, // Number structPointer
+  texelX, // Number texelX
+  texelY, // Number texelY
+  texelZ, // Number texelZ
+  setTo0 // Number setTo0
+)
+{
+  pointerSetAtOffset_int(structPointer, RedCopyImageOffset_offsetof_texelX, texelX)
+  pointerSetAtOffset_int(structPointer, RedCopyImageOffset_offsetof_texelY, texelY)
+  pointerSetAtOffset_int(structPointer, RedCopyImageOffset_offsetof_texelZ, texelZ)
+}
+
+fn RedCopyImageParts(
+  structPointer, // Number structPointer
+  allParts, // Number allParts
+  level, // Number level
+  layersFirst, // Number layersFirst
+  layersCount, // Number layersCount
+  setTo0 // Number setTo0
+)
+{
+  pointerSetAtOffset_RedImagePartBitflags(structPointer, RedCopyImageParts_offsetof_allParts, allParts)
+  pointerSetAtOffset_unsigned(structPointer, RedCopyImageParts_offsetof_level, level)
+  pointerSetAtOffset_unsigned(structPointer, RedCopyImageParts_offsetof_layersFirst, layersFirst)
+  pointerSetAtOffset_unsigned(structPointer, RedCopyImageParts_offsetof_layersCount, layersCount)
+}
+
+fn RedCopyImageRange(
+  structPointer, // Number structPointer
+  imageRPartsAllParts, // Number imageRPartsAllParts
+  imageRPartsLevel, // Number imageRPartsLevel
+  imageRPartsLayersFirst, // Number imageRPartsLayersFirst
+  imageRPartsLayersCount, // Number imageRPartsLayersCount
+  imageROffsetTexelX, // Number imageROffsetTexelX
+  imageROffsetTexelY, // Number imageROffsetTexelY
+  imageROffsetTexelZ, // Number imageROffsetTexelZ
+  imageWPartsAllParts, // Number imageWPartsAllParts
+  imageWPartsLevel, // Number imageWPartsLevel
+  imageWPartsLayersFirst, // Number imageWPartsLayersFirst
+  imageWPartsLayersCount, // Number imageWPartsLayersCount
+  imageWOffsetTexelX, // Number imageWOffsetTexelX
+  imageWOffsetTexelY, // Number imageWOffsetTexelY
+  imageWOffsetTexelZ, // Number imageWOffsetTexelZ
+  extentTexelsCountWidth, // Number extentTexelsCountWidth
+  extentTexelsCountHeight, // Number extentTexelsCountHeight
+  extentTexelsCountDepth, // Number extentTexelsCountDepth
+  setTo0 // Number setTo0
+)
+{
+  pointerSetAtOffset_RedImagePartBitflags(structPointer, RedCopyImageRange_offsetof_imageRParts + (RedCopyImageParts_sizeof * 0) + RedCopyImageParts_offsetof_allParts, imageRPartsAllParts)
+  pointerSetAtOffset_unsigned(structPointer, RedCopyImageRange_offsetof_imageRParts + (RedCopyImageParts_sizeof * 0) + RedCopyImageParts_offsetof_level, imageRPartsLevel)
+  pointerSetAtOffset_unsigned(structPointer, RedCopyImageRange_offsetof_imageRParts + (RedCopyImageParts_sizeof * 0) + RedCopyImageParts_offsetof_layersFirst, imageRPartsLayersFirst)
+  pointerSetAtOffset_unsigned(structPointer, RedCopyImageRange_offsetof_imageRParts + (RedCopyImageParts_sizeof * 0) + RedCopyImageParts_offsetof_layersCount, imageRPartsLayersCount)
+  pointerSetAtOffset_int(structPointer, RedCopyImageRange_offsetof_imageROffset + (RedCopyImageOffset_sizeof * 0) + RedCopyImageOffset_offsetof_texelX, imageROffsetTexelX)
+  pointerSetAtOffset_int(structPointer, RedCopyImageRange_offsetof_imageROffset + (RedCopyImageOffset_sizeof * 0) + RedCopyImageOffset_offsetof_texelY, imageROffsetTexelY)
+  pointerSetAtOffset_int(structPointer, RedCopyImageRange_offsetof_imageROffset + (RedCopyImageOffset_sizeof * 0) + RedCopyImageOffset_offsetof_texelZ, imageROffsetTexelZ)
+  pointerSetAtOffset_RedImagePartBitflags(structPointer, RedCopyImageRange_offsetof_imageWParts + (RedCopyImageParts_sizeof * 0) + RedCopyImageParts_offsetof_allParts, imageWPartsAllParts)
+  pointerSetAtOffset_unsigned(structPointer, RedCopyImageRange_offsetof_imageWParts + (RedCopyImageParts_sizeof * 0) + RedCopyImageParts_offsetof_level, imageWPartsLevel)
+  pointerSetAtOffset_unsigned(structPointer, RedCopyImageRange_offsetof_imageWParts + (RedCopyImageParts_sizeof * 0) + RedCopyImageParts_offsetof_layersFirst, imageWPartsLayersFirst)
+  pointerSetAtOffset_unsigned(structPointer, RedCopyImageRange_offsetof_imageWParts + (RedCopyImageParts_sizeof * 0) + RedCopyImageParts_offsetof_layersCount, imageWPartsLayersCount)
+  pointerSetAtOffset_int(structPointer, RedCopyImageRange_offsetof_imageWOffset + (RedCopyImageOffset_sizeof * 0) + RedCopyImageOffset_offsetof_texelX, imageWOffsetTexelX)
+  pointerSetAtOffset_int(structPointer, RedCopyImageRange_offsetof_imageWOffset + (RedCopyImageOffset_sizeof * 0) + RedCopyImageOffset_offsetof_texelY, imageWOffsetTexelY)
+  pointerSetAtOffset_int(structPointer, RedCopyImageRange_offsetof_imageWOffset + (RedCopyImageOffset_sizeof * 0) + RedCopyImageOffset_offsetof_texelZ, imageWOffsetTexelZ)
+  pointerSetAtOffset_unsigned(structPointer, RedCopyImageRange_offsetof_extent + (RedCopyImageExtent_sizeof * 0) + RedCopyImageExtent_offsetof_texelsCountWidth, extentTexelsCountWidth)
+  pointerSetAtOffset_unsigned(structPointer, RedCopyImageRange_offsetof_extent + (RedCopyImageExtent_sizeof * 0) + RedCopyImageExtent_offsetof_texelsCountHeight, extentTexelsCountHeight)
+  pointerSetAtOffset_unsigned(structPointer, RedCopyImageRange_offsetof_extent + (RedCopyImageExtent_sizeof * 0) + RedCopyImageExtent_offsetof_texelsCountDepth, extentTexelsCountDepth)
+}
+
+fn RedDebugCallbackData(
+  structPointer, // Number structPointer
+  _0, // Number _0
+  _1, // Number _1
+  statusCode, // Number statusCode
+  messageIdName, // String messageIdName
+  statusHresult, // Number statusHresult
+  message, // String message
+  _2, // Number _2
+  _3, // Number _3
+  _4, // Number _4
+  _5, // Number _5
+  handleInfosCount, // Number handleInfosCount
+  handleInfos, // Number handleInfos
+  setTo0 // Number setTo0
+)
+{
+  pointerSetAtOffset_unsigned(structPointer, RedDebugCallbackData_offsetof__0, _0)
+  pointerSetAtOffset_const_void_p(structPointer, RedDebugCallbackData_offsetof__1, _1)
+  pointerSetAtOffset_unsigned(structPointer, RedDebugCallbackData_offsetof_statusCode, statusCode)
+  pointerSetAtOffset_const_char_p(structPointer, RedDebugCallbackData_offsetof_messageIdName, messageIdName)
+  pointerSetAtOffset_int(structPointer, RedDebugCallbackData_offsetof_statusHresult, statusHresult)
+  pointerSetAtOffset_const_char_p(structPointer, RedDebugCallbackData_offsetof_message, message)
+  pointerSetAtOffset_unsigned(structPointer, RedDebugCallbackData_offsetof__2, _2)
+  pointerSetAtOffset_const_void_p(structPointer, RedDebugCallbackData_offsetof__3, _3)
+  pointerSetAtOffset_unsigned(structPointer, RedDebugCallbackData_offsetof__4, _4)
+  pointerSetAtOffset_const_void_p(structPointer, RedDebugCallbackData_offsetof__5, _5)
+  pointerSetAtOffset_unsigned(structPointer, RedDebugCallbackData_offsetof_handleInfosCount, handleInfosCount)
+  pointerSetAtOffset_const_RedHandleInfo_p(structPointer, RedDebugCallbackData_offsetof_handleInfos, handleInfos)
+}
+
+fn RedGpuInfo(
+  structPointer, // Number structPointer
+  gpu, // Number gpu
+  gpuDevice, // Number gpuDevice
+  gpuName, // Number gpuName [256]
+  gpuType, // Number gpuType
+  gpuVendorId, // Number gpuVendorId
+  gpuDeviceId, // Number gpuDeviceId
+  gpuDriverVersion, // Number gpuDriverVersion
+  gpuProcedureCacheUuid, // Number gpuProcedureCacheUuid [16]
+  memoryTypesCount, // Number memoryTypesCount
+  memoryTypes, // Number memoryTypes
+  memoryTypesDescription, // Number memoryTypesDescription
+  memoryHeapsCount, // Number memoryHeapsCount
+  memoryHeaps, // Number memoryHeaps
+  memoryHeapsDescription, // Number memoryHeapsDescription
+  queuesCount, // Number queuesCount
+  queues, // Number queues
+  queuesDescription, // Number queuesDescription
+  queuesFamilyIndex, // Number queuesFamilyIndex
+  queuesCanCopy, // Number queuesCanCopy
+  queuesCanDraw, // Number queuesCanDraw
+  queuesCanCompute, // Number queuesCanCompute
+  queuesCopyLimits, // Number queuesCopyLimits
+  maxMemoryAllocateCount, // Number maxMemoryAllocateCount
+  minMemoryAllocateBytesAlignment, // Number minMemoryAllocateBytesAlignment
+  maxMemoryAllocateBytesCount, // Number maxMemoryAllocateBytesCount
+  minMemoryNonCoherentBlockBytesCount, // Number minMemoryNonCoherentBlockBytesCount
+  maxCreateSamplerCount, // Number maxCreateSamplerCount
+  minMemoryPageSeparationArrayImageBytesCount, // Number minMemoryPageSeparationArrayImageBytesCount
+  minArrayROCStructMemberRangeBytesAlignment, // Number minArrayROCStructMemberRangeBytesAlignment
+  maxArrayROCStructMemberRangeBytesCount, // Number maxArrayROCStructMemberRangeBytesCount
+  minArrayRORWStructMemberRangeBytesAlignment, // Number minArrayRORWStructMemberRangeBytesAlignment
+  maxArrayRORWStructMemberRangeBytesCount, // Number maxArrayRORWStructMemberRangeBytesCount
+  maxArrayIndexUint32Value, // Number maxArrayIndexUint32Value
+  maxImageDimensions1D, // Number maxImageDimensions1D
+  maxImageDimensions2D, // Number maxImageDimensions2D
+  maxImageDimensions3D, // Number maxImageDimensions3D
+  maxImageDimensionsCube, // Number maxImageDimensionsCube
+  maxImageLayersCount, // Number maxImageLayersCount
+  maxSamplerMipLodBias, // Number maxSamplerMipLodBias
+  maxSamplerAnisotropy, // Number maxSamplerAnisotropy
+  precisionBitsSamplerFilteringMagMin, // Number precisionBitsSamplerFilteringMagMin
+  precisionBitsSamplerFilteringMip, // Number precisionBitsSamplerFilteringMip
+  maxOutputWidth, // Number maxOutputWidth
+  maxOutputHeight, // Number maxOutputHeight
+  maxOutputColorsCount, // Number maxOutputColorsCount
+  supportedMultisampleCountsForOutputDepth, // Number supportedMultisampleCountsForOutputDepth
+  supportedMultisampleCountsForOutputStencil, // Number supportedMultisampleCountsForOutputStencil
+  supportedMultisampleCountsForOutputColor, // Number supportedMultisampleCountsForOutputColor
+  supportedMultisampleCountsForEmptyOutput, // Number supportedMultisampleCountsForEmptyOutput
+  maxStructSlotsCount, // Number maxStructSlotsCount
+  maxStructPerStageArrayROCsCount, // Number maxStructPerStageArrayROCsCount
+  maxStructPerStageArrayRORWsCount, // Number maxStructPerStageArrayRORWsCount
+  maxStructPerStageSamplersCount, // Number maxStructPerStageSamplersCount
+  maxStructPerStageTextureROsCount, // Number maxStructPerStageTextureROsCount
+  maxStructPerStageTextureRWsCount, // Number maxStructPerStageTextureRWsCount
+  maxStructPerStageAllResourcesCount, // Number maxStructPerStageAllResourcesCount
+  maxStructArrayROCsCount, // Number maxStructArrayROCsCount
+  maxStructArrayRORWsCount, // Number maxStructArrayRORWsCount
+  maxStructSamplersCount, // Number maxStructSamplersCount
+  maxStructTextureROsCount, // Number maxStructTextureROsCount
+  maxStructTextureRWsCount, // Number maxStructTextureRWsCount
+  maxProcedureParametersVariablesBytesCount, // Number maxProcedureParametersVariablesBytesCount
+  maxViewportDimensions, // Number maxViewportDimensions [2]
+  minViewportBoundsRange, // Number minViewportBoundsRange
+  maxViewportBoundsRange, // Number maxViewportBoundsRange
+  precisionBitsViewportCoordinates, // Number precisionBitsViewportCoordinates
+  precisionBitsViewportBounds, // Number precisionBitsViewportBounds
+  maxPerStageClipDistances, // Number maxPerStageClipDistances
+  maxPerStageCullDistances, // Number maxPerStageCullDistances
+  maxPerStageClipAndCullDistances, // Number maxPerStageClipAndCullDistances
+  maxVertexOutputLocationsCount, // Number maxVertexOutputLocationsCount
+  maxFragmentInputLocationsCount, // Number maxFragmentInputLocationsCount
+  maxFragmentOutputColorsCount, // Number maxFragmentOutputColorsCount
+  maxFragmentOutputColorsCountBlendDualSource, // Number maxFragmentOutputColorsCountBlendDualSource
+  maxFragmentOutputResourcesCount, // Number maxFragmentOutputResourcesCount
+  maxComputeSharedMemoryBytesCount, // Number maxComputeSharedMemoryBytesCount
+  maxComputeWorkgroupsCount, // Number maxComputeWorkgroupsCount [3]
+  maxComputeWorkgroupInvocationsCount, // Number maxComputeWorkgroupInvocationsCount
+  maxComputeWorkgroupDimensions, // Number maxComputeWorkgroupDimensions [3]
+  minImageSampleImageFetchOffset, // Number minImageSampleImageFetchOffset
+  maxImageSampleImageFetchOffset, // Number maxImageSampleImageFetchOffset
+  minImageGatherOffset, // Number minImageGatherOffset
+  maxImageGatherOffset, // Number maxImageGatherOffset
+  minInterpolateAtOffset, // Number minInterpolateAtOffset
+  maxInterpolateAtOffset, // Number maxInterpolateAtOffset
+  precisionBitsInterpolateAtOffset, // Number precisionBitsInterpolateAtOffset
+  optimalCopyArrayImageRangeArrayBytesFirstBytesAlignment, // Number optimalCopyArrayImageRangeArrayBytesFirstBytesAlignment
+  optimalCopyArrayImageRangeArrayTexelsCountToNextRowBytesAlignment, // Number optimalCopyArrayImageRangeArrayTexelsCountToNextRowBytesAlignment
+  supportsWsi, // Number supportsWsi
+  supportsMemoryGetBudget, // Number supportsMemoryGetBudget
+  supportsFullArrayIndexUint32Value, // Number supportsFullArrayIndexUint32Value
+  supportsSamplerAnisotropy, // Number supportsSamplerAnisotropy
+  supportsTextureDimensionsCubeLayered, // Number supportsTextureDimensionsCubeLayered
+  supportsProcedureStateRasterizationDepthClamp, // Number supportsProcedureStateRasterizationDepthClamp
+  supportsProcedureStateRasterizationDepthBiasDynamic, // Number supportsProcedureStateRasterizationDepthBiasDynamic
+  supportsProcedureStateRasterizationDepthBiasClamp, // Number supportsProcedureStateRasterizationDepthBiasClamp
+  supportsProcedureStateMultisampleSampleShading, // Number supportsProcedureStateMultisampleSampleShading
+  supportsProcedureStateMultisampleAlphaToOne, // Number supportsProcedureStateMultisampleAlphaToOne
+  supportsProcedureStateDepthTestBoundsTest, // Number supportsProcedureStateDepthTestBoundsTest
+  supportsProcedureStateDepthTestBoundsTestDynamic, // Number supportsProcedureStateDepthTestBoundsTestDynamic
+  supportsProcedureStateStencilTestFrontAndBackDynamicCompareMask, // Number supportsProcedureStateStencilTestFrontAndBackDynamicCompareMask
+  supportsProcedureStateStencilTestFrontAndBackDynamicWriteMask, // Number supportsProcedureStateStencilTestFrontAndBackDynamicWriteMask
+  supportsProcedureStateBlendLogicOp, // Number supportsProcedureStateBlendLogicOp
+  supportsProcedureStateOutputColorsBlendVaryingPerColor, // Number supportsProcedureStateOutputColorsBlendVaryingPerColor
+  supportsProcedureStateOutputColorsBlendDualSource, // Number supportsProcedureStateOutputColorsBlendDualSource
+  supportsMultisampleEmptyOutputVariableMultisampleCount, // Number supportsMultisampleEmptyOutputVariableMultisampleCount
+  supportsMultisampleStandardSampleLocations, // Number supportsMultisampleStandardSampleLocations
+  supportsGpuCodeWritesAndAtomicsInStageVertex, // Number supportsGpuCodeWritesAndAtomicsInStageVertex
+  supportsGpuCodeWritesAndAtomicsInStageFragment, // Number supportsGpuCodeWritesAndAtomicsInStageFragment
+  supportsGpuCodeImageGatherExtended, // Number supportsGpuCodeImageGatherExtended
+  supportsGpuCodeTextureRWExtendedFormats, // Number supportsGpuCodeTextureRWExtendedFormats
+  supportsGpuCodeTextureRWMultisample, // Number supportsGpuCodeTextureRWMultisample
+  supportsGpuCodeTextureRWReadWithoutFormat, // Number supportsGpuCodeTextureRWReadWithoutFormat
+  supportsGpuCodeTextureRWWriteWithoutFormat, // Number supportsGpuCodeTextureRWWriteWithoutFormat
+  supportsGpuCodeDynamicallyIndexableArraysOfArrayROCs, // Number supportsGpuCodeDynamicallyIndexableArraysOfArrayROCs
+  supportsGpuCodeDynamicallyIndexableArraysOfArrayRORWs, // Number supportsGpuCodeDynamicallyIndexableArraysOfArrayRORWs
+  supportsGpuCodeDynamicallyIndexableArraysOfSamplers, // Number supportsGpuCodeDynamicallyIndexableArraysOfSamplers
+  supportsGpuCodeDynamicallyIndexableArraysOfTextureROs, // Number supportsGpuCodeDynamicallyIndexableArraysOfTextureROs
+  supportsGpuCodeDynamicallyIndexableArraysOfTextureRWs, // Number supportsGpuCodeDynamicallyIndexableArraysOfTextureRWs
+  supportsGpuCodeClipDistance, // Number supportsGpuCodeClipDistance
+  supportsGpuCodeCullDistance, // Number supportsGpuCodeCullDistance
+  supportsGpuCodeInt64, // Number supportsGpuCodeInt64
+  supportsGpuCodeFloat64, // Number supportsGpuCodeFloat64
+  supportsGpuCodeMinLod, // Number supportsGpuCodeMinLod
+  imageFormatsLimitsImageDimensions1D, // Number imageFormatsLimitsImageDimensions1D
+  imageFormatsLimitsImageDimensions2D, // Number imageFormatsLimitsImageDimensions2D
+  imageFormatsLimitsImageDimensions2DMultisample, // Number imageFormatsLimitsImageDimensions2DMultisample
+  imageFormatsLimitsImageDimensions2DWithTextureDimensionsCubeAndCubeLayered, // Number imageFormatsLimitsImageDimensions2DWithTextureDimensionsCubeAndCubeLayered
+  imageFormatsLimitsImageDimensions3D, // Number imageFormatsLimitsImageDimensions3D
+  imageFormatsLimitsImageDimensions3DWithTextureDimensions2DAnd2DLayered, // Number imageFormatsLimitsImageDimensions3DWithTextureDimensions2DAnd2DLayered
+  imageFormatsFeatures, // Number imageFormatsFeatures
+  optionalInfo, // Number optionalInfo
+  setTo0 // Number setTo0
+)
+{
+  pointerSetAtOffset_RedHandleGpu(structPointer, RedGpuInfo_offsetof_gpu, gpu)
+  pointerSetAtOffset_RedHandleGpuDevice(structPointer, RedGpuInfo_offsetof_gpuDevice, gpuDevice)
+  for (var i = 0; i < len(gpuName); i += 1) {
+    pointerSetAtOffset_char(structPointer, RedGpuInfo_offsetof_gpuName + (char_sizeof * i), gpuName)
+  }
+  pointerSetAtOffset_RedGpuType(structPointer, RedGpuInfo_offsetof_gpuType, gpuType)
+  pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_gpuVendorId, gpuVendorId)
+  pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_gpuDeviceId, gpuDeviceId)
+  pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_gpuDriverVersion, gpuDriverVersion)
+  for (var i = 0; i < len(gpuProcedureCacheUuid); i += 1) {
+    pointerSetAtOffset_unsigned_char(structPointer, RedGpuInfo_offsetof_gpuProcedureCacheUuid + (unsigned_char_sizeof * i), gpuProcedureCacheUuid)
+  }
+  pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_memoryTypesCount, memoryTypesCount)
+  pointerSetAtOffset_const_RedMemoryType_p(structPointer, RedGpuInfo_offsetof_memoryTypes, memoryTypes)
+  pointerSetAtOffset_const_char_pp(structPointer, RedGpuInfo_offsetof_memoryTypesDescription, memoryTypesDescription)
+  pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_memoryHeapsCount, memoryHeapsCount)
+  pointerSetAtOffset_const_RedMemoryHeap_p(structPointer, RedGpuInfo_offsetof_memoryHeaps, memoryHeaps)
+  pointerSetAtOffset_const_char_pp(structPointer, RedGpuInfo_offsetof_memoryHeapsDescription, memoryHeapsDescription)
+  pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_queuesCount, queuesCount)
+  pointerSetAtOffset_const_RedHandleQueue_p(structPointer, RedGpuInfo_offsetof_queues, queues)
+  pointerSetAtOffset_const_char_pp(structPointer, RedGpuInfo_offsetof_queuesDescription, queuesDescription)
+  pointerSetAtOffset_const_unsigned_p(structPointer, RedGpuInfo_offsetof_queuesFamilyIndex, queuesFamilyIndex)
+  pointerSetAtOffset_const_RedBool32_p(structPointer, RedGpuInfo_offsetof_queuesCanCopy, queuesCanCopy)
+  pointerSetAtOffset_const_RedBool32_p(structPointer, RedGpuInfo_offsetof_queuesCanDraw, queuesCanDraw)
+  pointerSetAtOffset_const_RedBool32_p(structPointer, RedGpuInfo_offsetof_queuesCanCompute, queuesCanCompute)
+  pointerSetAtOffset_const_RedQueueCopyLimits_p(structPointer, RedGpuInfo_offsetof_queuesCopyLimits, queuesCopyLimits)
+  pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_maxMemoryAllocateCount, maxMemoryAllocateCount)
+  pointerSetAtOffset_uint64_t(structPointer, RedGpuInfo_offsetof_minMemoryAllocateBytesAlignment, minMemoryAllocateBytesAlignment)
+  pointerSetAtOffset_uint64_t(structPointer, RedGpuInfo_offsetof_maxMemoryAllocateBytesCount, maxMemoryAllocateBytesCount)
+  pointerSetAtOffset_uint64_t(structPointer, RedGpuInfo_offsetof_minMemoryNonCoherentBlockBytesCount, minMemoryNonCoherentBlockBytesCount)
+  pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_maxCreateSamplerCount, maxCreateSamplerCount)
+  pointerSetAtOffset_uint64_t(structPointer, RedGpuInfo_offsetof_minMemoryPageSeparationArrayImageBytesCount, minMemoryPageSeparationArrayImageBytesCount)
+  pointerSetAtOffset_uint64_t(structPointer, RedGpuInfo_offsetof_minArrayROCStructMemberRangeBytesAlignment, minArrayROCStructMemberRangeBytesAlignment)
+  pointerSetAtOffset_uint64_t(structPointer, RedGpuInfo_offsetof_maxArrayROCStructMemberRangeBytesCount, maxArrayROCStructMemberRangeBytesCount)
+  pointerSetAtOffset_uint64_t(structPointer, RedGpuInfo_offsetof_minArrayRORWStructMemberRangeBytesAlignment, minArrayRORWStructMemberRangeBytesAlignment)
+  pointerSetAtOffset_uint64_t(structPointer, RedGpuInfo_offsetof_maxArrayRORWStructMemberRangeBytesCount, maxArrayRORWStructMemberRangeBytesCount)
+  pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_maxArrayIndexUint32Value, maxArrayIndexUint32Value)
+  pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_maxImageDimensions1D, maxImageDimensions1D)
+  pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_maxImageDimensions2D, maxImageDimensions2D)
+  pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_maxImageDimensions3D, maxImageDimensions3D)
+  pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_maxImageDimensionsCube, maxImageDimensionsCube)
+  pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_maxImageLayersCount, maxImageLayersCount)
+  pointerSetAtOffset_float(structPointer, RedGpuInfo_offsetof_maxSamplerMipLodBias, maxSamplerMipLodBias)
+  pointerSetAtOffset_float(structPointer, RedGpuInfo_offsetof_maxSamplerAnisotropy, maxSamplerAnisotropy)
+  pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_precisionBitsSamplerFilteringMagMin, precisionBitsSamplerFilteringMagMin)
+  pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_precisionBitsSamplerFilteringMip, precisionBitsSamplerFilteringMip)
+  pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_maxOutputWidth, maxOutputWidth)
+  pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_maxOutputHeight, maxOutputHeight)
+  pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_maxOutputColorsCount, maxOutputColorsCount)
+  pointerSetAtOffset_RedMultisampleCountBitflags(structPointer, RedGpuInfo_offsetof_supportedMultisampleCountsForOutputDepth, supportedMultisampleCountsForOutputDepth)
+  pointerSetAtOffset_RedMultisampleCountBitflags(structPointer, RedGpuInfo_offsetof_supportedMultisampleCountsForOutputStencil, supportedMultisampleCountsForOutputStencil)
+  pointerSetAtOffset_RedMultisampleCountBitflags(structPointer, RedGpuInfo_offsetof_supportedMultisampleCountsForOutputColor, supportedMultisampleCountsForOutputColor)
+  pointerSetAtOffset_RedMultisampleCountBitflags(structPointer, RedGpuInfo_offsetof_supportedMultisampleCountsForEmptyOutput, supportedMultisampleCountsForEmptyOutput)
+  pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_maxStructSlotsCount, maxStructSlotsCount)
+  pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_maxStructPerStageArrayROCsCount, maxStructPerStageArrayROCsCount)
+  pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_maxStructPerStageArrayRORWsCount, maxStructPerStageArrayRORWsCount)
+  pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_maxStructPerStageSamplersCount, maxStructPerStageSamplersCount)
+  pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_maxStructPerStageTextureROsCount, maxStructPerStageTextureROsCount)
+  pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_maxStructPerStageTextureRWsCount, maxStructPerStageTextureRWsCount)
+  pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_maxStructPerStageAllResourcesCount, maxStructPerStageAllResourcesCount)
+  pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_maxStructArrayROCsCount, maxStructArrayROCsCount)
+  pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_maxStructArrayRORWsCount, maxStructArrayRORWsCount)
+  pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_maxStructSamplersCount, maxStructSamplersCount)
+  pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_maxStructTextureROsCount, maxStructTextureROsCount)
+  pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_maxStructTextureRWsCount, maxStructTextureRWsCount)
+  pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_maxProcedureParametersVariablesBytesCount, maxProcedureParametersVariablesBytesCount)
+  for (var i = 0; i < len(maxViewportDimensions); i += 1) {
+    pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_maxViewportDimensions + (unsigned_sizeof * i), maxViewportDimensions)
+  }
+  pointerSetAtOffset_float(structPointer, RedGpuInfo_offsetof_minViewportBoundsRange, minViewportBoundsRange)
+  pointerSetAtOffset_float(structPointer, RedGpuInfo_offsetof_maxViewportBoundsRange, maxViewportBoundsRange)
+  pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_precisionBitsViewportCoordinates, precisionBitsViewportCoordinates)
+  pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_precisionBitsViewportBounds, precisionBitsViewportBounds)
+  pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_maxPerStageClipDistances, maxPerStageClipDistances)
+  pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_maxPerStageCullDistances, maxPerStageCullDistances)
+  pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_maxPerStageClipAndCullDistances, maxPerStageClipAndCullDistances)
+  pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_maxVertexOutputLocationsCount, maxVertexOutputLocationsCount)
+  pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_maxFragmentInputLocationsCount, maxFragmentInputLocationsCount)
+  pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_maxFragmentOutputColorsCount, maxFragmentOutputColorsCount)
+  pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_maxFragmentOutputColorsCountBlendDualSource, maxFragmentOutputColorsCountBlendDualSource)
+  pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_maxFragmentOutputResourcesCount, maxFragmentOutputResourcesCount)
+  pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_maxComputeSharedMemoryBytesCount, maxComputeSharedMemoryBytesCount)
+  for (var i = 0; i < len(maxComputeWorkgroupsCount); i += 1) {
+    pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_maxComputeWorkgroupsCount + (unsigned_sizeof * i), maxComputeWorkgroupsCount)
+  }
+  pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_maxComputeWorkgroupInvocationsCount, maxComputeWorkgroupInvocationsCount)
+  for (var i = 0; i < len(maxComputeWorkgroupDimensions); i += 1) {
+    pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_maxComputeWorkgroupDimensions + (unsigned_sizeof * i), maxComputeWorkgroupDimensions)
+  }
+  pointerSetAtOffset_int(structPointer, RedGpuInfo_offsetof_minImageSampleImageFetchOffset, minImageSampleImageFetchOffset)
+  pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_maxImageSampleImageFetchOffset, maxImageSampleImageFetchOffset)
+  pointerSetAtOffset_int(structPointer, RedGpuInfo_offsetof_minImageGatherOffset, minImageGatherOffset)
+  pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_maxImageGatherOffset, maxImageGatherOffset)
+  pointerSetAtOffset_float(structPointer, RedGpuInfo_offsetof_minInterpolateAtOffset, minInterpolateAtOffset)
+  pointerSetAtOffset_float(structPointer, RedGpuInfo_offsetof_maxInterpolateAtOffset, maxInterpolateAtOffset)
+  pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_precisionBitsInterpolateAtOffset, precisionBitsInterpolateAtOffset)
+  pointerSetAtOffset_uint64_t(structPointer, RedGpuInfo_offsetof_optimalCopyArrayImageRangeArrayBytesFirstBytesAlignment, optimalCopyArrayImageRangeArrayBytesFirstBytesAlignment)
+  pointerSetAtOffset_uint64_t(structPointer, RedGpuInfo_offsetof_optimalCopyArrayImageRangeArrayTexelsCountToNextRowBytesAlignment, optimalCopyArrayImageRangeArrayTexelsCountToNextRowBytesAlignment)
+  pointerSetAtOffset_RedBool32(structPointer, RedGpuInfo_offsetof_supportsWsi, supportsWsi)
+  pointerSetAtOffset_RedBool32(structPointer, RedGpuInfo_offsetof_supportsMemoryGetBudget, supportsMemoryGetBudget)
+  pointerSetAtOffset_RedBool32(structPointer, RedGpuInfo_offsetof_supportsFullArrayIndexUint32Value, supportsFullArrayIndexUint32Value)
+  pointerSetAtOffset_RedBool32(structPointer, RedGpuInfo_offsetof_supportsSamplerAnisotropy, supportsSamplerAnisotropy)
+  pointerSetAtOffset_RedBool32(structPointer, RedGpuInfo_offsetof_supportsTextureDimensionsCubeLayered, supportsTextureDimensionsCubeLayered)
+  pointerSetAtOffset_RedBool32(structPointer, RedGpuInfo_offsetof_supportsProcedureStateRasterizationDepthClamp, supportsProcedureStateRasterizationDepthClamp)
+  pointerSetAtOffset_RedBool32(structPointer, RedGpuInfo_offsetof_supportsProcedureStateRasterizationDepthBiasDynamic, supportsProcedureStateRasterizationDepthBiasDynamic)
+  pointerSetAtOffset_RedBool32(structPointer, RedGpuInfo_offsetof_supportsProcedureStateRasterizationDepthBiasClamp, supportsProcedureStateRasterizationDepthBiasClamp)
+  pointerSetAtOffset_RedBool32(structPointer, RedGpuInfo_offsetof_supportsProcedureStateMultisampleSampleShading, supportsProcedureStateMultisampleSampleShading)
+  pointerSetAtOffset_RedBool32(structPointer, RedGpuInfo_offsetof_supportsProcedureStateMultisampleAlphaToOne, supportsProcedureStateMultisampleAlphaToOne)
+  pointerSetAtOffset_RedBool32(structPointer, RedGpuInfo_offsetof_supportsProcedureStateDepthTestBoundsTest, supportsProcedureStateDepthTestBoundsTest)
+  pointerSetAtOffset_RedBool32(structPointer, RedGpuInfo_offsetof_supportsProcedureStateDepthTestBoundsTestDynamic, supportsProcedureStateDepthTestBoundsTestDynamic)
+  pointerSetAtOffset_RedBool32(structPointer, RedGpuInfo_offsetof_supportsProcedureStateStencilTestFrontAndBackDynamicCompareMask, supportsProcedureStateStencilTestFrontAndBackDynamicCompareMask)
+  pointerSetAtOffset_RedBool32(structPointer, RedGpuInfo_offsetof_supportsProcedureStateStencilTestFrontAndBackDynamicWriteMask, supportsProcedureStateStencilTestFrontAndBackDynamicWriteMask)
+  pointerSetAtOffset_RedBool32(structPointer, RedGpuInfo_offsetof_supportsProcedureStateBlendLogicOp, supportsProcedureStateBlendLogicOp)
+  pointerSetAtOffset_RedBool32(structPointer, RedGpuInfo_offsetof_supportsProcedureStateOutputColorsBlendVaryingPerColor, supportsProcedureStateOutputColorsBlendVaryingPerColor)
+  pointerSetAtOffset_RedBool32(structPointer, RedGpuInfo_offsetof_supportsProcedureStateOutputColorsBlendDualSource, supportsProcedureStateOutputColorsBlendDualSource)
+  pointerSetAtOffset_RedBool32(structPointer, RedGpuInfo_offsetof_supportsMultisampleEmptyOutputVariableMultisampleCount, supportsMultisampleEmptyOutputVariableMultisampleCount)
+  pointerSetAtOffset_RedBool32(structPointer, RedGpuInfo_offsetof_supportsMultisampleStandardSampleLocations, supportsMultisampleStandardSampleLocations)
+  pointerSetAtOffset_RedBool32(structPointer, RedGpuInfo_offsetof_supportsGpuCodeWritesAndAtomicsInStageVertex, supportsGpuCodeWritesAndAtomicsInStageVertex)
+  pointerSetAtOffset_RedBool32(structPointer, RedGpuInfo_offsetof_supportsGpuCodeWritesAndAtomicsInStageFragment, supportsGpuCodeWritesAndAtomicsInStageFragment)
+  pointerSetAtOffset_RedBool32(structPointer, RedGpuInfo_offsetof_supportsGpuCodeImageGatherExtended, supportsGpuCodeImageGatherExtended)
+  pointerSetAtOffset_RedBool32(structPointer, RedGpuInfo_offsetof_supportsGpuCodeTextureRWExtendedFormats, supportsGpuCodeTextureRWExtendedFormats)
+  pointerSetAtOffset_RedBool32(structPointer, RedGpuInfo_offsetof_supportsGpuCodeTextureRWMultisample, supportsGpuCodeTextureRWMultisample)
+  pointerSetAtOffset_RedBool32(structPointer, RedGpuInfo_offsetof_supportsGpuCodeTextureRWReadWithoutFormat, supportsGpuCodeTextureRWReadWithoutFormat)
+  pointerSetAtOffset_RedBool32(structPointer, RedGpuInfo_offsetof_supportsGpuCodeTextureRWWriteWithoutFormat, supportsGpuCodeTextureRWWriteWithoutFormat)
+  pointerSetAtOffset_RedBool32(structPointer, RedGpuInfo_offsetof_supportsGpuCodeDynamicallyIndexableArraysOfArrayROCs, supportsGpuCodeDynamicallyIndexableArraysOfArrayROCs)
+  pointerSetAtOffset_RedBool32(structPointer, RedGpuInfo_offsetof_supportsGpuCodeDynamicallyIndexableArraysOfArrayRORWs, supportsGpuCodeDynamicallyIndexableArraysOfArrayRORWs)
+  pointerSetAtOffset_RedBool32(structPointer, RedGpuInfo_offsetof_supportsGpuCodeDynamicallyIndexableArraysOfSamplers, supportsGpuCodeDynamicallyIndexableArraysOfSamplers)
+  pointerSetAtOffset_RedBool32(structPointer, RedGpuInfo_offsetof_supportsGpuCodeDynamicallyIndexableArraysOfTextureROs, supportsGpuCodeDynamicallyIndexableArraysOfTextureROs)
+  pointerSetAtOffset_RedBool32(structPointer, RedGpuInfo_offsetof_supportsGpuCodeDynamicallyIndexableArraysOfTextureRWs, supportsGpuCodeDynamicallyIndexableArraysOfTextureRWs)
+  pointerSetAtOffset_RedBool32(structPointer, RedGpuInfo_offsetof_supportsGpuCodeClipDistance, supportsGpuCodeClipDistance)
+  pointerSetAtOffset_RedBool32(structPointer, RedGpuInfo_offsetof_supportsGpuCodeCullDistance, supportsGpuCodeCullDistance)
+  pointerSetAtOffset_RedBool32(structPointer, RedGpuInfo_offsetof_supportsGpuCodeInt64, supportsGpuCodeInt64)
+  pointerSetAtOffset_RedBool32(structPointer, RedGpuInfo_offsetof_supportsGpuCodeFloat64, supportsGpuCodeFloat64)
+  pointerSetAtOffset_RedBool32(structPointer, RedGpuInfo_offsetof_supportsGpuCodeMinLod, supportsGpuCodeMinLod)
+  pointerSetAtOffset_const_RedImageFormatLimits_p(structPointer, RedGpuInfo_offsetof_imageFormatsLimitsImageDimensions1D, imageFormatsLimitsImageDimensions1D)
+  pointerSetAtOffset_const_RedImageFormatLimits_p(structPointer, RedGpuInfo_offsetof_imageFormatsLimitsImageDimensions2D, imageFormatsLimitsImageDimensions2D)
+  pointerSetAtOffset_const_RedImageFormatLimits_p(structPointer, RedGpuInfo_offsetof_imageFormatsLimitsImageDimensions2DMultisample, imageFormatsLimitsImageDimensions2DMultisample)
+  pointerSetAtOffset_const_RedImageFormatLimits_p(structPointer, RedGpuInfo_offsetof_imageFormatsLimitsImageDimensions2DWithTextureDimensionsCubeAndCubeLayered, imageFormatsLimitsImageDimensions2DWithTextureDimensionsCubeAndCubeLayered)
+  pointerSetAtOffset_const_RedImageFormatLimits_p(structPointer, RedGpuInfo_offsetof_imageFormatsLimitsImageDimensions3D, imageFormatsLimitsImageDimensions3D)
+  pointerSetAtOffset_const_RedImageFormatLimits_p(structPointer, RedGpuInfo_offsetof_imageFormatsLimitsImageDimensions3DWithTextureDimensions2DAnd2DLayered, imageFormatsLimitsImageDimensions3DWithTextureDimensions2DAnd2DLayered)
+  pointerSetAtOffset_const_RedImageFormatFeatures_p(structPointer, RedGpuInfo_offsetof_imageFormatsFeatures, imageFormatsFeatures)
+  pointerSetAtOffset_const_void_p(structPointer, RedGpuInfo_offsetof_optionalInfo, optionalInfo)
+}
+
+fn RedGpuInfoOptionalInfoAdditionalInfo0(
+  structPointer, // Number structPointer
+  optionalInfo, // Number optionalInfo
+  next, // Number next
+  supportsArraysImagesUsageBeforeMemorySet, // Number supportsArraysImagesUsageBeforeMemorySet
+  supportsInitialQueueFamilyIndexSetToMaxValueForSimultaneousQueueAccessOfArrays, // Number supportsInitialQueueFamilyIndexSetToMaxValueForSimultaneousQueueAccessOfArrays
+  supportsInitialQueueFamilyIndexSetToMaxValueForSimultaneousQueueAccessOfImages, // Number supportsInitialQueueFamilyIndexSetToMaxValueForSimultaneousQueueAccessOfImages
+  supportsInitialQueueFamilyIndexSetToMaxValueForSimultaneousQueueAccessOfImagesMultisample, // Number supportsInitialQueueFamilyIndexSetToMaxValueForSimultaneousQueueAccessOfImagesMultisample
+  supportsInitialQueueFamilyIndexSetToMaxValueForSimultaneousQueueAccessOfImagesDepthStencil, // Number supportsInitialQueueFamilyIndexSetToMaxValueForSimultaneousQueueAccessOfImagesDepthStencil
+  setTo0 // Number setTo0
+)
+{
+  pointerSetAtOffset_RedGpuInfoOptionalInfo(structPointer, RedGpuInfoOptionalInfoAdditionalInfo0_offsetof_optionalInfo, optionalInfo)
+  pointerSetAtOffset_const_void_p(structPointer, RedGpuInfoOptionalInfoAdditionalInfo0_offsetof_next, next)
+  pointerSetAtOffset_RedBool32(structPointer, RedGpuInfoOptionalInfoAdditionalInfo0_offsetof_supportsArraysImagesUsageBeforeMemorySet, supportsArraysImagesUsageBeforeMemorySet)
+  pointerSetAtOffset_RedBool32(structPointer, RedGpuInfoOptionalInfoAdditionalInfo0_offsetof_supportsInitialQueueFamilyIndexSetToMaxValueForSimultaneousQueueAccessOfArrays, supportsInitialQueueFamilyIndexSetToMaxValueForSimultaneousQueueAccessOfArrays)
+  pointerSetAtOffset_RedBool32(structPointer, RedGpuInfoOptionalInfoAdditionalInfo0_offsetof_supportsInitialQueueFamilyIndexSetToMaxValueForSimultaneousQueueAccessOfImages, supportsInitialQueueFamilyIndexSetToMaxValueForSimultaneousQueueAccessOfImages)
+  pointerSetAtOffset_RedBool32(structPointer, RedGpuInfoOptionalInfoAdditionalInfo0_offsetof_supportsInitialQueueFamilyIndexSetToMaxValueForSimultaneousQueueAccessOfImagesMultisample, supportsInitialQueueFamilyIndexSetToMaxValueForSimultaneousQueueAccessOfImagesMultisample)
+  pointerSetAtOffset_RedBool32(structPointer, RedGpuInfoOptionalInfoAdditionalInfo0_offsetof_supportsInitialQueueFamilyIndexSetToMaxValueForSimultaneousQueueAccessOfImagesDepthStencil, supportsInitialQueueFamilyIndexSetToMaxValueForSimultaneousQueueAccessOfImagesDepthStencil)
+}
+
+fn RedGpuInfoOptionalInfoDriverProperties(
+  structPointer, // Number structPointer
+  optionalInfo, // Number optionalInfo
+  next, // Number next
+  id, // Number id
+  name, // Number name [256]
+  info, // Number info [256]
+  compliantWithConformanceTestSuiteVersionMajor, // Number compliantWithConformanceTestSuiteVersionMajor
+  compliantWithConformanceTestSuiteVersionMinor, // Number compliantWithConformanceTestSuiteVersionMinor
+  compliantWithConformanceTestSuiteVersionSubminor, // Number compliantWithConformanceTestSuiteVersionSubminor
+  compliantWithConformanceTestSuiteVersionPatch, // Number compliantWithConformanceTestSuiteVersionPatch
+  setTo0 // Number setTo0
+)
+{
+  pointerSetAtOffset_RedGpuInfoOptionalInfo(structPointer, RedGpuInfoOptionalInfoDriverProperties_offsetof_optionalInfo, optionalInfo)
+  pointerSetAtOffset_const_void_p(structPointer, RedGpuInfoOptionalInfoDriverProperties_offsetof_next, next)
+  pointerSetAtOffset_RedDriverId(structPointer, RedGpuInfoOptionalInfoDriverProperties_offsetof_id, id)
+  for (var i = 0; i < len(name); i += 1) {
+    pointerSetAtOffset_char(structPointer, RedGpuInfoOptionalInfoDriverProperties_offsetof_name + (char_sizeof * i), name)
+  }
+  for (var i = 0; i < len(info); i += 1) {
+    pointerSetAtOffset_char(structPointer, RedGpuInfoOptionalInfoDriverProperties_offsetof_info + (char_sizeof * i), info)
+  }
+  pointerSetAtOffset_unsigned_char(structPointer, RedGpuInfoOptionalInfoDriverProperties_offsetof_compliantWithConformanceTestSuiteVersionMajor, compliantWithConformanceTestSuiteVersionMajor)
+  pointerSetAtOffset_unsigned_char(structPointer, RedGpuInfoOptionalInfoDriverProperties_offsetof_compliantWithConformanceTestSuiteVersionMinor, compliantWithConformanceTestSuiteVersionMinor)
+  pointerSetAtOffset_unsigned_char(structPointer, RedGpuInfoOptionalInfoDriverProperties_offsetof_compliantWithConformanceTestSuiteVersionSubminor, compliantWithConformanceTestSuiteVersionSubminor)
+  pointerSetAtOffset_unsigned_char(structPointer, RedGpuInfoOptionalInfoDriverProperties_offsetof_compliantWithConformanceTestSuiteVersionPatch, compliantWithConformanceTestSuiteVersionPatch)
+}
+
+fn RedGpuInfoOptionalInfoFormalMemoryModel(
+  structPointer, // Number structPointer
+  optionalInfo, // Number optionalInfo
+  next, // Number next
+  supportsFormalMemoryModel, // Number supportsFormalMemoryModel
+  supportsFormalMemoryModelGpuScopeSynchronization, // Number supportsFormalMemoryModelGpuScopeSynchronization
+  supportsFormalMemoryModelAvailabilityAndVisibilityChains, // Number supportsFormalMemoryModelAvailabilityAndVisibilityChains
+  setTo0 // Number setTo0
+)
+{
+  pointerSetAtOffset_RedGpuInfoOptionalInfo(structPointer, RedGpuInfoOptionalInfoFormalMemoryModel_offsetof_optionalInfo, optionalInfo)
+  pointerSetAtOffset_const_void_p(structPointer, RedGpuInfoOptionalInfoFormalMemoryModel_offsetof_next, next)
+  pointerSetAtOffset_RedBool32(structPointer, RedGpuInfoOptionalInfoFormalMemoryModel_offsetof_supportsFormalMemoryModel, supportsFormalMemoryModel)
+  pointerSetAtOffset_RedBool32(structPointer, RedGpuInfoOptionalInfoFormalMemoryModel_offsetof_supportsFormalMemoryModelGpuScopeSynchronization, supportsFormalMemoryModelGpuScopeSynchronization)
+  pointerSetAtOffset_RedBool32(structPointer, RedGpuInfoOptionalInfoFormalMemoryModel_offsetof_supportsFormalMemoryModelAvailabilityAndVisibilityChains, supportsFormalMemoryModelAvailabilityAndVisibilityChains)
+}
+
+fn RedGpuInfoOptionalInfoIterator(
+  structPointer, // Number structPointer
+  optionalInfo, // Number optionalInfo
+  next, // Number next
+  setTo0 // Number setTo0
+)
+{
+  pointerSetAtOffset_unsigned(structPointer, RedGpuInfoOptionalInfoIterator_offsetof_optionalInfo, optionalInfo)
+  pointerSetAtOffset_const_void_p(structPointer, RedGpuInfoOptionalInfoIterator_offsetof_next, next)
+}
+
+fn RedGpuInfoOptionalInfoProcedureParametersHandles(
+  structPointer, // Number structPointer
+  optionalInfo, // Number optionalInfo
+  next, // Number next
+  supportsProcedureParametersHandles, // Number supportsProcedureParametersHandles
+  maxProcedureParametersHandlesCount, // Number maxProcedureParametersHandlesCount
+  setTo0 // Number setTo0
+)
+{
+  pointerSetAtOffset_RedGpuInfoOptionalInfo(structPointer, RedGpuInfoOptionalInfoProcedureParametersHandles_offsetof_optionalInfo, optionalInfo)
+  pointerSetAtOffset_const_void_p(structPointer, RedGpuInfoOptionalInfoProcedureParametersHandles_offsetof_next, next)
+  pointerSetAtOffset_RedBool32(structPointer, RedGpuInfoOptionalInfoProcedureParametersHandles_offsetof_supportsProcedureParametersHandles, supportsProcedureParametersHandles)
+  pointerSetAtOffset_unsigned(structPointer, RedGpuInfoOptionalInfoProcedureParametersHandles_offsetof_maxProcedureParametersHandlesCount, maxProcedureParametersHandlesCount)
+}
+
+fn RedGpuInfoOptionalInfoRasterizationMode(
+  structPointer, // Number structPointer
+  optionalInfo, // Number optionalInfo
+  next, // Number next
+  supportsRasterizationModeOverestimate, // Number supportsRasterizationModeOverestimate
+  supportsRasterizationModeUnderestimate, // Number supportsRasterizationModeUnderestimate
+  supportsGuaranteedZeroAreaBackFacingTriangles, // Number supportsGuaranteedZeroAreaBackFacingTriangles
+  supportsGpuCodeFullyCoveredEXT, // Number supportsGpuCodeFullyCoveredEXT
+  setTo0 // Number setTo0
+)
+{
+  pointerSetAtOffset_RedGpuInfoOptionalInfo(structPointer, RedGpuInfoOptionalInfoRasterizationMode_offsetof_optionalInfo, optionalInfo)
+  pointerSetAtOffset_const_void_p(structPointer, RedGpuInfoOptionalInfoRasterizationMode_offsetof_next, next)
+  pointerSetAtOffset_RedBool32(structPointer, RedGpuInfoOptionalInfoRasterizationMode_offsetof_supportsRasterizationModeOverestimate, supportsRasterizationModeOverestimate)
+  pointerSetAtOffset_RedBool32(structPointer, RedGpuInfoOptionalInfoRasterizationMode_offsetof_supportsRasterizationModeUnderestimate, supportsRasterizationModeUnderestimate)
+  pointerSetAtOffset_RedBool32(structPointer, RedGpuInfoOptionalInfoRasterizationMode_offsetof_supportsGuaranteedZeroAreaBackFacingTriangles, supportsGuaranteedZeroAreaBackFacingTriangles)
+  pointerSetAtOffset_RedBool32(structPointer, RedGpuInfoOptionalInfoRasterizationMode_offsetof_supportsGpuCodeFullyCoveredEXT, supportsGpuCodeFullyCoveredEXT)
+}
+
+fn RedGpuInfoOptionalInfoRayTracing(
+  structPointer, // Number structPointer
+  optionalInfo, // Number optionalInfo
+  next, // Number next
+  supportsRayTracing, // Number supportsRayTracing
+  setTo0 // Number setTo0
+)
+{
+  pointerSetAtOffset_RedGpuInfoOptionalInfo(structPointer, RedGpuInfoOptionalInfoRayTracing_offsetof_optionalInfo, optionalInfo)
+  pointerSetAtOffset_const_void_p(structPointer, RedGpuInfoOptionalInfoRayTracing_offsetof_next, next)
+  pointerSetAtOffset_RedBool32(structPointer, RedGpuInfoOptionalInfoRayTracing_offsetof_supportsRayTracing, supportsRayTracing)
+}
+
+fn RedGpuInfoOptionalInfoResolveDepthStencil(
+  structPointer, // Number structPointer
+  optionalInfo, // Number optionalInfo
+  next, // Number next
+  supportsResolveDepthStencil, // Number supportsResolveDepthStencil
+  supportsResolveModeDepthSampleIndexZero, // Number supportsResolveModeDepthSampleIndexZero
+  supportsResolveModeDepthAverage, // Number supportsResolveModeDepthAverage
+  supportsResolveModeDepthMin, // Number supportsResolveModeDepthMin
+  supportsResolveModeDepthMax, // Number supportsResolveModeDepthMax
+  supportsResolveModeStencilSampleIndexZero, // Number supportsResolveModeStencilSampleIndexZero
+  supportsResolveModeStencilAverage, // Number supportsResolveModeStencilAverage
+  supportsResolveModeStencilMin, // Number supportsResolveModeStencilMin
+  supportsResolveModeStencilMax, // Number supportsResolveModeStencilMax
+  supportsResolveIndependentNone, // Number supportsResolveIndependentNone
+  supportsResolveIndependent, // Number supportsResolveIndependent
+  setTo0 // Number setTo0
+)
+{
+  pointerSetAtOffset_RedGpuInfoOptionalInfo(structPointer, RedGpuInfoOptionalInfoResolveDepthStencil_offsetof_optionalInfo, optionalInfo)
+  pointerSetAtOffset_const_void_p(structPointer, RedGpuInfoOptionalInfoResolveDepthStencil_offsetof_next, next)
+  pointerSetAtOffset_RedBool32(structPointer, RedGpuInfoOptionalInfoResolveDepthStencil_offsetof_supportsResolveDepthStencil, supportsResolveDepthStencil)
+  pointerSetAtOffset_RedBool32(structPointer, RedGpuInfoOptionalInfoResolveDepthStencil_offsetof_supportsResolveModeDepthSampleIndexZero, supportsResolveModeDepthSampleIndexZero)
+  pointerSetAtOffset_RedBool32(structPointer, RedGpuInfoOptionalInfoResolveDepthStencil_offsetof_supportsResolveModeDepthAverage, supportsResolveModeDepthAverage)
+  pointerSetAtOffset_RedBool32(structPointer, RedGpuInfoOptionalInfoResolveDepthStencil_offsetof_supportsResolveModeDepthMin, supportsResolveModeDepthMin)
+  pointerSetAtOffset_RedBool32(structPointer, RedGpuInfoOptionalInfoResolveDepthStencil_offsetof_supportsResolveModeDepthMax, supportsResolveModeDepthMax)
+  pointerSetAtOffset_RedBool32(structPointer, RedGpuInfoOptionalInfoResolveDepthStencil_offsetof_supportsResolveModeStencilSampleIndexZero, supportsResolveModeStencilSampleIndexZero)
+  pointerSetAtOffset_RedBool32(structPointer, RedGpuInfoOptionalInfoResolveDepthStencil_offsetof_supportsResolveModeStencilAverage, supportsResolveModeStencilAverage)
+  pointerSetAtOffset_RedBool32(structPointer, RedGpuInfoOptionalInfoResolveDepthStencil_offsetof_supportsResolveModeStencilMin, supportsResolveModeStencilMin)
+  pointerSetAtOffset_RedBool32(structPointer, RedGpuInfoOptionalInfoResolveDepthStencil_offsetof_supportsResolveModeStencilMax, supportsResolveModeStencilMax)
+  pointerSetAtOffset_RedBool32(structPointer, RedGpuInfoOptionalInfoResolveDepthStencil_offsetof_supportsResolveIndependentNone, supportsResolveIndependentNone)
+  pointerSetAtOffset_RedBool32(structPointer, RedGpuInfoOptionalInfoResolveDepthStencil_offsetof_supportsResolveIndependent, supportsResolveIndependent)
+}
+
+fn RedGpuTimeline(
+  structPointer, // Number structPointer
+  setTo4, // Number setTo4
+  setTo0, // Number setTo0
+  waitForAndUnsignalGpuSignalsCount, // Number waitForAndUnsignalGpuSignalsCount
+  waitForAndUnsignalGpuSignals, // Number waitForAndUnsignalGpuSignals
+  setTo65536, // Number setTo65536
+  callsCount, // Number callsCount
+  calls, // Number calls
+  signalGpuSignalsCount, // Number signalGpuSignalsCount
+  signalGpuSignals, // Number signalGpuSignals
+  setTo0 // Number setTo0
+)
+{
+  pointerSetAtOffset_unsigned(structPointer, RedGpuTimeline_offsetof_setTo4, setTo4)
+  pointerSetAtOffset_size_t(structPointer, RedGpuTimeline_offsetof_setTo0, setTo0)
+  pointerSetAtOffset_unsigned(structPointer, RedGpuTimeline_offsetof_waitForAndUnsignalGpuSignalsCount, waitForAndUnsignalGpuSignalsCount)
+  pointerSetAtOffset_const_RedHandleGpuSignal_p(structPointer, RedGpuTimeline_offsetof_waitForAndUnsignalGpuSignals, waitForAndUnsignalGpuSignals)
+  pointerSetAtOffset_const_unsigned_p(structPointer, RedGpuTimeline_offsetof_setTo65536, setTo65536)
+  pointerSetAtOffset_unsigned(structPointer, RedGpuTimeline_offsetof_callsCount, callsCount)
+  pointerSetAtOffset_const_RedHandleCalls_p(structPointer, RedGpuTimeline_offsetof_calls, calls)
+  pointerSetAtOffset_unsigned(structPointer, RedGpuTimeline_offsetof_signalGpuSignalsCount, signalGpuSignalsCount)
+  pointerSetAtOffset_const_RedHandleGpuSignal_p(structPointer, RedGpuTimeline_offsetof_signalGpuSignals, signalGpuSignals)
+}
+
+fn RedHandleInfo(
+  structPointer, // Number structPointer
+  _0, // Number _0
+  _1, // Number _1
+  handleType, // Number handleType
+  handle, // Number handle
+  handleName, // String handleName
+  setTo0 // Number setTo0
+)
+{
+  pointerSetAtOffset_unsigned(structPointer, RedHandleInfo_offsetof__0, _0)
+  pointerSetAtOffset_const_void_p(structPointer, RedHandleInfo_offsetof__1, _1)
+  pointerSetAtOffset_RedHandleType(structPointer, RedHandleInfo_offsetof_handleType, handleType)
+  pointerSetAtOffset_const_void_p(structPointer, RedHandleInfo_offsetof_handle, handle)
+  pointerSetAtOffset_const_char_p(structPointer, RedHandleInfo_offsetof_handleName, handleName)
+}
+
+fn RedImage(
+  structPointer, // Number structPointer
+  handle, // Number handle
+  memoryBytesAlignment, // Number memoryBytesAlignment
+  memoryBytesCount, // Number memoryBytesCount
+  memoryTypesSupported, // Number memoryTypesSupported
+  setTo0 // Number setTo0
+)
+{
+  pointerSetAtOffset_RedHandleImage(structPointer, RedImage_offsetof_handle, handle)
+  pointerSetAtOffset_uint64_t(structPointer, RedImage_offsetof_memoryBytesAlignment, memoryBytesAlignment)
+  pointerSetAtOffset_uint64_t(structPointer, RedImage_offsetof_memoryBytesCount, memoryBytesCount)
+  pointerSetAtOffset_unsigned(structPointer, RedImage_offsetof_memoryTypesSupported, memoryTypesSupported)
+}
+
+fn RedImageFormatFeatures(
+  structPointer, // Number structPointer
+  supportsCopyR, // Number supportsCopyR
+  supportsCopyW, // Number supportsCopyW
+  supportsTextureRO, // Number supportsTextureRO
+  supportsTextureRW, // Number supportsTextureRW
+  supportsOutputDepthStencil, // Number supportsOutputDepthStencil
+  supportsOutputColor, // Number supportsOutputColor
+  supportsTextureROFilteringLinear, // Number supportsTextureROFilteringLinear
+  supportsTextureRWAtomics, // Number supportsTextureRWAtomics
+  supportsOutputColorBlend, // Number supportsOutputColorBlend
+  setTo0 // Number setTo0
+)
+{
+  pointerSetAtOffset_RedBool32(structPointer, RedImageFormatFeatures_offsetof_supportsCopyR, supportsCopyR)
+  pointerSetAtOffset_RedBool32(structPointer, RedImageFormatFeatures_offsetof_supportsCopyW, supportsCopyW)
+  pointerSetAtOffset_RedBool32(structPointer, RedImageFormatFeatures_offsetof_supportsTextureRO, supportsTextureRO)
+  pointerSetAtOffset_RedBool32(structPointer, RedImageFormatFeatures_offsetof_supportsTextureRW, supportsTextureRW)
+  pointerSetAtOffset_RedBool32(structPointer, RedImageFormatFeatures_offsetof_supportsOutputDepthStencil, supportsOutputDepthStencil)
+  pointerSetAtOffset_RedBool32(structPointer, RedImageFormatFeatures_offsetof_supportsOutputColor, supportsOutputColor)
+  pointerSetAtOffset_RedBool32(structPointer, RedImageFormatFeatures_offsetof_supportsTextureROFilteringLinear, supportsTextureROFilteringLinear)
+  pointerSetAtOffset_RedBool32(structPointer, RedImageFormatFeatures_offsetof_supportsTextureRWAtomics, supportsTextureRWAtomics)
+  pointerSetAtOffset_RedBool32(structPointer, RedImageFormatFeatures_offsetof_supportsOutputColorBlend, supportsOutputColorBlend)
+}
+
+fn RedImageFormatLimits(
+  structPointer, // Number structPointer
+  maxDimensionsMaxWidth, // Number maxDimensionsMaxWidth
+  maxDimensionsMaxHeight, // Number maxDimensionsMaxHeight
+  maxDimensionsMaxDepth, // Number maxDimensionsMaxDepth
+  maxLevelsCount, // Number maxLevelsCount
+  maxLayersCount, // Number maxLayersCount
+  supportedMultisampleCounts, // Number supportedMultisampleCounts
+  maxBytesCount, // Number maxBytesCount
+  status, // Number status
+  setTo0 // Number setTo0
+)
+{
+  pointerSetAtOffset_unsigned(structPointer, RedImageFormatLimits_offsetof_maxDimensions + (RedImageFormatLimitsDimensions_sizeof * 0) + RedImageFormatLimitsDimensions_offsetof_maxWidth, maxDimensionsMaxWidth)
+  pointerSetAtOffset_unsigned(structPointer, RedImageFormatLimits_offsetof_maxDimensions + (RedImageFormatLimitsDimensions_sizeof * 0) + RedImageFormatLimitsDimensions_offsetof_maxHeight, maxDimensionsMaxHeight)
+  pointerSetAtOffset_unsigned(structPointer, RedImageFormatLimits_offsetof_maxDimensions + (RedImageFormatLimitsDimensions_sizeof * 0) + RedImageFormatLimitsDimensions_offsetof_maxDepth, maxDimensionsMaxDepth)
+  pointerSetAtOffset_unsigned(structPointer, RedImageFormatLimits_offsetof_maxLevelsCount, maxLevelsCount)
+  pointerSetAtOffset_unsigned(structPointer, RedImageFormatLimits_offsetof_maxLayersCount, maxLayersCount)
+  pointerSetAtOffset_RedMultisampleCountBitflags(structPointer, RedImageFormatLimits_offsetof_supportedMultisampleCounts, supportedMultisampleCounts)
+  pointerSetAtOffset_uint64_t(structPointer, RedImageFormatLimits_offsetof_maxBytesCount, maxBytesCount)
+  pointerSetAtOffset_RedStatus(structPointer, RedImageFormatLimits_offsetof_status, status)
+}
+
+fn RedImageFormatLimitsDimensions(
+  structPointer, // Number structPointer
+  maxWidth, // Number maxWidth
+  maxHeight, // Number maxHeight
+  maxDepth, // Number maxDepth
+  setTo0 // Number setTo0
+)
+{
+  pointerSetAtOffset_unsigned(structPointer, RedImageFormatLimitsDimensions_offsetof_maxWidth, maxWidth)
+  pointerSetAtOffset_unsigned(structPointer, RedImageFormatLimitsDimensions_offsetof_maxHeight, maxHeight)
+  pointerSetAtOffset_unsigned(structPointer, RedImageFormatLimitsDimensions_offsetof_maxDepth, maxDepth)
+}
+
+fn RedInlineOutput(
+  structPointer, // Number structPointer
+  outputMembers, // Number outputMembers
+  outputMembersResolveTargets, // Number outputMembersResolveTargets
+  setTo0 // Number setTo0
+)
+{
+  pointerSetAtOffset_const_RedOutputMembers_p(structPointer, RedInlineOutput_offsetof_outputMembers, outputMembers)
+  pointerSetAtOffset_const_RedOutputMembersResolveTargets_p(structPointer, RedInlineOutput_offsetof_outputMembersResolveTargets, outputMembersResolveTargets)
+}
+
+fn RedMappableMemoryRange(
+  structPointer, // Number structPointer
+  setTo6, // Number setTo6
+  setTo0, // Number setTo0
+  mappableMemory, // Number mappableMemory
+  mappableMemoryRangeBytesFirst, // Number mappableMemoryRangeBytesFirst
+  mappableMemoryRangeBytesCount, // Number mappableMemoryRangeBytesCount
+  setTo0 // Number setTo0
+)
+{
+  pointerSetAtOffset_unsigned(structPointer, RedMappableMemoryRange_offsetof_setTo6, setTo6)
+  pointerSetAtOffset_size_t(structPointer, RedMappableMemoryRange_offsetof_setTo0, setTo0)
+  pointerSetAtOffset_RedHandleMemory(structPointer, RedMappableMemoryRange_offsetof_mappableMemory, mappableMemory)
+  pointerSetAtOffset_uint64_t(structPointer, RedMappableMemoryRange_offsetof_mappableMemoryRangeBytesFirst, mappableMemoryRangeBytesFirst)
+  pointerSetAtOffset_uint64_t(structPointer, RedMappableMemoryRange_offsetof_mappableMemoryRangeBytesCount, mappableMemoryRangeBytesCount)
+}
+
+fn RedMemoryAllocationTag(
+  structPointer, // Number structPointer
+  tag, // Number tag [512]
+  setTo0 // Number setTo0
+)
+{
+  for (var i = 0; i < len(tag); i += 1) {
+    pointerSetAtOffset_char(structPointer, RedMemoryAllocationTag_offsetof_tag + (char_sizeof * i), tag)
+  }
+}
+
+fn RedMemoryArray(
+  structPointer, // Number structPointer
+  setTo1000157000, // Number setTo1000157000
+  setTo0, // Number setTo0
+  array, // Number array
+  memory, // Number memory
+  memoryBytesFirst, // Number memoryBytesFirst
+  setTo0 // Number setTo0
+)
+{
+  pointerSetAtOffset_unsigned(structPointer, RedMemoryArray_offsetof_setTo1000157000, setTo1000157000)
+  pointerSetAtOffset_size_t(structPointer, RedMemoryArray_offsetof_setTo0, setTo0)
+  pointerSetAtOffset_RedHandleArray(structPointer, RedMemoryArray_offsetof_array, array)
+  pointerSetAtOffset_RedHandleMemory(structPointer, RedMemoryArray_offsetof_memory, memory)
+  pointerSetAtOffset_uint64_t(structPointer, RedMemoryArray_offsetof_memoryBytesFirst, memoryBytesFirst)
+}
+
+fn RedMemoryBudget(
+  structPointer, // Number structPointer
+  setTo1000237000, // Number setTo1000237000
+  setTo0, // Number setTo0
+  memoryHeapsBudget, // Number memoryHeapsBudget [16]
+  memoryHeapsUsage, // Number memoryHeapsUsage [16]
+  setTo0 // Number setTo0
+)
+{
+  pointerSetAtOffset_unsigned(structPointer, RedMemoryBudget_offsetof_setTo1000237000, setTo1000237000)
+  pointerSetAtOffset_size_t(structPointer, RedMemoryBudget_offsetof_setTo0, setTo0)
+  for (var i = 0; i < len(memoryHeapsBudget); i += 1) {
+    pointerSetAtOffset_uint64_t(structPointer, RedMemoryBudget_offsetof_memoryHeapsBudget + (uint64_t_sizeof * i), memoryHeapsBudget)
+  }
+  for (var i = 0; i < len(memoryHeapsUsage); i += 1) {
+    pointerSetAtOffset_uint64_t(structPointer, RedMemoryBudget_offsetof_memoryHeapsUsage + (uint64_t_sizeof * i), memoryHeapsUsage)
+  }
+}
+
+fn RedMemoryHeap(
+  structPointer, // Number structPointer
+  memoryBytesCount, // Number memoryBytesCount
+  isGpuVram, // Number isGpuVram
+  setTo0 // Number setTo0
+)
+{
+  pointerSetAtOffset_uint64_t(structPointer, RedMemoryHeap_offsetof_memoryBytesCount, memoryBytesCount)
+  pointerSetAtOffset_RedBool32(structPointer, RedMemoryHeap_offsetof_isGpuVram, isGpuVram)
+}
+
+fn RedMemoryImage(
+  structPointer, // Number structPointer
+  setTo1000157001, // Number setTo1000157001
+  setTo0, // Number setTo0
+  image, // Number image
+  memory, // Number memory
+  memoryBytesFirst, // Number memoryBytesFirst
+  setTo0 // Number setTo0
+)
+{
+  pointerSetAtOffset_unsigned(structPointer, RedMemoryImage_offsetof_setTo1000157001, setTo1000157001)
+  pointerSetAtOffset_size_t(structPointer, RedMemoryImage_offsetof_setTo0, setTo0)
+  pointerSetAtOffset_RedHandleImage(structPointer, RedMemoryImage_offsetof_image, image)
+  pointerSetAtOffset_RedHandleMemory(structPointer, RedMemoryImage_offsetof_memory, memory)
+  pointerSetAtOffset_uint64_t(structPointer, RedMemoryImage_offsetof_memoryBytesFirst, memoryBytesFirst)
+}
+
+fn RedMemoryType(
+  structPointer, // Number structPointer
+  memoryHeapIndex, // Number memoryHeapIndex
+  isGpuVram, // Number isGpuVram
+  isCpuMappable, // Number isCpuMappable
+  isCpuCoherent, // Number isCpuCoherent
+  isCpuCached, // Number isCpuCached
+  setTo0 // Number setTo0
+)
+{
+  pointerSetAtOffset_unsigned(structPointer, RedMemoryType_offsetof_memoryHeapIndex, memoryHeapIndex)
+  pointerSetAtOffset_RedBool32(structPointer, RedMemoryType_offsetof_isGpuVram, isGpuVram)
+  pointerSetAtOffset_RedBool32(structPointer, RedMemoryType_offsetof_isCpuMappable, isCpuMappable)
+  pointerSetAtOffset_RedBool32(structPointer, RedMemoryType_offsetof_isCpuCoherent, isCpuCoherent)
+  pointerSetAtOffset_RedBool32(structPointer, RedMemoryType_offsetof_isCpuCached, isCpuCached)
+}
+
+fn RedOrder(
+  structPointer, // Number structPointer
+  barrierSplit, // Number barrierSplit
+  resourceHandle, // Number resourceHandle
+  setTo0 // Number setTo0
+)
+{
+  pointerSetAtOffset_RedBarrierSplit(structPointer, RedOrder_offsetof_barrierSplit, barrierSplit)
+  pointerSetAtOffset_uint64_t(structPointer, RedOrder_offsetof_resourceHandle, resourceHandle)
+}
+
+fn RedOutput(
+  structPointer, // Number structPointer
+  handle, // Number handle
+  width, // Number width
+  height, // Number height
+  depthStencilEnable, // Number depthStencilEnable
+  colorsCount, // Number colorsCount
+  setTo0 // Number setTo0
+)
+{
+  pointerSetAtOffset_RedHandleOutput(structPointer, RedOutput_offsetof_handle, handle)
+  pointerSetAtOffset_unsigned(structPointer, RedOutput_offsetof_width, width)
+  pointerSetAtOffset_unsigned(structPointer, RedOutput_offsetof_height, height)
+  pointerSetAtOffset_RedBool32(structPointer, RedOutput_offsetof_depthStencilEnable, depthStencilEnable)
+  pointerSetAtOffset_unsigned(structPointer, RedOutput_offsetof_colorsCount, colorsCount)
+}
+
+fn RedOutputDeclarationMembers(
+  structPointer, // Number structPointer
+  depthStencilEnable, // Number depthStencilEnable
+  depthStencilFormat, // Number depthStencilFormat
+  depthStencilMultisampleCount, // Number depthStencilMultisampleCount
+  depthStencilDepthSetProcedureOutputOp, // Number depthStencilDepthSetProcedureOutputOp
+  depthStencilDepthEndProcedureOutputOp, // Number depthStencilDepthEndProcedureOutputOp
+  depthStencilStencilSetProcedureOutputOp, // Number depthStencilStencilSetProcedureOutputOp
+  depthStencilStencilEndProcedureOutputOp, // Number depthStencilStencilEndProcedureOutputOp
+  depthStencilSharesMemoryWithAnotherMember, // Number depthStencilSharesMemoryWithAnotherMember
+  colorsCount, // Number colorsCount
+  colorsFormat, // Number colorsFormat [8]
+  colorsMultisampleCount, // Number colorsMultisampleCount [8]
+  colorsSetProcedureOutputOp, // Number colorsSetProcedureOutputOp [8]
+  colorsEndProcedureOutputOp, // Number colorsEndProcedureOutputOp [8]
+  colorsSharesMemoryWithAnotherMember, // Number colorsSharesMemoryWithAnotherMember [8]
+  setTo0 // Number setTo0
+)
+{
+  pointerSetAtOffset_RedBool32(structPointer, RedOutputDeclarationMembers_offsetof_depthStencilEnable, depthStencilEnable)
+  pointerSetAtOffset_RedFormat(structPointer, RedOutputDeclarationMembers_offsetof_depthStencilFormat, depthStencilFormat)
+  pointerSetAtOffset_RedMultisampleCountBitflag(structPointer, RedOutputDeclarationMembers_offsetof_depthStencilMultisampleCount, depthStencilMultisampleCount)
+  pointerSetAtOffset_RedSetProcedureOutputOp(structPointer, RedOutputDeclarationMembers_offsetof_depthStencilDepthSetProcedureOutputOp, depthStencilDepthSetProcedureOutputOp)
+  pointerSetAtOffset_RedEndProcedureOutputOp(structPointer, RedOutputDeclarationMembers_offsetof_depthStencilDepthEndProcedureOutputOp, depthStencilDepthEndProcedureOutputOp)
+  pointerSetAtOffset_RedSetProcedureOutputOp(structPointer, RedOutputDeclarationMembers_offsetof_depthStencilStencilSetProcedureOutputOp, depthStencilStencilSetProcedureOutputOp)
+  pointerSetAtOffset_RedEndProcedureOutputOp(structPointer, RedOutputDeclarationMembers_offsetof_depthStencilStencilEndProcedureOutputOp, depthStencilStencilEndProcedureOutputOp)
+  pointerSetAtOffset_RedBool32(structPointer, RedOutputDeclarationMembers_offsetof_depthStencilSharesMemoryWithAnotherMember, depthStencilSharesMemoryWithAnotherMember)
+  pointerSetAtOffset_unsigned(structPointer, RedOutputDeclarationMembers_offsetof_colorsCount, colorsCount)
+  for (var i = 0; i < len(colorsFormat); i += 1) {
+    pointerSetAtOffset_RedFormat(structPointer, RedOutputDeclarationMembers_offsetof_colorsFormat + (RedFormat_sizeof * i), colorsFormat)
+  }
+  for (var i = 0; i < len(colorsMultisampleCount); i += 1) {
+    pointerSetAtOffset_RedMultisampleCountBitflag(structPointer, RedOutputDeclarationMembers_offsetof_colorsMultisampleCount + (RedMultisampleCountBitflag_sizeof * i), colorsMultisampleCount)
+  }
+  for (var i = 0; i < len(colorsSetProcedureOutputOp); i += 1) {
+    pointerSetAtOffset_RedSetProcedureOutputOp(structPointer, RedOutputDeclarationMembers_offsetof_colorsSetProcedureOutputOp + (RedSetProcedureOutputOp_sizeof * i), colorsSetProcedureOutputOp)
+  }
+  for (var i = 0; i < len(colorsEndProcedureOutputOp); i += 1) {
+    pointerSetAtOffset_RedEndProcedureOutputOp(structPointer, RedOutputDeclarationMembers_offsetof_colorsEndProcedureOutputOp + (RedEndProcedureOutputOp_sizeof * i), colorsEndProcedureOutputOp)
+  }
+  for (var i = 0; i < len(colorsSharesMemoryWithAnotherMember); i += 1) {
+    pointerSetAtOffset_RedBool32(structPointer, RedOutputDeclarationMembers_offsetof_colorsSharesMemoryWithAnotherMember + (RedBool32_sizeof * i), colorsSharesMemoryWithAnotherMember)
+  }
+}
+
+fn RedOutputDeclarationMembersResolveSources(
+  structPointer, // Number structPointer
+  resolveModeDepth, // Number resolveModeDepth
+  resolveModeStencil, // Number resolveModeStencil
+  resolveDepthStencil, // Number resolveDepthStencil
+  resolveColors, // Number resolveColors
+  setTo0 // Number setTo0
+)
+{
+  pointerSetAtOffset_RedResolveMode(structPointer, RedOutputDeclarationMembersResolveSources_offsetof_resolveModeDepth, resolveModeDepth)
+  pointerSetAtOffset_RedResolveMode(structPointer, RedOutputDeclarationMembersResolveSources_offsetof_resolveModeStencil, resolveModeStencil)
+  pointerSetAtOffset_RedBool32(structPointer, RedOutputDeclarationMembersResolveSources_offsetof_resolveDepthStencil, resolveDepthStencil)
+  pointerSetAtOffset_RedBool32(structPointer, RedOutputDeclarationMembersResolveSources_offsetof_resolveColors, resolveColors)
+}
+
+fn RedOutputMembers(
+  structPointer, // Number structPointer
+  depthStencil, // Number depthStencil
+  colorsCount, // Number colorsCount
+  colors, // Number colors [8]
+  setTo0 // Number setTo0
+)
+{
+  pointerSetAtOffset_RedHandleTexture(structPointer, RedOutputMembers_offsetof_depthStencil, depthStencil)
+  pointerSetAtOffset_unsigned(structPointer, RedOutputMembers_offsetof_colorsCount, colorsCount)
+  for (var i = 0; i < len(colors); i += 1) {
+    pointerSetAtOffset_RedHandleTexture(structPointer, RedOutputMembers_offsetof_colors + (RedHandleTexture_sizeof * i), colors)
+  }
+}
+
+fn RedOutputMembersResolveTargets(
+  structPointer, // Number structPointer
+  depthStencil, // Number depthStencil
+  colors, // Number colors [8]
+  setTo0 // Number setTo0
+)
+{
+  pointerSetAtOffset_RedHandleTexture(structPointer, RedOutputMembersResolveTargets_offsetof_depthStencil, depthStencil)
+  for (var i = 0; i < len(colors); i += 1) {
+    pointerSetAtOffset_RedHandleTexture(structPointer, RedOutputMembersResolveTargets_offsetof_colors + (RedHandleTexture_sizeof * i), colors)
+  }
+}
+
+fn RedProcedureParametersDeclaration(
+  structPointer, // Number structPointer
+  variablesSlot, // Number variablesSlot
+  variablesVisibleToStages, // Number variablesVisibleToStages
+  variablesBytesCount, // Number variablesBytesCount
+  structsDeclarationsCount, // Number structsDeclarationsCount
+  structsDeclarations, // Number structsDeclarations [7]
+  handlesDeclaration, // Number handlesDeclaration
+  setTo0 // Number setTo0
+)
+{
+  pointerSetAtOffset_unsigned(structPointer, RedProcedureParametersDeclaration_offsetof_variablesSlot, variablesSlot)
+  pointerSetAtOffset_RedVisibleToStageBitflags(structPointer, RedProcedureParametersDeclaration_offsetof_variablesVisibleToStages, variablesVisibleToStages)
+  pointerSetAtOffset_unsigned(structPointer, RedProcedureParametersDeclaration_offsetof_variablesBytesCount, variablesBytesCount)
+  pointerSetAtOffset_unsigned(structPointer, RedProcedureParametersDeclaration_offsetof_structsDeclarationsCount, structsDeclarationsCount)
+  for (var i = 0; i < len(structsDeclarations); i += 1) {
+    pointerSetAtOffset_RedHandleStructDeclaration(structPointer, RedProcedureParametersDeclaration_offsetof_structsDeclarations + (RedHandleStructDeclaration_sizeof * i), structsDeclarations)
+  }
+  pointerSetAtOffset_RedHandleStructDeclaration(structPointer, RedProcedureParametersDeclaration_offsetof_handlesDeclaration, handlesDeclaration)
+}
+
+fn RedProcedureParametersHandle(
+  structPointer, // Number structPointer
+  setTo35, // Number setTo35
+  setTo0, // Number setTo0
+  setTo00, // Number setTo00
+  slot, // Number slot
+  setTo000, // Number setTo000
+  setTo1, // Number setTo1
+  type, // Number type
+  setTo0000, // Number setTo0000
+  array, // Number array
+  setTo00000, // Number setTo00000
+  setTo0 // Number setTo0
+)
+{
+  pointerSetAtOffset_unsigned(structPointer, RedProcedureParametersHandle_offsetof_setTo35, setTo35)
+  pointerSetAtOffset_size_t(structPointer, RedProcedureParametersHandle_offsetof_setTo0, setTo0)
+  pointerSetAtOffset_uint64_t(structPointer, RedProcedureParametersHandle_offsetof_setTo00, setTo00)
+  pointerSetAtOffset_unsigned(structPointer, RedProcedureParametersHandle_offsetof_slot, slot)
+  pointerSetAtOffset_unsigned(structPointer, RedProcedureParametersHandle_offsetof_setTo000, setTo000)
+  pointerSetAtOffset_unsigned(structPointer, RedProcedureParametersHandle_offsetof_setTo1, setTo1)
+  pointerSetAtOffset_RedProcedureParametersHandleType(structPointer, RedProcedureParametersHandle_offsetof_type, type)
+  pointerSetAtOffset_size_t(structPointer, RedProcedureParametersHandle_offsetof_setTo0000, setTo0000)
+  pointerSetAtOffset_const_RedProcedureParametersHandleArray_p(structPointer, RedProcedureParametersHandle_offsetof_array, array)
+  pointerSetAtOffset_size_t(structPointer, RedProcedureParametersHandle_offsetof_setTo00000, setTo00000)
+}
+
+fn RedProcedureParametersHandleArray(
+  structPointer, // Number structPointer
+  array, // Number array
+  setTo0, // Number setTo0
+  setToMaxValue, // Number setToMaxValue
+  setTo0 // Number setTo0
+)
+{
+  pointerSetAtOffset_RedHandleArray(structPointer, RedProcedureParametersHandleArray_offsetof_array, array)
+  pointerSetAtOffset_uint64_t(structPointer, RedProcedureParametersHandleArray_offsetof_setTo0, setTo0)
+  pointerSetAtOffset_uint64_t(structPointer, RedProcedureParametersHandleArray_offsetof_setToMaxValue, setToMaxValue)
+}
+
+fn RedProcedureState(
+  structPointer, // Number structPointer
+  inputAssemblyTopology, // Number inputAssemblyTopology
+  inputAssemblyPrimitiveRestartEnable, // Number inputAssemblyPrimitiveRestartEnable
+  viewportDynamic, // Number viewportDynamic
+  viewportStaticX, // Number viewportStaticX
+  viewportStaticY, // Number viewportStaticY
+  viewportStaticWidth, // Number viewportStaticWidth
+  viewportStaticHeight, // Number viewportStaticHeight
+  viewportStaticDepthMin, // Number viewportStaticDepthMin
+  viewportStaticDepthMax, // Number viewportStaticDepthMax
+  scissorDynamic, // Number scissorDynamic
+  scissorStaticX, // Number scissorStaticX
+  scissorStaticY, // Number scissorStaticY
+  scissorStaticWidth, // Number scissorStaticWidth
+  scissorStaticHeight, // Number scissorStaticHeight
+  rasterizationDepthClampEnable, // Number rasterizationDepthClampEnable
+  rasterizationDiscardAllPrimitivesEnable, // Number rasterizationDiscardAllPrimitivesEnable
+  rasterizationCullMode, // Number rasterizationCullMode
+  rasterizationFrontFace, // Number rasterizationFrontFace
+  rasterizationDepthBiasEnable, // Number rasterizationDepthBiasEnable
+  rasterizationDepthBiasDynamic, // Number rasterizationDepthBiasDynamic
+  rasterizationDepthBiasStaticConstantFactor, // Number rasterizationDepthBiasStaticConstantFactor
+  rasterizationDepthBiasStaticClamp, // Number rasterizationDepthBiasStaticClamp
+  rasterizationDepthBiasStaticSlopeFactor, // Number rasterizationDepthBiasStaticSlopeFactor
+  multisampleCount, // Number multisampleCount
+  multisampleSampleMask, // Number multisampleSampleMask
+  multisampleSampleShadingEnable, // Number multisampleSampleShadingEnable
+  multisampleSampleShadingMin, // Number multisampleSampleShadingMin
+  multisampleAlphaToCoverageEnable, // Number multisampleAlphaToCoverageEnable
+  multisampleAlphaToOneEnable, // Number multisampleAlphaToOneEnable
+  depthTestEnable, // Number depthTestEnable
+  depthTestDepthWriteEnable, // Number depthTestDepthWriteEnable
+  depthTestDepthCompareOp, // Number depthTestDepthCompareOp
+  depthTestBoundsTestEnable, // Number depthTestBoundsTestEnable
+  depthTestBoundsTestDynamic, // Number depthTestBoundsTestDynamic
+  depthTestBoundsTestStaticMin, // Number depthTestBoundsTestStaticMin
+  depthTestBoundsTestStaticMax, // Number depthTestBoundsTestStaticMax
+  stencilTestEnable, // Number stencilTestEnable
+  stencilTestFrontStencilTestFailOp, // Number stencilTestFrontStencilTestFailOp
+  stencilTestFrontStencilTestPassDepthTestPassOp, // Number stencilTestFrontStencilTestPassDepthTestPassOp
+  stencilTestFrontStencilTestPassDepthTestFailOp, // Number stencilTestFrontStencilTestPassDepthTestFailOp
+  stencilTestFrontCompareOp, // Number stencilTestFrontCompareOp
+  stencilTestBackStencilTestFailOp, // Number stencilTestBackStencilTestFailOp
+  stencilTestBackStencilTestPassDepthTestPassOp, // Number stencilTestBackStencilTestPassDepthTestPassOp
+  stencilTestBackStencilTestPassDepthTestFailOp, // Number stencilTestBackStencilTestPassDepthTestFailOp
+  stencilTestBackCompareOp, // Number stencilTestBackCompareOp
+  stencilTestFrontAndBackDynamicCompareMask, // Number stencilTestFrontAndBackDynamicCompareMask
+  stencilTestFrontAndBackDynamicWriteMask, // Number stencilTestFrontAndBackDynamicWriteMask
+  stencilTestFrontAndBackDynamicReference, // Number stencilTestFrontAndBackDynamicReference
+  stencilTestFrontAndBackStaticCompareMask, // Number stencilTestFrontAndBackStaticCompareMask
+  stencilTestFrontAndBackStaticWriteMask, // Number stencilTestFrontAndBackStaticWriteMask
+  stencilTestFrontAndBackStaticReference, // Number stencilTestFrontAndBackStaticReference
+  blendLogicOpEnable, // Number blendLogicOpEnable
+  blendLogicOp, // Number blendLogicOp
+  blendConstantsDynamic, // Number blendConstantsDynamic
+  blendConstantsStatic, // Number blendConstantsStatic [4]
+  outputColorsCount, // Number outputColorsCount
+  outputColorsWriteMask, // Number outputColorsWriteMask [8]
+  outputColorsBlendEnable, // Number outputColorsBlendEnable [8]
+  outputColorsBlendColorFactorSource, // Number outputColorsBlendColorFactorSource [8]
+  outputColorsBlendColorFactorTarget, // Number outputColorsBlendColorFactorTarget [8]
+  outputColorsBlendColorOp, // Number outputColorsBlendColorOp [8]
+  outputColorsBlendAlphaFactorSource, // Number outputColorsBlendAlphaFactorSource [8]
+  outputColorsBlendAlphaFactorTarget, // Number outputColorsBlendAlphaFactorTarget [8]
+  outputColorsBlendAlphaOp, // Number outputColorsBlendAlphaOp [8]
+  setTo0 // Number setTo0
+)
+{
+  pointerSetAtOffset_RedPrimitiveTopology(structPointer, RedProcedureState_offsetof_inputAssemblyTopology, inputAssemblyTopology)
+  pointerSetAtOffset_RedBool32(structPointer, RedProcedureState_offsetof_inputAssemblyPrimitiveRestartEnable, inputAssemblyPrimitiveRestartEnable)
+  pointerSetAtOffset_RedBool32(structPointer, RedProcedureState_offsetof_viewportDynamic, viewportDynamic)
+  pointerSetAtOffset_float(structPointer, RedProcedureState_offsetof_viewportStaticX, viewportStaticX)
+  pointerSetAtOffset_float(structPointer, RedProcedureState_offsetof_viewportStaticY, viewportStaticY)
+  pointerSetAtOffset_float(structPointer, RedProcedureState_offsetof_viewportStaticWidth, viewportStaticWidth)
+  pointerSetAtOffset_float(structPointer, RedProcedureState_offsetof_viewportStaticHeight, viewportStaticHeight)
+  pointerSetAtOffset_float(structPointer, RedProcedureState_offsetof_viewportStaticDepthMin, viewportStaticDepthMin)
+  pointerSetAtOffset_float(structPointer, RedProcedureState_offsetof_viewportStaticDepthMax, viewportStaticDepthMax)
+  pointerSetAtOffset_RedBool32(structPointer, RedProcedureState_offsetof_scissorDynamic, scissorDynamic)
+  pointerSetAtOffset_int(structPointer, RedProcedureState_offsetof_scissorStaticX, scissorStaticX)
+  pointerSetAtOffset_int(structPointer, RedProcedureState_offsetof_scissorStaticY, scissorStaticY)
+  pointerSetAtOffset_unsigned(structPointer, RedProcedureState_offsetof_scissorStaticWidth, scissorStaticWidth)
+  pointerSetAtOffset_unsigned(structPointer, RedProcedureState_offsetof_scissorStaticHeight, scissorStaticHeight)
+  pointerSetAtOffset_RedBool32(structPointer, RedProcedureState_offsetof_rasterizationDepthClampEnable, rasterizationDepthClampEnable)
+  pointerSetAtOffset_RedBool32(structPointer, RedProcedureState_offsetof_rasterizationDiscardAllPrimitivesEnable, rasterizationDiscardAllPrimitivesEnable)
+  pointerSetAtOffset_RedCullMode(structPointer, RedProcedureState_offsetof_rasterizationCullMode, rasterizationCullMode)
+  pointerSetAtOffset_RedFrontFace(structPointer, RedProcedureState_offsetof_rasterizationFrontFace, rasterizationFrontFace)
+  pointerSetAtOffset_RedBool32(structPointer, RedProcedureState_offsetof_rasterizationDepthBiasEnable, rasterizationDepthBiasEnable)
+  pointerSetAtOffset_RedBool32(structPointer, RedProcedureState_offsetof_rasterizationDepthBiasDynamic, rasterizationDepthBiasDynamic)
+  pointerSetAtOffset_float(structPointer, RedProcedureState_offsetof_rasterizationDepthBiasStaticConstantFactor, rasterizationDepthBiasStaticConstantFactor)
+  pointerSetAtOffset_float(structPointer, RedProcedureState_offsetof_rasterizationDepthBiasStaticClamp, rasterizationDepthBiasStaticClamp)
+  pointerSetAtOffset_float(structPointer, RedProcedureState_offsetof_rasterizationDepthBiasStaticSlopeFactor, rasterizationDepthBiasStaticSlopeFactor)
+  pointerSetAtOffset_RedMultisampleCountBitflag(structPointer, RedProcedureState_offsetof_multisampleCount, multisampleCount)
+  pointerSetAtOffset_const_unsigned_p(structPointer, RedProcedureState_offsetof_multisampleSampleMask, multisampleSampleMask)
+  pointerSetAtOffset_RedBool32(structPointer, RedProcedureState_offsetof_multisampleSampleShadingEnable, multisampleSampleShadingEnable)
+  pointerSetAtOffset_float(structPointer, RedProcedureState_offsetof_multisampleSampleShadingMin, multisampleSampleShadingMin)
+  pointerSetAtOffset_RedBool32(structPointer, RedProcedureState_offsetof_multisampleAlphaToCoverageEnable, multisampleAlphaToCoverageEnable)
+  pointerSetAtOffset_RedBool32(structPointer, RedProcedureState_offsetof_multisampleAlphaToOneEnable, multisampleAlphaToOneEnable)
+  pointerSetAtOffset_RedBool32(structPointer, RedProcedureState_offsetof_depthTestEnable, depthTestEnable)
+  pointerSetAtOffset_RedBool32(structPointer, RedProcedureState_offsetof_depthTestDepthWriteEnable, depthTestDepthWriteEnable)
+  pointerSetAtOffset_RedCompareOp(structPointer, RedProcedureState_offsetof_depthTestDepthCompareOp, depthTestDepthCompareOp)
+  pointerSetAtOffset_RedBool32(structPointer, RedProcedureState_offsetof_depthTestBoundsTestEnable, depthTestBoundsTestEnable)
+  pointerSetAtOffset_RedBool32(structPointer, RedProcedureState_offsetof_depthTestBoundsTestDynamic, depthTestBoundsTestDynamic)
+  pointerSetAtOffset_float(structPointer, RedProcedureState_offsetof_depthTestBoundsTestStaticMin, depthTestBoundsTestStaticMin)
+  pointerSetAtOffset_float(structPointer, RedProcedureState_offsetof_depthTestBoundsTestStaticMax, depthTestBoundsTestStaticMax)
+  pointerSetAtOffset_RedBool32(structPointer, RedProcedureState_offsetof_stencilTestEnable, stencilTestEnable)
+  pointerSetAtOffset_RedStencilOp(structPointer, RedProcedureState_offsetof_stencilTestFrontStencilTestFailOp, stencilTestFrontStencilTestFailOp)
+  pointerSetAtOffset_RedStencilOp(structPointer, RedProcedureState_offsetof_stencilTestFrontStencilTestPassDepthTestPassOp, stencilTestFrontStencilTestPassDepthTestPassOp)
+  pointerSetAtOffset_RedStencilOp(structPointer, RedProcedureState_offsetof_stencilTestFrontStencilTestPassDepthTestFailOp, stencilTestFrontStencilTestPassDepthTestFailOp)
+  pointerSetAtOffset_RedCompareOp(structPointer, RedProcedureState_offsetof_stencilTestFrontCompareOp, stencilTestFrontCompareOp)
+  pointerSetAtOffset_RedStencilOp(structPointer, RedProcedureState_offsetof_stencilTestBackStencilTestFailOp, stencilTestBackStencilTestFailOp)
+  pointerSetAtOffset_RedStencilOp(structPointer, RedProcedureState_offsetof_stencilTestBackStencilTestPassDepthTestPassOp, stencilTestBackStencilTestPassDepthTestPassOp)
+  pointerSetAtOffset_RedStencilOp(structPointer, RedProcedureState_offsetof_stencilTestBackStencilTestPassDepthTestFailOp, stencilTestBackStencilTestPassDepthTestFailOp)
+  pointerSetAtOffset_RedCompareOp(structPointer, RedProcedureState_offsetof_stencilTestBackCompareOp, stencilTestBackCompareOp)
+  pointerSetAtOffset_RedBool32(structPointer, RedProcedureState_offsetof_stencilTestFrontAndBackDynamicCompareMask, stencilTestFrontAndBackDynamicCompareMask)
+  pointerSetAtOffset_RedBool32(structPointer, RedProcedureState_offsetof_stencilTestFrontAndBackDynamicWriteMask, stencilTestFrontAndBackDynamicWriteMask)
+  pointerSetAtOffset_RedBool32(structPointer, RedProcedureState_offsetof_stencilTestFrontAndBackDynamicReference, stencilTestFrontAndBackDynamicReference)
+  pointerSetAtOffset_unsigned(structPointer, RedProcedureState_offsetof_stencilTestFrontAndBackStaticCompareMask, stencilTestFrontAndBackStaticCompareMask)
+  pointerSetAtOffset_unsigned(structPointer, RedProcedureState_offsetof_stencilTestFrontAndBackStaticWriteMask, stencilTestFrontAndBackStaticWriteMask)
+  pointerSetAtOffset_unsigned(structPointer, RedProcedureState_offsetof_stencilTestFrontAndBackStaticReference, stencilTestFrontAndBackStaticReference)
+  pointerSetAtOffset_RedBool32(structPointer, RedProcedureState_offsetof_blendLogicOpEnable, blendLogicOpEnable)
+  pointerSetAtOffset_RedLogicOp(structPointer, RedProcedureState_offsetof_blendLogicOp, blendLogicOp)
+  pointerSetAtOffset_RedBool32(structPointer, RedProcedureState_offsetof_blendConstantsDynamic, blendConstantsDynamic)
+  for (var i = 0; i < len(blendConstantsStatic); i += 1) {
+    pointerSetAtOffset_float(structPointer, RedProcedureState_offsetof_blendConstantsStatic + (float_sizeof * i), blendConstantsStatic)
+  }
+  pointerSetAtOffset_unsigned(structPointer, RedProcedureState_offsetof_outputColorsCount, outputColorsCount)
+  for (var i = 0; i < len(outputColorsWriteMask); i += 1) {
+    pointerSetAtOffset_RedColorComponentBitflags(structPointer, RedProcedureState_offsetof_outputColorsWriteMask + (RedColorComponentBitflags_sizeof * i), outputColorsWriteMask)
+  }
+  for (var i = 0; i < len(outputColorsBlendEnable); i += 1) {
+    pointerSetAtOffset_RedBool32(structPointer, RedProcedureState_offsetof_outputColorsBlendEnable + (RedBool32_sizeof * i), outputColorsBlendEnable)
+  }
+  for (var i = 0; i < len(outputColorsBlendColorFactorSource); i += 1) {
+    pointerSetAtOffset_RedBlendFactor(structPointer, RedProcedureState_offsetof_outputColorsBlendColorFactorSource + (RedBlendFactor_sizeof * i), outputColorsBlendColorFactorSource)
+  }
+  for (var i = 0; i < len(outputColorsBlendColorFactorTarget); i += 1) {
+    pointerSetAtOffset_RedBlendFactor(structPointer, RedProcedureState_offsetof_outputColorsBlendColorFactorTarget + (RedBlendFactor_sizeof * i), outputColorsBlendColorFactorTarget)
+  }
+  for (var i = 0; i < len(outputColorsBlendColorOp); i += 1) {
+    pointerSetAtOffset_RedBlendOp(structPointer, RedProcedureState_offsetof_outputColorsBlendColorOp + (RedBlendOp_sizeof * i), outputColorsBlendColorOp)
+  }
+  for (var i = 0; i < len(outputColorsBlendAlphaFactorSource); i += 1) {
+    pointerSetAtOffset_RedBlendFactor(structPointer, RedProcedureState_offsetof_outputColorsBlendAlphaFactorSource + (RedBlendFactor_sizeof * i), outputColorsBlendAlphaFactorSource)
+  }
+  for (var i = 0; i < len(outputColorsBlendAlphaFactorTarget); i += 1) {
+    pointerSetAtOffset_RedBlendFactor(structPointer, RedProcedureState_offsetof_outputColorsBlendAlphaFactorTarget + (RedBlendFactor_sizeof * i), outputColorsBlendAlphaFactorTarget)
+  }
+  for (var i = 0; i < len(outputColorsBlendAlphaOp); i += 1) {
+    pointerSetAtOffset_RedBlendOp(structPointer, RedProcedureState_offsetof_outputColorsBlendAlphaOp + (RedBlendOp_sizeof * i), outputColorsBlendAlphaOp)
+  }
+}
+
+fn RedProcedureStateExtensionIterator(
+  structPointer, // Number structPointer
+  extension, // Number extension
+  next, // Number next
+  setTo0 // Number setTo0
+)
+{
+  pointerSetAtOffset_unsigned(structPointer, RedProcedureStateExtensionIterator_offsetof_extension, extension)
+  pointerSetAtOffset_const_void_p(structPointer, RedProcedureStateExtensionIterator_offsetof_next, next)
+}
+
+fn RedProcedureStateExtensionRasterizationMode(
+  structPointer, // Number structPointer
+  extension, // Number extension
+  next, // Number next
+  rasterizationMode, // Number rasterizationMode
+  setTo0 // Number setTo0
+)
+{
+  pointerSetAtOffset_RedProcedureStateExtension(structPointer, RedProcedureStateExtensionRasterizationMode_offsetof_extension, extension)
+  pointerSetAtOffset_const_void_p(structPointer, RedProcedureStateExtensionRasterizationMode_offsetof_next, next)
+  pointerSetAtOffset_RedRasterizationMode(structPointer, RedProcedureStateExtensionRasterizationMode_offsetof_rasterizationMode, rasterizationMode)
+}
+
+fn RedQueueCopyLimits(
+  structPointer, // Number structPointer
+  copyBlockTexelsCountWidth, // Number copyBlockTexelsCountWidth
+  copyBlockTexelsCountHeight, // Number copyBlockTexelsCountHeight
+  copyBlockTexelsCountDepth, // Number copyBlockTexelsCountDepth
+  setTo0 // Number setTo0
+)
+{
+  pointerSetAtOffset_unsigned(structPointer, RedQueueCopyLimits_offsetof_copyBlockTexelsCountWidth, copyBlockTexelsCountWidth)
+  pointerSetAtOffset_unsigned(structPointer, RedQueueCopyLimits_offsetof_copyBlockTexelsCountHeight, copyBlockTexelsCountHeight)
+  pointerSetAtOffset_unsigned(structPointer, RedQueueCopyLimits_offsetof_copyBlockTexelsCountDepth, copyBlockTexelsCountDepth)
+}
+
+fn RedStatuses(
+  structPointer, // Number structPointer
+  status, // Number status
+  statusCode, // Number statusCode
+  statusHresult, // Number statusHresult
+  statusProcedureId, // Number statusProcedureId
+  statusFile, // String statusFile
+  statusLine, // Number statusLine
+  statusError, // Number statusError
+  statusErrorCode, // Number statusErrorCode
+  statusErrorHresult, // Number statusErrorHresult
+  statusErrorProcedureId, // Number statusErrorProcedureId
+  statusErrorFile, // String statusErrorFile
+  statusErrorLine, // Number statusErrorLine
+  statusErrorDescription, // Number statusErrorDescription [512]
+  setTo0 // Number setTo0
+)
+{
+  pointerSetAtOffset_RedStatus(structPointer, RedStatuses_offsetof_status, status)
+  pointerSetAtOffset_unsigned(structPointer, RedStatuses_offsetof_statusCode, statusCode)
+  pointerSetAtOffset_int(structPointer, RedStatuses_offsetof_statusHresult, statusHresult)
+  pointerSetAtOffset_RedProcedureId(structPointer, RedStatuses_offsetof_statusProcedureId, statusProcedureId)
+  pointerSetAtOffset_const_char_p(structPointer, RedStatuses_offsetof_statusFile, statusFile)
+  pointerSetAtOffset_int(structPointer, RedStatuses_offsetof_statusLine, statusLine)
+  pointerSetAtOffset_RedStatus(structPointer, RedStatuses_offsetof_statusError, statusError)
+  pointerSetAtOffset_unsigned(structPointer, RedStatuses_offsetof_statusErrorCode, statusErrorCode)
+  pointerSetAtOffset_int(structPointer, RedStatuses_offsetof_statusErrorHresult, statusErrorHresult)
+  pointerSetAtOffset_RedProcedureId(structPointer, RedStatuses_offsetof_statusErrorProcedureId, statusErrorProcedureId)
+  pointerSetAtOffset_const_char_p(structPointer, RedStatuses_offsetof_statusErrorFile, statusErrorFile)
+  pointerSetAtOffset_int(structPointer, RedStatuses_offsetof_statusErrorLine, statusErrorLine)
+  for (var i = 0; i < len(statusErrorDescription); i += 1) {
+    pointerSetAtOffset_char(structPointer, RedStatuses_offsetof_statusErrorDescription + (char_sizeof * i), statusErrorDescription)
+  }
+}
+
+fn RedStructDeclarationMember(
+  structPointer, // Number structPointer
+  slot, // Number slot
+  type, // Number type
+  count, // Number count
+  visibleToStages, // Number visibleToStages
+  inlineSampler, // Number inlineSampler
+  setTo0 // Number setTo0
+)
+{
+  pointerSetAtOffset_unsigned(structPointer, RedStructDeclarationMember_offsetof_slot, slot)
+  pointerSetAtOffset_RedStructMemberType(structPointer, RedStructDeclarationMember_offsetof_type, type)
+  pointerSetAtOffset_unsigned(structPointer, RedStructDeclarationMember_offsetof_count, count)
+  pointerSetAtOffset_RedVisibleToStageBitflags(structPointer, RedStructDeclarationMember_offsetof_visibleToStages, visibleToStages)
+  pointerSetAtOffset_const_RedHandleSampler_p(structPointer, RedStructDeclarationMember_offsetof_inlineSampler, inlineSampler)
+}
+
+fn RedStructDeclarationMemberArrayRO(
+  structPointer, // Number structPointer
+  slot, // Number slot
+  setTo0 // Number setTo0
+)
+{
+  pointerSetAtOffset_unsigned(structPointer, RedStructDeclarationMemberArrayRO_offsetof_slot, slot)
+}
+
+fn RedStructMember(
+  structPointer, // Number structPointer
+  setTo35, // Number setTo35
+  setTo0, // Number setTo0
+  structure, // Number structure
+  slot, // Number slot
+  first, // Number first
+  count, // Number count
+  type, // Number type
+  textures, // Number textures
+  arrays, // Number arrays
+  setTo00, // Number setTo00
+  setTo0 // Number setTo0
+)
+{
+  pointerSetAtOffset_unsigned(structPointer, RedStructMember_offsetof_setTo35, setTo35)
+  pointerSetAtOffset_size_t(structPointer, RedStructMember_offsetof_setTo0, setTo0)
+  pointerSetAtOffset_RedHandleStruct(structPointer, RedStructMember_offsetof_structure, structure)
+  pointerSetAtOffset_unsigned(structPointer, RedStructMember_offsetof_slot, slot)
+  pointerSetAtOffset_unsigned(structPointer, RedStructMember_offsetof_first, first)
+  pointerSetAtOffset_unsigned(structPointer, RedStructMember_offsetof_count, count)
+  pointerSetAtOffset_RedStructMemberType(structPointer, RedStructMember_offsetof_type, type)
+  pointerSetAtOffset_const_RedStructMemberTexture_p(structPointer, RedStructMember_offsetof_textures, textures)
+  pointerSetAtOffset_const_RedStructMemberArray_p(structPointer, RedStructMember_offsetof_arrays, arrays)
+  pointerSetAtOffset_size_t(structPointer, RedStructMember_offsetof_setTo00, setTo00)
+}
+
+fn RedStructMemberArray(
+  structPointer, // Number structPointer
+  array, // Number array
+  arrayRangeBytesFirst, // Number arrayRangeBytesFirst
+  arrayRangeBytesCount, // Number arrayRangeBytesCount
+  setTo0 // Number setTo0
+)
+{
+  pointerSetAtOffset_RedHandleArray(structPointer, RedStructMemberArray_offsetof_array, array)
+  pointerSetAtOffset_uint64_t(structPointer, RedStructMemberArray_offsetof_arrayRangeBytesFirst, arrayRangeBytesFirst)
+  pointerSetAtOffset_uint64_t(structPointer, RedStructMemberArray_offsetof_arrayRangeBytesCount, arrayRangeBytesCount)
+}
+
+fn RedStructMemberTexture(
+  structPointer, // Number structPointer
+  sampler, // Number sampler
+  texture, // Number texture
+  setTo1, // Number setTo1
+  setTo0 // Number setTo0
+)
+{
+  pointerSetAtOffset_RedHandleSampler(structPointer, RedStructMemberTexture_offsetof_sampler, sampler)
+  pointerSetAtOffset_RedHandleTexture(structPointer, RedStructMemberTexture_offsetof_texture, texture)
+  pointerSetAtOffset_unsigned(structPointer, RedStructMemberTexture_offsetof_setTo1, setTo1)
+}
+
+fn RedTypeContext(
+  structPointer, // Number structPointer
+  gpusCount, // Number gpusCount
+  gpus, // Number gpus
+  gpusStatuses, // Number gpusStatuses
+  handle, // Number handle
+  userData, // Number userData
+  setTo0 // Number setTo0
+)
+{
+  pointerSetAtOffset_unsigned(structPointer, RedTypeContext_offsetof_gpusCount, gpusCount)
+  pointerSetAtOffset_const_RedGpuInfo_p(structPointer, RedTypeContext_offsetof_gpus, gpus)
+  pointerSetAtOffset_const_RedStatuses_p(structPointer, RedTypeContext_offsetof_gpusStatuses, gpusStatuses)
+  pointerSetAtOffset_RedHandleContext(structPointer, RedTypeContext_offsetof_handle, handle)
+  pointerSetAtOffset_void_p(structPointer, RedTypeContext_offsetof_userData, userData)
+}
+
+fn RedUsageArray(
+  structPointer, // Number structPointer
+  barrierSplit, // Number barrierSplit
+  oldAccessStages, // Number oldAccessStages
+  newAccessStages, // Number newAccessStages
+  oldAccess, // Number oldAccess
+  newAccess, // Number newAccess
+  queueFamilyIndexSource, // Number queueFamilyIndexSource
+  queueFamilyIndexTarget, // Number queueFamilyIndexTarget
+  array, // Number array
+  arrayBytesFirst, // Number arrayBytesFirst
+  arrayBytesCount, // Number arrayBytesCount
+  setTo0 // Number setTo0
+)
+{
+  pointerSetAtOffset_RedBarrierSplit(structPointer, RedUsageArray_offsetof_barrierSplit, barrierSplit)
+  pointerSetAtOffset_RedAccessStageBitflags(structPointer, RedUsageArray_offsetof_oldAccessStages, oldAccessStages)
+  pointerSetAtOffset_RedAccessStageBitflags(structPointer, RedUsageArray_offsetof_newAccessStages, newAccessStages)
+  pointerSetAtOffset_RedAccessBitflags(structPointer, RedUsageArray_offsetof_oldAccess, oldAccess)
+  pointerSetAtOffset_RedAccessBitflags(structPointer, RedUsageArray_offsetof_newAccess, newAccess)
+  pointerSetAtOffset_unsigned(structPointer, RedUsageArray_offsetof_queueFamilyIndexSource, queueFamilyIndexSource)
+  pointerSetAtOffset_unsigned(structPointer, RedUsageArray_offsetof_queueFamilyIndexTarget, queueFamilyIndexTarget)
+  pointerSetAtOffset_RedHandleArray(structPointer, RedUsageArray_offsetof_array, array)
+  pointerSetAtOffset_uint64_t(structPointer, RedUsageArray_offsetof_arrayBytesFirst, arrayBytesFirst)
+  pointerSetAtOffset_uint64_t(structPointer, RedUsageArray_offsetof_arrayBytesCount, arrayBytesCount)
+}
+
+fn RedUsageImage(
+  structPointer, // Number structPointer
+  barrierSplit, // Number barrierSplit
+  oldAccessStages, // Number oldAccessStages
+  newAccessStages, // Number newAccessStages
+  oldAccess, // Number oldAccess
+  newAccess, // Number newAccess
+  oldState, // Number oldState
+  newState, // Number newState
+  queueFamilyIndexSource, // Number queueFamilyIndexSource
+  queueFamilyIndexTarget, // Number queueFamilyIndexTarget
+  image, // Number image
+  imageAllParts, // Number imageAllParts
+  imageLevelsFirst, // Number imageLevelsFirst
+  imageLevelsCount, // Number imageLevelsCount
+  imageLayersFirst, // Number imageLayersFirst
+  imageLayersCount, // Number imageLayersCount
+  setTo0 // Number setTo0
+)
+{
+  pointerSetAtOffset_RedBarrierSplit(structPointer, RedUsageImage_offsetof_barrierSplit, barrierSplit)
+  pointerSetAtOffset_RedAccessStageBitflags(structPointer, RedUsageImage_offsetof_oldAccessStages, oldAccessStages)
+  pointerSetAtOffset_RedAccessStageBitflags(structPointer, RedUsageImage_offsetof_newAccessStages, newAccessStages)
+  pointerSetAtOffset_RedAccessBitflags(structPointer, RedUsageImage_offsetof_oldAccess, oldAccess)
+  pointerSetAtOffset_RedAccessBitflags(structPointer, RedUsageImage_offsetof_newAccess, newAccess)
+  pointerSetAtOffset_RedState(structPointer, RedUsageImage_offsetof_oldState, oldState)
+  pointerSetAtOffset_RedState(structPointer, RedUsageImage_offsetof_newState, newState)
+  pointerSetAtOffset_unsigned(structPointer, RedUsageImage_offsetof_queueFamilyIndexSource, queueFamilyIndexSource)
+  pointerSetAtOffset_unsigned(structPointer, RedUsageImage_offsetof_queueFamilyIndexTarget, queueFamilyIndexTarget)
+  pointerSetAtOffset_RedHandleImage(structPointer, RedUsageImage_offsetof_image, image)
+  pointerSetAtOffset_RedImagePartBitflags(structPointer, RedUsageImage_offsetof_imageAllParts, imageAllParts)
+  pointerSetAtOffset_unsigned(structPointer, RedUsageImage_offsetof_imageLevelsFirst, imageLevelsFirst)
+  pointerSetAtOffset_unsigned(structPointer, RedUsageImage_offsetof_imageLevelsCount, imageLevelsCount)
+  pointerSetAtOffset_unsigned(structPointer, RedUsageImage_offsetof_imageLayersFirst, imageLayersFirst)
+  pointerSetAtOffset_unsigned(structPointer, RedUsageImage_offsetof_imageLayersCount, imageLayersCount)
+}
+

@@ -1,0 +1,44 @@
+fn pointerSetAtOffsetStringTemporaryPointer(pointer, bytesFirst, string) {
+  if (len(string) <= 1) {
+    pointerSetRaw64Bit(pointer, bytesFirst, pointerGetNull())
+    return
+  }
+  let value = globalArrayNew8Bit("_" + numberToString(getUniqueNumber()), len(string))
+  for (var i = 0; i < len(string); i += 1) {
+    pointerSetInteger8Bit(value, i, string[i])
+  }
+  pointerSetRaw64Bit(pointer, bytesFirst, value)
+}
+
+fn pointerSetAtOffset_uint32_t(pointer, bytesFirst, value)          { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_const_void_p(pointer, bytesFirst, value)      { return pointerSetRaw64Bit(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_size_t(pointer, bytesFirst, value)            { return pointerSetAtOffsetNumber64Bit(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_float(pointer, bytesFirst, value)             { return pointerSetAtOffsetNumber(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_bool(pointer, bytesFirst, value)              { return pointerSetUnsignedInteger8Bit(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_int(pointer, bytesFirst, value)               { return pointerSetAtOffsetInteger(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_sg_action(pointer, bytesFirst, value)         { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_uint8_t(pointer, bytesFirst, value)           { return pointerSetUnsignedInteger8Bit(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_sg_buffer_type(pointer, bytesFirst, value)    { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_sg_usage(pointer, bytesFirst, value)          { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_const_char_p(pointer, bytesFirst, value)      { return pointerSetAtOffsetStringTemporaryPointer(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_sg_image_type(pointer, bytesFirst, value)     { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_sg_pixel_format(pointer, bytesFirst, value)   { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_sg_filter(pointer, bytesFirst, value)         { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_sg_wrap(pointer, bytesFirst, value)           { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_sg_border_color(pointer, bytesFirst, value)   { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_sg_uniform_type(pointer, bytesFirst, value)   { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_sg_uniform_layout(pointer, bytesFirst, value) { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_sg_sampler_type(pointer, bytesFirst, value)   { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_sg_vertex_step(pointer, bytesFirst, value)    { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_sg_vertex_format(pointer, bytesFirst, value)  { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_sg_compare_func(pointer, bytesFirst, value)   { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_sg_stencil_op(pointer, bytesFirst, value)     { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_sg_blend_factor(pointer, bytesFirst, value)   { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_sg_blend_op(pointer, bytesFirst, value)       { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_sg_color_mask(pointer, bytesFirst, value)     { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_sg_primitive_type(pointer, bytesFirst, value) { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_sg_index_type(pointer, bytesFirst, value)     { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_sg_cull_mode(pointer, bytesFirst, value)      { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_sg_face_winding(pointer, bytesFirst, value)   { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_sg_resource_state(pointer, bytesFirst, value) { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_void_p(pointer, bytesFirst, value)            { return pointerSetRaw64Bit(pointer, bytesFirst, value) }
