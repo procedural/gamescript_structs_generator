@@ -1,13 +1,15 @@
 fn pointerSetAtOffsetStringTemporaryPointer(pointer, bytesFirst, string) {
-  if (len(string) == 0) {
+  let stringLength = len(string)
+  if (stringLength == 0) {
     pointerSetRaw64Bit(pointer, bytesFirst, pointerGetNull())
     return
   }
-  let value = globalArrayNew8Bit("_" + numberToString(getUniqueNumber()), len(string) + 1)
-  for (var i = 0; i < len(string); i += 1) {
-    pointerSetInteger8Bit(value, i, string[i])
+  let value = globalArrayNew8Bit("_" + numberToString(getUniqueNumber()), stringLength + 1)
+  let chars = stringToNumberArray(string)
+  for (var i = 0; i < stringLength; i += 1) {
+    pointerSetInteger8Bit(value, i, chars[i])
   }
-  pointerSetInteger8Bit(value, len(string), 0)
+  pointerSetInteger8Bit(value, stringLength, 0)
   pointerSetRaw64Bit(pointer, bytesFirst, value)
 }
 
