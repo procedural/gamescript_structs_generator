@@ -1,7 +1,11 @@
 fn pointerSetAtOffsetStringTemporaryPointer(pointer, bytesFirst, string) {
   let stringLength = len(string)
   if (stringLength == 0) {
-    pointerSetRaw64Bit(pointer, bytesFirst, pointerGetNull())
+    if (isAndroid() == true) {
+      pointerSetRaw32Bit(pointer, bytesFirst, pointerGetNull())
+    } else {
+      pointerSetRaw64Bit(pointer, bytesFirst, pointerGetNull())
+    }
     return
   }
   let value = globalArrayNew8Bit("__" + numberToString(getUniqueNumber()), stringLength + 1)
@@ -10,13 +14,14 @@ fn pointerSetAtOffsetStringTemporaryPointer(pointer, bytesFirst, string) {
     pointerSetInteger8Bit(value, i, chars[i])
   }
   pointerSetInteger8Bit(value, stringLength, 0)
-  pointerSetRaw64Bit(pointer, bytesFirst, value)
+  if (isAndroid() == true) {
+    pointerSetRaw32Bit(pointer, bytesFirst, value)
+  } else {
+    pointerSetRaw64Bit(pointer, bytesFirst, value)
+  }
 }
 
-// NOTE(Constantine): Currently assumes 64-bit architecture, modify these later for 32-bit Android.
 fn pointerSetAtOffset_uint32_t(pointer, bytesFirst, value)          { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
-fn pointerSetAtOffset_const_void_p(pointer, bytesFirst, value)      { return pointerSetRaw64Bit(pointer, bytesFirst, value) }
-fn pointerSetAtOffset_size_t(pointer, bytesFirst, value)            { return pointerSetAtOffsetUnsignedInteger64Bit(pointer, bytesFirst, value) }
 fn pointerSetAtOffset_float(pointer, bytesFirst, value)             { return pointerSetAtOffsetNumber(pointer, bytesFirst, value) }
 fn pointerSetAtOffset_bool(pointer, bytesFirst, value)              { return pointerSetUnsignedInteger8Bit(pointer, bytesFirst, value) }
 fn pointerSetAtOffset_int(pointer, bytesFirst, value)               { return pointerSetAtOffsetInteger(pointer, bytesFirst, value) }
@@ -45,4 +50,6 @@ fn pointerSetAtOffset_sg_index_type(pointer, bytesFirst, value)     { return poi
 fn pointerSetAtOffset_sg_cull_mode(pointer, bytesFirst, value)      { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
 fn pointerSetAtOffset_sg_face_winding(pointer, bytesFirst, value)   { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
 fn pointerSetAtOffset_sg_resource_state(pointer, bytesFirst, value) { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
-fn pointerSetAtOffset_void_p(pointer, bytesFirst, value)            { return pointerSetRaw64Bit(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_void_p(pointer, bytesFirst, value)            { if (isAndroid() == true) { return pointerSetRaw32Bit(pointer, bytesFirst, value) } else { return pointerSetRaw64Bit(pointer, bytesFirst, value) } }
+fn pointerSetAtOffset_const_void_p(pointer, bytesFirst, value)      { if (isAndroid() == true) { return pointerSetRaw32Bit(pointer, bytesFirst, value) } else { return pointerSetRaw64Bit(pointer, bytesFirst, value) } }
+fn pointerSetAtOffset_size_t(pointer, bytesFirst, value)            { if (isAndroid() == true) { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) } else { return pointerSetAtOffsetUnsignedInteger64Bit(pointer, bytesFirst, value) } }
