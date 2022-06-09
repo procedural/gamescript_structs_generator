@@ -1,12 +1,18 @@
 let uint32_t_sizeof = 4
-let const_void_p_sizeof = 8
-let size_t_sizeof = 8
 let float_sizeof = 4
 let bool_sizeof = 1
 let int_sizeof = 4
 let uint8_t_sizeof = 1
-let const_char_p_sizeof = 8
-let void_p_sizeof = 8
+var void_p_sizeof = 8
+var const_void_p_sizeof = 8
+var size_t_sizeof = 8
+var const_char_p_sizeof = 8
+if (isAndroid() == true) {
+  void_p_sizeof = 4
+  const_void_p_sizeof = 4
+  size_t_sizeof = 4
+  const_char_p_sizeof = 4
+}
 
 let sg_action_sizeof = 4
 let sg_buffer_type_sizeof = 4
