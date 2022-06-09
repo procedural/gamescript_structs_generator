@@ -15,7 +15,7 @@ fn pointerSetAtOffsetStringTemporaryPointer(pointer, bytesFirst, string) {
 
 fn pointerSetAtOffset_uint32_t(pointer, bytesFirst, value)          { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
 fn pointerSetAtOffset_const_void_p(pointer, bytesFirst, value)      { return pointerSetRaw64Bit(pointer, bytesFirst, value) }
-fn pointerSetAtOffset_size_t(pointer, bytesFirst, value)            { return pointerSetAtOffsetNumber64Bit(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_size_t(pointer, bytesFirst, value)            { return pointerSetAtOffsetUnsignedInteger64Bit(pointer, bytesFirst, value) }
 fn pointerSetAtOffset_float(pointer, bytesFirst, value)             { return pointerSetAtOffsetNumber(pointer, bytesFirst, value) }
 fn pointerSetAtOffset_bool(pointer, bytesFirst, value)              { return pointerSetUnsignedInteger8Bit(pointer, bytesFirst, value) }
 fn pointerSetAtOffset_int(pointer, bytesFirst, value)               { return pointerSetAtOffsetInteger(pointer, bytesFirst, value) }
