@@ -133,7 +133,7 @@ void PrintStructureMembersRecursively(std::vector<ParentStructure> parentStructs
             }
             printf("%s_offsetof_%s + (%s_sizeof * %s)", parentStructs.back().type.c_str(), member.name.c_str(), member.type.c_str(), (member.count1*member.count2) > 1 ? "i" : "0");
             printf(", ");
-            printf("%s", name.c_str());
+            printf("%s[i]", name.c_str());
             printf(")\n");
           }
           printf("  }\n", std::to_string(memberCount));
