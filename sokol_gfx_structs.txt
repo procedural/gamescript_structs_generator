@@ -682,13 +682,13 @@ fn sg_pass_attachment_desc(
   structPointer, // Number structPointer
   imageId, // Number imageId
   mip_level, // Number mip_level
-  slice, // Number slice
+  _slice, // Number slice
   setTo0 // Number setTo0
 )
 {
   pointerSetAtOffset_uint32_t(structPointer, sg_pass_attachment_desc_offsetof_image + (sg_image_sizeof * 0) + sg_image_offsetof_id, imageId)
   pointerSetAtOffset_int(structPointer, sg_pass_attachment_desc_offsetof_mip_level, mip_level)
-  pointerSetAtOffset_int(structPointer, sg_pass_attachment_desc_offsetof_slice, slice)
+  pointerSetAtOffset_int(structPointer, sg_pass_attachment_desc_offsetof_slice, _slice)
 }
 
 fn sg_pass_desc(
