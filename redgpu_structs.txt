@@ -49,16 +49,16 @@ fn RedColorsClearValuesFloat(
 )
 {
   for (var i = 0; i < len(r); i += 1) {
-    pointerSetAtOffset_float(structPointer, RedColorsClearValuesFloat_offsetof_r + (float_sizeof * i), r)
+    pointerSetAtOffset_float(structPointer, RedColorsClearValuesFloat_offsetof_r + (float_sizeof * i), r[i])
   }
   for (var i = 0; i < len(g); i += 1) {
-    pointerSetAtOffset_float(structPointer, RedColorsClearValuesFloat_offsetof_g + (float_sizeof * i), g)
+    pointerSetAtOffset_float(structPointer, RedColorsClearValuesFloat_offsetof_g + (float_sizeof * i), g[i])
   }
   for (var i = 0; i < len(b); i += 1) {
-    pointerSetAtOffset_float(structPointer, RedColorsClearValuesFloat_offsetof_b + (float_sizeof * i), b)
+    pointerSetAtOffset_float(structPointer, RedColorsClearValuesFloat_offsetof_b + (float_sizeof * i), b[i])
   }
   for (var i = 0; i < len(a); i += 1) {
-    pointerSetAtOffset_float(structPointer, RedColorsClearValuesFloat_offsetof_a + (float_sizeof * i), a)
+    pointerSetAtOffset_float(structPointer, RedColorsClearValuesFloat_offsetof_a + (float_sizeof * i), a[i])
   }
 }
 
@@ -72,16 +72,16 @@ fn RedColorsClearValuesSint(
 )
 {
   for (var i = 0; i < len(r); i += 1) {
-    pointerSetAtOffset_int(structPointer, RedColorsClearValuesSint_offsetof_r + (int_sizeof * i), r)
+    pointerSetAtOffset_int(structPointer, RedColorsClearValuesSint_offsetof_r + (int_sizeof * i), r[i])
   }
   for (var i = 0; i < len(g); i += 1) {
-    pointerSetAtOffset_int(structPointer, RedColorsClearValuesSint_offsetof_g + (int_sizeof * i), g)
+    pointerSetAtOffset_int(structPointer, RedColorsClearValuesSint_offsetof_g + (int_sizeof * i), g[i])
   }
   for (var i = 0; i < len(b); i += 1) {
-    pointerSetAtOffset_int(structPointer, RedColorsClearValuesSint_offsetof_b + (int_sizeof * i), b)
+    pointerSetAtOffset_int(structPointer, RedColorsClearValuesSint_offsetof_b + (int_sizeof * i), b[i])
   }
   for (var i = 0; i < len(a); i += 1) {
-    pointerSetAtOffset_int(structPointer, RedColorsClearValuesSint_offsetof_a + (int_sizeof * i), a)
+    pointerSetAtOffset_int(structPointer, RedColorsClearValuesSint_offsetof_a + (int_sizeof * i), a[i])
   }
 }
 
@@ -95,16 +95,16 @@ fn RedColorsClearValuesUint(
 )
 {
   for (var i = 0; i < len(r); i += 1) {
-    pointerSetAtOffset_unsigned(structPointer, RedColorsClearValuesUint_offsetof_r + (unsigned_sizeof * i), r)
+    pointerSetAtOffset_unsigned(structPointer, RedColorsClearValuesUint_offsetof_r + (unsigned_sizeof * i), r[i])
   }
   for (var i = 0; i < len(g); i += 1) {
-    pointerSetAtOffset_unsigned(structPointer, RedColorsClearValuesUint_offsetof_g + (unsigned_sizeof * i), g)
+    pointerSetAtOffset_unsigned(structPointer, RedColorsClearValuesUint_offsetof_g + (unsigned_sizeof * i), g[i])
   }
   for (var i = 0; i < len(b); i += 1) {
-    pointerSetAtOffset_unsigned(structPointer, RedColorsClearValuesUint_offsetof_b + (unsigned_sizeof * i), b)
+    pointerSetAtOffset_unsigned(structPointer, RedColorsClearValuesUint_offsetof_b + (unsigned_sizeof * i), b[i])
   }
   for (var i = 0; i < len(a); i += 1) {
-    pointerSetAtOffset_unsigned(structPointer, RedColorsClearValuesUint_offsetof_a + (unsigned_sizeof * i), a)
+    pointerSetAtOffset_unsigned(structPointer, RedColorsClearValuesUint_offsetof_a + (unsigned_sizeof * i), a[i])
   }
 }
 
@@ -435,14 +435,14 @@ fn RedGpuInfo(
   pointerSetAtOffset_RedHandleGpu(structPointer, RedGpuInfo_offsetof_gpu, gpu)
   pointerSetAtOffset_RedHandleGpuDevice(structPointer, RedGpuInfo_offsetof_gpuDevice, gpuDevice)
   for (var i = 0; i < len(gpuName); i += 1) {
-    pointerSetAtOffset_char(structPointer, RedGpuInfo_offsetof_gpuName + (char_sizeof * i), gpuName)
+    pointerSetAtOffset_char(structPointer, RedGpuInfo_offsetof_gpuName + (char_sizeof * i), gpuName[i])
   }
   pointerSetAtOffset_RedGpuType(structPointer, RedGpuInfo_offsetof_gpuType, gpuType)
   pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_gpuVendorId, gpuVendorId)
   pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_gpuDeviceId, gpuDeviceId)
   pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_gpuDriverVersion, gpuDriverVersion)
   for (var i = 0; i < len(gpuProcedureCacheUuid); i += 1) {
-    pointerSetAtOffset_unsigned_char(structPointer, RedGpuInfo_offsetof_gpuProcedureCacheUuid + (unsigned_char_sizeof * i), gpuProcedureCacheUuid)
+    pointerSetAtOffset_unsigned_char(structPointer, RedGpuInfo_offsetof_gpuProcedureCacheUuid + (unsigned_char_sizeof * i), gpuProcedureCacheUuid[i])
   }
   pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_memoryTypesCount, memoryTypesCount)
   pointerSetAtOffset_const_RedMemoryType_p(structPointer, RedGpuInfo_offsetof_memoryTypes, memoryTypes)
@@ -499,7 +499,7 @@ fn RedGpuInfo(
   pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_maxStructTextureRWsCount, maxStructTextureRWsCount)
   pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_maxProcedureParametersVariablesBytesCount, maxProcedureParametersVariablesBytesCount)
   for (var i = 0; i < len(maxViewportDimensions); i += 1) {
-    pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_maxViewportDimensions + (unsigned_sizeof * i), maxViewportDimensions)
+    pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_maxViewportDimensions + (unsigned_sizeof * i), maxViewportDimensions[i])
   }
   pointerSetAtOffset_float(structPointer, RedGpuInfo_offsetof_minViewportBoundsRange, minViewportBoundsRange)
   pointerSetAtOffset_float(structPointer, RedGpuInfo_offsetof_maxViewportBoundsRange, maxViewportBoundsRange)
@@ -515,11 +515,11 @@ fn RedGpuInfo(
   pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_maxFragmentOutputResourcesCount, maxFragmentOutputResourcesCount)
   pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_maxComputeSharedMemoryBytesCount, maxComputeSharedMemoryBytesCount)
   for (var i = 0; i < len(maxComputeWorkgroupsCount); i += 1) {
-    pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_maxComputeWorkgroupsCount + (unsigned_sizeof * i), maxComputeWorkgroupsCount)
+    pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_maxComputeWorkgroupsCount + (unsigned_sizeof * i), maxComputeWorkgroupsCount[i])
   }
   pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_maxComputeWorkgroupInvocationsCount, maxComputeWorkgroupInvocationsCount)
   for (var i = 0; i < len(maxComputeWorkgroupDimensions); i += 1) {
-    pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_maxComputeWorkgroupDimensions + (unsigned_sizeof * i), maxComputeWorkgroupDimensions)
+    pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_maxComputeWorkgroupDimensions + (unsigned_sizeof * i), maxComputeWorkgroupDimensions[i])
   }
   pointerSetAtOffset_int(structPointer, RedGpuInfo_offsetof_minImageSampleImageFetchOffset, minImageSampleImageFetchOffset)
   pointerSetAtOffset_unsigned(structPointer, RedGpuInfo_offsetof_maxImageSampleImageFetchOffset, maxImageSampleImageFetchOffset)
@@ -615,10 +615,10 @@ fn RedGpuInfoOptionalInfoDriverProperties(
   pointerSetAtOffset_const_void_p(structPointer, RedGpuInfoOptionalInfoDriverProperties_offsetof_next, next)
   pointerSetAtOffset_RedDriverId(structPointer, RedGpuInfoOptionalInfoDriverProperties_offsetof_id, id)
   for (var i = 0; i < len(name); i += 1) {
-    pointerSetAtOffset_char(structPointer, RedGpuInfoOptionalInfoDriverProperties_offsetof_name + (char_sizeof * i), name)
+    pointerSetAtOffset_char(structPointer, RedGpuInfoOptionalInfoDriverProperties_offsetof_name + (char_sizeof * i), name[i])
   }
   for (var i = 0; i < len(info); i += 1) {
-    pointerSetAtOffset_char(structPointer, RedGpuInfoOptionalInfoDriverProperties_offsetof_info + (char_sizeof * i), info)
+    pointerSetAtOffset_char(structPointer, RedGpuInfoOptionalInfoDriverProperties_offsetof_info + (char_sizeof * i), info[i])
   }
   pointerSetAtOffset_unsigned_char(structPointer, RedGpuInfoOptionalInfoDriverProperties_offsetof_compliantWithConformanceTestSuiteVersionMajor, compliantWithConformanceTestSuiteVersionMajor)
   pointerSetAtOffset_unsigned_char(structPointer, RedGpuInfoOptionalInfoDriverProperties_offsetof_compliantWithConformanceTestSuiteVersionMinor, compliantWithConformanceTestSuiteVersionMinor)
@@ -887,7 +887,7 @@ fn RedMemoryAllocationTag(
 )
 {
   for (var i = 0; i < len(tag); i += 1) {
-    pointerSetAtOffset_char(structPointer, RedMemoryAllocationTag_offsetof_tag + (char_sizeof * i), tag)
+    pointerSetAtOffset_char(structPointer, RedMemoryAllocationTag_offsetof_tag + (char_sizeof * i), tag[i])
   }
 }
 
@@ -920,10 +920,10 @@ fn RedMemoryBudget(
   pointerSetAtOffset_unsigned(structPointer, RedMemoryBudget_offsetof_setTo1000237000, setTo1000237000)
   pointerSetAtOffset_size_t(structPointer, RedMemoryBudget_offsetof_setTo0, setTo0)
   for (var i = 0; i < len(memoryHeapsBudget); i += 1) {
-    pointerSetAtOffset_uint64_t(structPointer, RedMemoryBudget_offsetof_memoryHeapsBudget + (uint64_t_sizeof * i), memoryHeapsBudget)
+    pointerSetAtOffset_uint64_t(structPointer, RedMemoryBudget_offsetof_memoryHeapsBudget + (uint64_t_sizeof * i), memoryHeapsBudget[i])
   }
   for (var i = 0; i < len(memoryHeapsUsage); i += 1) {
-    pointerSetAtOffset_uint64_t(structPointer, RedMemoryBudget_offsetof_memoryHeapsUsage + (uint64_t_sizeof * i), memoryHeapsUsage)
+    pointerSetAtOffset_uint64_t(structPointer, RedMemoryBudget_offsetof_memoryHeapsUsage + (uint64_t_sizeof * i), memoryHeapsUsage[i])
   }
 }
 
@@ -1029,19 +1029,19 @@ fn RedOutputDeclarationMembers(
   pointerSetAtOffset_RedBool32(structPointer, RedOutputDeclarationMembers_offsetof_depthStencilSharesMemoryWithAnotherMember, depthStencilSharesMemoryWithAnotherMember)
   pointerSetAtOffset_unsigned(structPointer, RedOutputDeclarationMembers_offsetof_colorsCount, colorsCount)
   for (var i = 0; i < len(colorsFormat); i += 1) {
-    pointerSetAtOffset_RedFormat(structPointer, RedOutputDeclarationMembers_offsetof_colorsFormat + (RedFormat_sizeof * i), colorsFormat)
+    pointerSetAtOffset_RedFormat(structPointer, RedOutputDeclarationMembers_offsetof_colorsFormat + (RedFormat_sizeof * i), colorsFormat[i])
   }
   for (var i = 0; i < len(colorsMultisampleCount); i += 1) {
-    pointerSetAtOffset_RedMultisampleCountBitflag(structPointer, RedOutputDeclarationMembers_offsetof_colorsMultisampleCount + (RedMultisampleCountBitflag_sizeof * i), colorsMultisampleCount)
+    pointerSetAtOffset_RedMultisampleCountBitflag(structPointer, RedOutputDeclarationMembers_offsetof_colorsMultisampleCount + (RedMultisampleCountBitflag_sizeof * i), colorsMultisampleCount[i])
   }
   for (var i = 0; i < len(colorsSetProcedureOutputOp); i += 1) {
-    pointerSetAtOffset_RedSetProcedureOutputOp(structPointer, RedOutputDeclarationMembers_offsetof_colorsSetProcedureOutputOp + (RedSetProcedureOutputOp_sizeof * i), colorsSetProcedureOutputOp)
+    pointerSetAtOffset_RedSetProcedureOutputOp(structPointer, RedOutputDeclarationMembers_offsetof_colorsSetProcedureOutputOp + (RedSetProcedureOutputOp_sizeof * i), colorsSetProcedureOutputOp[i])
   }
   for (var i = 0; i < len(colorsEndProcedureOutputOp); i += 1) {
-    pointerSetAtOffset_RedEndProcedureOutputOp(structPointer, RedOutputDeclarationMembers_offsetof_colorsEndProcedureOutputOp + (RedEndProcedureOutputOp_sizeof * i), colorsEndProcedureOutputOp)
+    pointerSetAtOffset_RedEndProcedureOutputOp(structPointer, RedOutputDeclarationMembers_offsetof_colorsEndProcedureOutputOp + (RedEndProcedureOutputOp_sizeof * i), colorsEndProcedureOutputOp[i])
   }
   for (var i = 0; i < len(colorsSharesMemoryWithAnotherMember); i += 1) {
-    pointerSetAtOffset_RedBool32(structPointer, RedOutputDeclarationMembers_offsetof_colorsSharesMemoryWithAnotherMember + (RedBool32_sizeof * i), colorsSharesMemoryWithAnotherMember)
+    pointerSetAtOffset_RedBool32(structPointer, RedOutputDeclarationMembers_offsetof_colorsSharesMemoryWithAnotherMember + (RedBool32_sizeof * i), colorsSharesMemoryWithAnotherMember[i])
   }
 }
 
@@ -1071,7 +1071,7 @@ fn RedOutputMembers(
   pointerSetAtOffset_RedHandleTexture(structPointer, RedOutputMembers_offsetof_depthStencil, depthStencil)
   pointerSetAtOffset_unsigned(structPointer, RedOutputMembers_offsetof_colorsCount, colorsCount)
   for (var i = 0; i < len(colors); i += 1) {
-    pointerSetAtOffset_RedHandleTexture(structPointer, RedOutputMembers_offsetof_colors + (RedHandleTexture_sizeof * i), colors)
+    pointerSetAtOffset_RedHandleTexture(structPointer, RedOutputMembers_offsetof_colors + (RedHandleTexture_sizeof * i), colors[i])
   }
 }
 
@@ -1084,7 +1084,7 @@ fn RedOutputMembersResolveTargets(
 {
   pointerSetAtOffset_RedHandleTexture(structPointer, RedOutputMembersResolveTargets_offsetof_depthStencil, depthStencil)
   for (var i = 0; i < len(colors); i += 1) {
-    pointerSetAtOffset_RedHandleTexture(structPointer, RedOutputMembersResolveTargets_offsetof_colors + (RedHandleTexture_sizeof * i), colors)
+    pointerSetAtOffset_RedHandleTexture(structPointer, RedOutputMembersResolveTargets_offsetof_colors + (RedHandleTexture_sizeof * i), colors[i])
   }
 }
 
@@ -1104,7 +1104,7 @@ fn RedProcedureParametersDeclaration(
   pointerSetAtOffset_unsigned(structPointer, RedProcedureParametersDeclaration_offsetof_variablesBytesCount, variablesBytesCount)
   pointerSetAtOffset_unsigned(structPointer, RedProcedureParametersDeclaration_offsetof_structsDeclarationsCount, structsDeclarationsCount)
   for (var i = 0; i < len(structsDeclarations); i += 1) {
-    pointerSetAtOffset_RedHandleStructDeclaration(structPointer, RedProcedureParametersDeclaration_offsetof_structsDeclarations + (RedHandleStructDeclaration_sizeof * i), structsDeclarations)
+    pointerSetAtOffset_RedHandleStructDeclaration(structPointer, RedProcedureParametersDeclaration_offsetof_structsDeclarations + (RedHandleStructDeclaration_sizeof * i), structsDeclarations[i])
   }
   pointerSetAtOffset_RedHandleStructDeclaration(structPointer, RedProcedureParametersDeclaration_offsetof_handlesDeclaration, handlesDeclaration)
 }
@@ -1273,32 +1273,32 @@ fn RedProcedureState(
   pointerSetAtOffset_RedLogicOp(structPointer, RedProcedureState_offsetof_blendLogicOp, blendLogicOp)
   pointerSetAtOffset_RedBool32(structPointer, RedProcedureState_offsetof_blendConstantsDynamic, blendConstantsDynamic)
   for (var i = 0; i < len(blendConstantsStatic); i += 1) {
-    pointerSetAtOffset_float(structPointer, RedProcedureState_offsetof_blendConstantsStatic + (float_sizeof * i), blendConstantsStatic)
+    pointerSetAtOffset_float(structPointer, RedProcedureState_offsetof_blendConstantsStatic + (float_sizeof * i), blendConstantsStatic[i])
   }
   pointerSetAtOffset_unsigned(structPointer, RedProcedureState_offsetof_outputColorsCount, outputColorsCount)
   for (var i = 0; i < len(outputColorsWriteMask); i += 1) {
-    pointerSetAtOffset_RedColorComponentBitflags(structPointer, RedProcedureState_offsetof_outputColorsWriteMask + (RedColorComponentBitflags_sizeof * i), outputColorsWriteMask)
+    pointerSetAtOffset_RedColorComponentBitflags(structPointer, RedProcedureState_offsetof_outputColorsWriteMask + (RedColorComponentBitflags_sizeof * i), outputColorsWriteMask[i])
   }
   for (var i = 0; i < len(outputColorsBlendEnable); i += 1) {
-    pointerSetAtOffset_RedBool32(structPointer, RedProcedureState_offsetof_outputColorsBlendEnable + (RedBool32_sizeof * i), outputColorsBlendEnable)
+    pointerSetAtOffset_RedBool32(structPointer, RedProcedureState_offsetof_outputColorsBlendEnable + (RedBool32_sizeof * i), outputColorsBlendEnable[i])
   }
   for (var i = 0; i < len(outputColorsBlendColorFactorSource); i += 1) {
-    pointerSetAtOffset_RedBlendFactor(structPointer, RedProcedureState_offsetof_outputColorsBlendColorFactorSource + (RedBlendFactor_sizeof * i), outputColorsBlendColorFactorSource)
+    pointerSetAtOffset_RedBlendFactor(structPointer, RedProcedureState_offsetof_outputColorsBlendColorFactorSource + (RedBlendFactor_sizeof * i), outputColorsBlendColorFactorSource[i])
   }
   for (var i = 0; i < len(outputColorsBlendColorFactorTarget); i += 1) {
-    pointerSetAtOffset_RedBlendFactor(structPointer, RedProcedureState_offsetof_outputColorsBlendColorFactorTarget + (RedBlendFactor_sizeof * i), outputColorsBlendColorFactorTarget)
+    pointerSetAtOffset_RedBlendFactor(structPointer, RedProcedureState_offsetof_outputColorsBlendColorFactorTarget + (RedBlendFactor_sizeof * i), outputColorsBlendColorFactorTarget[i])
   }
   for (var i = 0; i < len(outputColorsBlendColorOp); i += 1) {
-    pointerSetAtOffset_RedBlendOp(structPointer, RedProcedureState_offsetof_outputColorsBlendColorOp + (RedBlendOp_sizeof * i), outputColorsBlendColorOp)
+    pointerSetAtOffset_RedBlendOp(structPointer, RedProcedureState_offsetof_outputColorsBlendColorOp + (RedBlendOp_sizeof * i), outputColorsBlendColorOp[i])
   }
   for (var i = 0; i < len(outputColorsBlendAlphaFactorSource); i += 1) {
-    pointerSetAtOffset_RedBlendFactor(structPointer, RedProcedureState_offsetof_outputColorsBlendAlphaFactorSource + (RedBlendFactor_sizeof * i), outputColorsBlendAlphaFactorSource)
+    pointerSetAtOffset_RedBlendFactor(structPointer, RedProcedureState_offsetof_outputColorsBlendAlphaFactorSource + (RedBlendFactor_sizeof * i), outputColorsBlendAlphaFactorSource[i])
   }
   for (var i = 0; i < len(outputColorsBlendAlphaFactorTarget); i += 1) {
-    pointerSetAtOffset_RedBlendFactor(structPointer, RedProcedureState_offsetof_outputColorsBlendAlphaFactorTarget + (RedBlendFactor_sizeof * i), outputColorsBlendAlphaFactorTarget)
+    pointerSetAtOffset_RedBlendFactor(structPointer, RedProcedureState_offsetof_outputColorsBlendAlphaFactorTarget + (RedBlendFactor_sizeof * i), outputColorsBlendAlphaFactorTarget[i])
   }
   for (var i = 0; i < len(outputColorsBlendAlphaOp); i += 1) {
-    pointerSetAtOffset_RedBlendOp(structPointer, RedProcedureState_offsetof_outputColorsBlendAlphaOp + (RedBlendOp_sizeof * i), outputColorsBlendAlphaOp)
+    pointerSetAtOffset_RedBlendOp(structPointer, RedProcedureState_offsetof_outputColorsBlendAlphaOp + (RedBlendOp_sizeof * i), outputColorsBlendAlphaOp[i])
   }
 }
 
@@ -1370,7 +1370,7 @@ fn RedStatuses(
   pointerSetAtOffset_const_char_p(structPointer, RedStatuses_offsetof_statusErrorFile, statusErrorFile)
   pointerSetAtOffset_int(structPointer, RedStatuses_offsetof_statusErrorLine, statusErrorLine)
   for (var i = 0; i < len(statusErrorDescription); i += 1) {
-    pointerSetAtOffset_char(structPointer, RedStatuses_offsetof_statusErrorDescription + (char_sizeof * i), statusErrorDescription)
+    pointerSetAtOffset_char(structPointer, RedStatuses_offsetof_statusErrorDescription + (char_sizeof * i), statusErrorDescription[i])
   }
 }
 

@@ -13,18 +13,18 @@ fn sg_bindings(
 {
   pointerSetAtOffset_uint32_t(structPointer, sg_bindings_offsetof__start_canary, _start_canary)
   for (var i = 0; i < len(vertex_buffersId); i += 1) {
-    pointerSetAtOffset_uint32_t(structPointer, sg_bindings_offsetof_vertex_buffers + (sg_buffer_sizeof * i) + sg_buffer_offsetof_id + (uint32_t_sizeof * 0), vertex_buffersId)
+    pointerSetAtOffset_uint32_t(structPointer, sg_bindings_offsetof_vertex_buffers + (sg_buffer_sizeof * i) + sg_buffer_offsetof_id + (uint32_t_sizeof * 0), vertex_buffersId[i])
   }
   for (var i = 0; i < len(vertex_buffer_offsets); i += 1) {
-    pointerSetAtOffset_int(structPointer, sg_bindings_offsetof_vertex_buffer_offsets + (int_sizeof * i), vertex_buffer_offsets)
+    pointerSetAtOffset_int(structPointer, sg_bindings_offsetof_vertex_buffer_offsets + (int_sizeof * i), vertex_buffer_offsets[i])
   }
   pointerSetAtOffset_uint32_t(structPointer, sg_bindings_offsetof_index_buffer + (sg_buffer_sizeof * 0) + sg_buffer_offsetof_id, index_bufferId)
   pointerSetAtOffset_int(structPointer, sg_bindings_offsetof_index_buffer_offset, index_buffer_offset)
   for (var i = 0; i < len(vs_imagesId); i += 1) {
-    pointerSetAtOffset_uint32_t(structPointer, sg_bindings_offsetof_vs_images + (sg_image_sizeof * i) + sg_image_offsetof_id + (uint32_t_sizeof * 0), vs_imagesId)
+    pointerSetAtOffset_uint32_t(structPointer, sg_bindings_offsetof_vs_images + (sg_image_sizeof * i) + sg_image_offsetof_id + (uint32_t_sizeof * 0), vs_imagesId[i])
   }
   for (var i = 0; i < len(fs_imagesId); i += 1) {
-    pointerSetAtOffset_uint32_t(structPointer, sg_bindings_offsetof_fs_images + (sg_image_sizeof * i) + sg_image_offsetof_id + (uint32_t_sizeof * 0), fs_imagesId)
+    pointerSetAtOffset_uint32_t(structPointer, sg_bindings_offsetof_fs_images + (sg_image_sizeof * i) + sg_image_offsetof_id + (uint32_t_sizeof * 0), fs_imagesId[i])
   }
   pointerSetAtOffset_uint32_t(structPointer, sg_bindings_offsetof__end_canary, _end_canary)
 }
@@ -84,10 +84,10 @@ fn sg_buffer_desc(
   pointerSetAtOffset_size_t(structPointer, sg_buffer_desc_offsetof_data + (sg_range_sizeof * 0) + sg_range_offsetof_size, dataSize)
   pointerSetAtOffset_const_char_p(structPointer, sg_buffer_desc_offsetof_label, label)
   for (var i = 0; i < len(gl_buffers); i += 1) {
-    pointerSetAtOffset_uint32_t(structPointer, sg_buffer_desc_offsetof_gl_buffers + (uint32_t_sizeof * i), gl_buffers)
+    pointerSetAtOffset_uint32_t(structPointer, sg_buffer_desc_offsetof_gl_buffers + (uint32_t_sizeof * i), gl_buffers[i])
   }
   for (var i = 0; i < len(mtl_buffers); i += 1) {
-    pointerSetAtOffset_const_void_p(structPointer, sg_buffer_desc_offsetof_mtl_buffers + (const_void_p_sizeof * i), mtl_buffers)
+    pointerSetAtOffset_const_void_p(structPointer, sg_buffer_desc_offsetof_mtl_buffers + (const_void_p_sizeof * i), mtl_buffers[i])
   }
   pointerSetAtOffset_const_void_p(structPointer, sg_buffer_desc_offsetof_d3d11_buffer, d3d11_buffer)
   pointerSetAtOffset_const_void_p(structPointer, sg_buffer_desc_offsetof_wgpu_buffer, wgpu_buffer)
@@ -436,10 +436,10 @@ fn sg_image_data(
 )
 {
   for (var i = 0; i < len(subimagePtr); i += 1) {
-    pointerSetAtOffset_const_void_p(structPointer, sg_image_data_offsetof_subimage + (sg_range_sizeof * i) + sg_range_offsetof_ptr + (const_void_p_sizeof * 0), subimagePtr)
+    pointerSetAtOffset_const_void_p(structPointer, sg_image_data_offsetof_subimage + (sg_range_sizeof * i) + sg_range_offsetof_ptr + (const_void_p_sizeof * 0), subimagePtr[i])
   }
   for (var i = 0; i < len(subimageSize); i += 1) {
-    pointerSetAtOffset_size_t(structPointer, sg_image_data_offsetof_subimage + (sg_range_sizeof * i) + sg_range_offsetof_size + (size_t_sizeof * 0), subimageSize)
+    pointerSetAtOffset_size_t(structPointer, sg_image_data_offsetof_subimage + (sg_range_sizeof * i) + sg_range_offsetof_size + (size_t_sizeof * 0), subimageSize[i])
   }
 }
 
@@ -497,18 +497,18 @@ fn sg_image_desc(
   pointerSetAtOffset_float(structPointer, sg_image_desc_offsetof_min_lod, min_lod)
   pointerSetAtOffset_float(structPointer, sg_image_desc_offsetof_max_lod, max_lod)
   for (var i = 0; i < len(dataSubimagePtr); i += 1) {
-    pointerSetAtOffset_const_void_p(structPointer, sg_image_desc_offsetof_data + (sg_image_data_sizeof * 0) + sg_image_data_offsetof_subimage + (sg_range_sizeof * i) + sg_range_offsetof_ptr + (const_void_p_sizeof * 0), dataSubimagePtr)
+    pointerSetAtOffset_const_void_p(structPointer, sg_image_desc_offsetof_data + (sg_image_data_sizeof * 0) + sg_image_data_offsetof_subimage + (sg_range_sizeof * i) + sg_range_offsetof_ptr + (const_void_p_sizeof * 0), dataSubimagePtr[i])
   }
   for (var i = 0; i < len(dataSubimageSize); i += 1) {
-    pointerSetAtOffset_size_t(structPointer, sg_image_desc_offsetof_data + (sg_image_data_sizeof * 0) + sg_image_data_offsetof_subimage + (sg_range_sizeof * i) + sg_range_offsetof_size + (size_t_sizeof * 0), dataSubimageSize)
+    pointerSetAtOffset_size_t(structPointer, sg_image_desc_offsetof_data + (sg_image_data_sizeof * 0) + sg_image_data_offsetof_subimage + (sg_range_sizeof * i) + sg_range_offsetof_size + (size_t_sizeof * 0), dataSubimageSize[i])
   }
   pointerSetAtOffset_const_char_p(structPointer, sg_image_desc_offsetof_label, label)
   for (var i = 0; i < len(gl_textures); i += 1) {
-    pointerSetAtOffset_uint32_t(structPointer, sg_image_desc_offsetof_gl_textures + (uint32_t_sizeof * i), gl_textures)
+    pointerSetAtOffset_uint32_t(structPointer, sg_image_desc_offsetof_gl_textures + (uint32_t_sizeof * i), gl_textures[i])
   }
   pointerSetAtOffset_uint32_t(structPointer, sg_image_desc_offsetof_gl_texture_target, gl_texture_target)
   for (var i = 0; i < len(mtl_textures); i += 1) {
-    pointerSetAtOffset_const_void_p(structPointer, sg_image_desc_offsetof_mtl_textures + (const_void_p_sizeof * i), mtl_textures)
+    pointerSetAtOffset_const_void_p(structPointer, sg_image_desc_offsetof_mtl_textures + (const_void_p_sizeof * i), mtl_textures[i])
   }
   pointerSetAtOffset_const_void_p(structPointer, sg_image_desc_offsetof_d3d11_texture, d3d11_texture)
   pointerSetAtOffset_const_void_p(structPointer, sg_image_desc_offsetof_d3d11_shader_resource_view, d3d11_shader_resource_view)
@@ -551,22 +551,22 @@ fn sg_layout_desc(
 )
 {
   for (var i = 0; i < len(buffersStride); i += 1) {
-    pointerSetAtOffset_int(structPointer, sg_layout_desc_offsetof_buffers + (sg_buffer_layout_desc_sizeof * i) + sg_buffer_layout_desc_offsetof_stride + (int_sizeof * 0), buffersStride)
+    pointerSetAtOffset_int(structPointer, sg_layout_desc_offsetof_buffers + (sg_buffer_layout_desc_sizeof * i) + sg_buffer_layout_desc_offsetof_stride + (int_sizeof * 0), buffersStride[i])
   }
   for (var i = 0; i < len(buffersStep_func); i += 1) {
-    pointerSetAtOffset_sg_vertex_step(structPointer, sg_layout_desc_offsetof_buffers + (sg_buffer_layout_desc_sizeof * i) + sg_buffer_layout_desc_offsetof_step_func + (sg_vertex_step_sizeof * 0), buffersStep_func)
+    pointerSetAtOffset_sg_vertex_step(structPointer, sg_layout_desc_offsetof_buffers + (sg_buffer_layout_desc_sizeof * i) + sg_buffer_layout_desc_offsetof_step_func + (sg_vertex_step_sizeof * 0), buffersStep_func[i])
   }
   for (var i = 0; i < len(buffersStep_rate); i += 1) {
-    pointerSetAtOffset_int(structPointer, sg_layout_desc_offsetof_buffers + (sg_buffer_layout_desc_sizeof * i) + sg_buffer_layout_desc_offsetof_step_rate + (int_sizeof * 0), buffersStep_rate)
+    pointerSetAtOffset_int(structPointer, sg_layout_desc_offsetof_buffers + (sg_buffer_layout_desc_sizeof * i) + sg_buffer_layout_desc_offsetof_step_rate + (int_sizeof * 0), buffersStep_rate[i])
   }
   for (var i = 0; i < len(attrsBuffer_index); i += 1) {
-    pointerSetAtOffset_int(structPointer, sg_layout_desc_offsetof_attrs + (sg_vertex_attr_desc_sizeof * i) + sg_vertex_attr_desc_offsetof_buffer_index + (int_sizeof * 0), attrsBuffer_index)
+    pointerSetAtOffset_int(structPointer, sg_layout_desc_offsetof_attrs + (sg_vertex_attr_desc_sizeof * i) + sg_vertex_attr_desc_offsetof_buffer_index + (int_sizeof * 0), attrsBuffer_index[i])
   }
   for (var i = 0; i < len(attrsOffset); i += 1) {
-    pointerSetAtOffset_int(structPointer, sg_layout_desc_offsetof_attrs + (sg_vertex_attr_desc_sizeof * i) + sg_vertex_attr_desc_offsetof_offset + (int_sizeof * 0), attrsOffset)
+    pointerSetAtOffset_int(structPointer, sg_layout_desc_offsetof_attrs + (sg_vertex_attr_desc_sizeof * i) + sg_vertex_attr_desc_offsetof_offset + (int_sizeof * 0), attrsOffset[i])
   }
   for (var i = 0; i < len(attrsFormat); i += 1) {
-    pointerSetAtOffset_sg_vertex_format(structPointer, sg_layout_desc_offsetof_attrs + (sg_vertex_attr_desc_sizeof * i) + sg_vertex_attr_desc_offsetof_format + (sg_vertex_format_sizeof * 0), attrsFormat)
+    pointerSetAtOffset_sg_vertex_format(structPointer, sg_layout_desc_offsetof_attrs + (sg_vertex_attr_desc_sizeof * i) + sg_vertex_attr_desc_offsetof_format + (sg_vertex_format_sizeof * 0), attrsFormat[i])
   }
 }
 
@@ -682,13 +682,13 @@ fn sg_pass_attachment_desc(
   structPointer, // Number structPointer
   imageId, // Number imageId
   mip_level, // Number mip_level
-  _slice, // Number slice
+  slice, // Number slice
   setTo0 // Number setTo0
 )
 {
   pointerSetAtOffset_uint32_t(structPointer, sg_pass_attachment_desc_offsetof_image + (sg_image_sizeof * 0) + sg_image_offsetof_id, imageId)
   pointerSetAtOffset_int(structPointer, sg_pass_attachment_desc_offsetof_mip_level, mip_level)
-  pointerSetAtOffset_int(structPointer, sg_pass_attachment_desc_offsetof_slice, _slice)
+  pointerSetAtOffset_int(structPointer, sg_pass_attachment_desc_offsetof_slice, slice)
 }
 
 fn sg_pass_desc(
@@ -839,22 +839,22 @@ fn sg_pipeline_desc(
   pointerSetAtOffset_uint32_t(structPointer, sg_pipeline_desc_offsetof__start_canary, _start_canary)
   pointerSetAtOffset_uint32_t(structPointer, sg_pipeline_desc_offsetof_shader + (sg_shader_sizeof * 0) + sg_shader_offsetof_id, shaderId)
   for (var i = 0; i < len(layoutBuffersStride); i += 1) {
-    pointerSetAtOffset_int(structPointer, sg_pipeline_desc_offsetof_layout + (sg_layout_desc_sizeof * 0) + sg_layout_desc_offsetof_buffers + (sg_buffer_layout_desc_sizeof * i) + sg_buffer_layout_desc_offsetof_stride + (int_sizeof * 0), layoutBuffersStride)
+    pointerSetAtOffset_int(structPointer, sg_pipeline_desc_offsetof_layout + (sg_layout_desc_sizeof * 0) + sg_layout_desc_offsetof_buffers + (sg_buffer_layout_desc_sizeof * i) + sg_buffer_layout_desc_offsetof_stride + (int_sizeof * 0), layoutBuffersStride[i])
   }
   for (var i = 0; i < len(layoutBuffersStep_func); i += 1) {
-    pointerSetAtOffset_sg_vertex_step(structPointer, sg_pipeline_desc_offsetof_layout + (sg_layout_desc_sizeof * 0) + sg_layout_desc_offsetof_buffers + (sg_buffer_layout_desc_sizeof * i) + sg_buffer_layout_desc_offsetof_step_func + (sg_vertex_step_sizeof * 0), layoutBuffersStep_func)
+    pointerSetAtOffset_sg_vertex_step(structPointer, sg_pipeline_desc_offsetof_layout + (sg_layout_desc_sizeof * 0) + sg_layout_desc_offsetof_buffers + (sg_buffer_layout_desc_sizeof * i) + sg_buffer_layout_desc_offsetof_step_func + (sg_vertex_step_sizeof * 0), layoutBuffersStep_func[i])
   }
   for (var i = 0; i < len(layoutBuffersStep_rate); i += 1) {
-    pointerSetAtOffset_int(structPointer, sg_pipeline_desc_offsetof_layout + (sg_layout_desc_sizeof * 0) + sg_layout_desc_offsetof_buffers + (sg_buffer_layout_desc_sizeof * i) + sg_buffer_layout_desc_offsetof_step_rate + (int_sizeof * 0), layoutBuffersStep_rate)
+    pointerSetAtOffset_int(structPointer, sg_pipeline_desc_offsetof_layout + (sg_layout_desc_sizeof * 0) + sg_layout_desc_offsetof_buffers + (sg_buffer_layout_desc_sizeof * i) + sg_buffer_layout_desc_offsetof_step_rate + (int_sizeof * 0), layoutBuffersStep_rate[i])
   }
   for (var i = 0; i < len(layoutAttrsBuffer_index); i += 1) {
-    pointerSetAtOffset_int(structPointer, sg_pipeline_desc_offsetof_layout + (sg_layout_desc_sizeof * 0) + sg_layout_desc_offsetof_attrs + (sg_vertex_attr_desc_sizeof * i) + sg_vertex_attr_desc_offsetof_buffer_index + (int_sizeof * 0), layoutAttrsBuffer_index)
+    pointerSetAtOffset_int(structPointer, sg_pipeline_desc_offsetof_layout + (sg_layout_desc_sizeof * 0) + sg_layout_desc_offsetof_attrs + (sg_vertex_attr_desc_sizeof * i) + sg_vertex_attr_desc_offsetof_buffer_index + (int_sizeof * 0), layoutAttrsBuffer_index[i])
   }
   for (var i = 0; i < len(layoutAttrsOffset); i += 1) {
-    pointerSetAtOffset_int(structPointer, sg_pipeline_desc_offsetof_layout + (sg_layout_desc_sizeof * 0) + sg_layout_desc_offsetof_attrs + (sg_vertex_attr_desc_sizeof * i) + sg_vertex_attr_desc_offsetof_offset + (int_sizeof * 0), layoutAttrsOffset)
+    pointerSetAtOffset_int(structPointer, sg_pipeline_desc_offsetof_layout + (sg_layout_desc_sizeof * 0) + sg_layout_desc_offsetof_attrs + (sg_vertex_attr_desc_sizeof * i) + sg_vertex_attr_desc_offsetof_offset + (int_sizeof * 0), layoutAttrsOffset[i])
   }
   for (var i = 0; i < len(layoutAttrsFormat); i += 1) {
-    pointerSetAtOffset_sg_vertex_format(structPointer, sg_pipeline_desc_offsetof_layout + (sg_layout_desc_sizeof * 0) + sg_layout_desc_offsetof_attrs + (sg_vertex_attr_desc_sizeof * i) + sg_vertex_attr_desc_offsetof_format + (sg_vertex_format_sizeof * 0), layoutAttrsFormat)
+    pointerSetAtOffset_sg_vertex_format(structPointer, sg_pipeline_desc_offsetof_layout + (sg_layout_desc_sizeof * 0) + sg_layout_desc_offsetof_attrs + (sg_vertex_attr_desc_sizeof * i) + sg_vertex_attr_desc_offsetof_format + (sg_vertex_format_sizeof * 0), layoutAttrsFormat[i])
   }
   pointerSetAtOffset_sg_pixel_format(structPointer, sg_pipeline_desc_offsetof_depth + (sg_depth_state_sizeof * 0) + sg_depth_state_offsetof_pixel_format, depthPixel_format)
   pointerSetAtOffset_sg_compare_func(structPointer, sg_pipeline_desc_offsetof_depth + (sg_depth_state_sizeof * 0) + sg_depth_state_offsetof_compare, depthCompare)
@@ -1059,13 +1059,13 @@ fn sg_shader_desc(
 {
   pointerSetAtOffset_uint32_t(structPointer, sg_shader_desc_offsetof__start_canary, _start_canary)
   for (var i = 0; i < len(attrsName); i += 1) {
-    pointerSetAtOffset_const_char_p(structPointer, sg_shader_desc_offsetof_attrs + (sg_shader_attr_desc_sizeof * i) + sg_shader_attr_desc_offsetof_name + (const_char_p_sizeof * 0), attrsName)
+    pointerSetAtOffset_const_char_p(structPointer, sg_shader_desc_offsetof_attrs + (sg_shader_attr_desc_sizeof * i) + sg_shader_attr_desc_offsetof_name + (const_char_p_sizeof * 0), attrsName[i])
   }
   for (var i = 0; i < len(attrsSem_name); i += 1) {
-    pointerSetAtOffset_const_char_p(structPointer, sg_shader_desc_offsetof_attrs + (sg_shader_attr_desc_sizeof * i) + sg_shader_attr_desc_offsetof_sem_name + (const_char_p_sizeof * 0), attrsSem_name)
+    pointerSetAtOffset_const_char_p(structPointer, sg_shader_desc_offsetof_attrs + (sg_shader_attr_desc_sizeof * i) + sg_shader_attr_desc_offsetof_sem_name + (const_char_p_sizeof * 0), attrsSem_name[i])
   }
   for (var i = 0; i < len(attrsSem_index); i += 1) {
-    pointerSetAtOffset_int(structPointer, sg_shader_desc_offsetof_attrs + (sg_shader_attr_desc_sizeof * i) + sg_shader_attr_desc_offsetof_sem_index + (int_sizeof * 0), attrsSem_index)
+    pointerSetAtOffset_int(structPointer, sg_shader_desc_offsetof_attrs + (sg_shader_attr_desc_sizeof * i) + sg_shader_attr_desc_offsetof_sem_index + (int_sizeof * 0), attrsSem_index[i])
   }
   pointerSetAtOffset_const_char_p(structPointer, sg_shader_desc_offsetof_vs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_source, vsSource)
   pointerSetAtOffset_const_void_p(structPointer, sg_shader_desc_offsetof_vs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_bytecode + (sg_range_sizeof * 0) + sg_range_offsetof_ptr, vsBytecodePtr)
@@ -1075,55 +1075,55 @@ fn sg_shader_desc(
   pointerSetAtOffset_size_t(structPointer, sg_shader_desc_offsetof_vs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 0) + sg_shader_uniform_block_desc_offsetof_size, vsUniform_blocks0Size)
   pointerSetAtOffset_sg_uniform_layout(structPointer, sg_shader_desc_offsetof_vs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 0) + sg_shader_uniform_block_desc_offsetof_layout, vsUniform_blocks0Layout)
   for (var i = 0; i < len(vsUniform_blocks0UniformsName); i += 1) {
-    pointerSetAtOffset_const_char_p(structPointer, sg_shader_desc_offsetof_vs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 0) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_name + (const_char_p_sizeof * 0), vsUniform_blocks0UniformsName)
+    pointerSetAtOffset_const_char_p(structPointer, sg_shader_desc_offsetof_vs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 0) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_name + (const_char_p_sizeof * 0), vsUniform_blocks0UniformsName[i])
   }
   for (var i = 0; i < len(vsUniform_blocks0UniformsType); i += 1) {
-    pointerSetAtOffset_sg_uniform_type(structPointer, sg_shader_desc_offsetof_vs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 0) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_type + (sg_uniform_type_sizeof * 0), vsUniform_blocks0UniformsType)
+    pointerSetAtOffset_sg_uniform_type(structPointer, sg_shader_desc_offsetof_vs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 0) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_type + (sg_uniform_type_sizeof * 0), vsUniform_blocks0UniformsType[i])
   }
   for (var i = 0; i < len(vsUniform_blocks0UniformsArray_count); i += 1) {
-    pointerSetAtOffset_int(structPointer, sg_shader_desc_offsetof_vs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 0) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_array_count + (int_sizeof * 0), vsUniform_blocks0UniformsArray_count)
+    pointerSetAtOffset_int(structPointer, sg_shader_desc_offsetof_vs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 0) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_array_count + (int_sizeof * 0), vsUniform_blocks0UniformsArray_count[i])
   }
   pointerSetAtOffset_size_t(structPointer, sg_shader_desc_offsetof_vs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 1) + sg_shader_uniform_block_desc_offsetof_size, vsUniform_blocks1Size)
   pointerSetAtOffset_sg_uniform_layout(structPointer, sg_shader_desc_offsetof_vs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 1) + sg_shader_uniform_block_desc_offsetof_layout, vsUniform_blocks1Layout)
   for (var i = 0; i < len(vsUniform_blocks1UniformsName); i += 1) {
-    pointerSetAtOffset_const_char_p(structPointer, sg_shader_desc_offsetof_vs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 1) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_name + (const_char_p_sizeof * 0), vsUniform_blocks1UniformsName)
+    pointerSetAtOffset_const_char_p(structPointer, sg_shader_desc_offsetof_vs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 1) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_name + (const_char_p_sizeof * 0), vsUniform_blocks1UniformsName[i])
   }
   for (var i = 0; i < len(vsUniform_blocks1UniformsType); i += 1) {
-    pointerSetAtOffset_sg_uniform_type(structPointer, sg_shader_desc_offsetof_vs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 1) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_type + (sg_uniform_type_sizeof * 0), vsUniform_blocks1UniformsType)
+    pointerSetAtOffset_sg_uniform_type(structPointer, sg_shader_desc_offsetof_vs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 1) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_type + (sg_uniform_type_sizeof * 0), vsUniform_blocks1UniformsType[i])
   }
   for (var i = 0; i < len(vsUniform_blocks1UniformsArray_count); i += 1) {
-    pointerSetAtOffset_int(structPointer, sg_shader_desc_offsetof_vs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 1) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_array_count + (int_sizeof * 0), vsUniform_blocks1UniformsArray_count)
+    pointerSetAtOffset_int(structPointer, sg_shader_desc_offsetof_vs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 1) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_array_count + (int_sizeof * 0), vsUniform_blocks1UniformsArray_count[i])
   }
   pointerSetAtOffset_size_t(structPointer, sg_shader_desc_offsetof_vs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 2) + sg_shader_uniform_block_desc_offsetof_size, vsUniform_blocks2Size)
   pointerSetAtOffset_sg_uniform_layout(structPointer, sg_shader_desc_offsetof_vs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 2) + sg_shader_uniform_block_desc_offsetof_layout, vsUniform_blocks2Layout)
   for (var i = 0; i < len(vsUniform_blocks2UniformsName); i += 1) {
-    pointerSetAtOffset_const_char_p(structPointer, sg_shader_desc_offsetof_vs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 2) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_name + (const_char_p_sizeof * 0), vsUniform_blocks2UniformsName)
+    pointerSetAtOffset_const_char_p(structPointer, sg_shader_desc_offsetof_vs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 2) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_name + (const_char_p_sizeof * 0), vsUniform_blocks2UniformsName[i])
   }
   for (var i = 0; i < len(vsUniform_blocks2UniformsType); i += 1) {
-    pointerSetAtOffset_sg_uniform_type(structPointer, sg_shader_desc_offsetof_vs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 2) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_type + (sg_uniform_type_sizeof * 0), vsUniform_blocks2UniformsType)
+    pointerSetAtOffset_sg_uniform_type(structPointer, sg_shader_desc_offsetof_vs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 2) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_type + (sg_uniform_type_sizeof * 0), vsUniform_blocks2UniformsType[i])
   }
   for (var i = 0; i < len(vsUniform_blocks2UniformsArray_count); i += 1) {
-    pointerSetAtOffset_int(structPointer, sg_shader_desc_offsetof_vs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 2) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_array_count + (int_sizeof * 0), vsUniform_blocks2UniformsArray_count)
+    pointerSetAtOffset_int(structPointer, sg_shader_desc_offsetof_vs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 2) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_array_count + (int_sizeof * 0), vsUniform_blocks2UniformsArray_count[i])
   }
   pointerSetAtOffset_size_t(structPointer, sg_shader_desc_offsetof_vs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 3) + sg_shader_uniform_block_desc_offsetof_size, vsUniform_blocks3Size)
   pointerSetAtOffset_sg_uniform_layout(structPointer, sg_shader_desc_offsetof_vs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 3) + sg_shader_uniform_block_desc_offsetof_layout, vsUniform_blocks3Layout)
   for (var i = 0; i < len(vsUniform_blocks3UniformsName); i += 1) {
-    pointerSetAtOffset_const_char_p(structPointer, sg_shader_desc_offsetof_vs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 3) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_name + (const_char_p_sizeof * 0), vsUniform_blocks3UniformsName)
+    pointerSetAtOffset_const_char_p(structPointer, sg_shader_desc_offsetof_vs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 3) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_name + (const_char_p_sizeof * 0), vsUniform_blocks3UniformsName[i])
   }
   for (var i = 0; i < len(vsUniform_blocks3UniformsType); i += 1) {
-    pointerSetAtOffset_sg_uniform_type(structPointer, sg_shader_desc_offsetof_vs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 3) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_type + (sg_uniform_type_sizeof * 0), vsUniform_blocks3UniformsType)
+    pointerSetAtOffset_sg_uniform_type(structPointer, sg_shader_desc_offsetof_vs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 3) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_type + (sg_uniform_type_sizeof * 0), vsUniform_blocks3UniformsType[i])
   }
   for (var i = 0; i < len(vsUniform_blocks3UniformsArray_count); i += 1) {
-    pointerSetAtOffset_int(structPointer, sg_shader_desc_offsetof_vs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 3) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_array_count + (int_sizeof * 0), vsUniform_blocks3UniformsArray_count)
+    pointerSetAtOffset_int(structPointer, sg_shader_desc_offsetof_vs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 3) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_array_count + (int_sizeof * 0), vsUniform_blocks3UniformsArray_count[i])
   }
   for (var i = 0; i < len(vsImagesName); i += 1) {
-    pointerSetAtOffset_const_char_p(structPointer, sg_shader_desc_offsetof_vs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_images + (sg_shader_image_desc_sizeof * i) + sg_shader_image_desc_offsetof_name + (const_char_p_sizeof * 0), vsImagesName)
+    pointerSetAtOffset_const_char_p(structPointer, sg_shader_desc_offsetof_vs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_images + (sg_shader_image_desc_sizeof * i) + sg_shader_image_desc_offsetof_name + (const_char_p_sizeof * 0), vsImagesName[i])
   }
   for (var i = 0; i < len(vsImagesImage_type); i += 1) {
-    pointerSetAtOffset_sg_image_type(structPointer, sg_shader_desc_offsetof_vs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_images + (sg_shader_image_desc_sizeof * i) + sg_shader_image_desc_offsetof_image_type + (sg_image_type_sizeof * 0), vsImagesImage_type)
+    pointerSetAtOffset_sg_image_type(structPointer, sg_shader_desc_offsetof_vs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_images + (sg_shader_image_desc_sizeof * i) + sg_shader_image_desc_offsetof_image_type + (sg_image_type_sizeof * 0), vsImagesImage_type[i])
   }
   for (var i = 0; i < len(vsImagesSampler_type); i += 1) {
-    pointerSetAtOffset_sg_sampler_type(structPointer, sg_shader_desc_offsetof_vs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_images + (sg_shader_image_desc_sizeof * i) + sg_shader_image_desc_offsetof_sampler_type + (sg_sampler_type_sizeof * 0), vsImagesSampler_type)
+    pointerSetAtOffset_sg_sampler_type(structPointer, sg_shader_desc_offsetof_vs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_images + (sg_shader_image_desc_sizeof * i) + sg_shader_image_desc_offsetof_sampler_type + (sg_sampler_type_sizeof * 0), vsImagesSampler_type[i])
   }
   pointerSetAtOffset_const_char_p(structPointer, sg_shader_desc_offsetof_fs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_source, fsSource)
   pointerSetAtOffset_const_void_p(structPointer, sg_shader_desc_offsetof_fs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_bytecode + (sg_range_sizeof * 0) + sg_range_offsetof_ptr, fsBytecodePtr)
@@ -1133,55 +1133,55 @@ fn sg_shader_desc(
   pointerSetAtOffset_size_t(structPointer, sg_shader_desc_offsetof_fs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 0) + sg_shader_uniform_block_desc_offsetof_size, fsUniform_blocks0Size)
   pointerSetAtOffset_sg_uniform_layout(structPointer, sg_shader_desc_offsetof_fs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 0) + sg_shader_uniform_block_desc_offsetof_layout, fsUniform_blocks0Layout)
   for (var i = 0; i < len(fsUniform_blocks0UniformsName); i += 1) {
-    pointerSetAtOffset_const_char_p(structPointer, sg_shader_desc_offsetof_fs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 0) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_name + (const_char_p_sizeof * 0), fsUniform_blocks0UniformsName)
+    pointerSetAtOffset_const_char_p(structPointer, sg_shader_desc_offsetof_fs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 0) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_name + (const_char_p_sizeof * 0), fsUniform_blocks0UniformsName[i])
   }
   for (var i = 0; i < len(fsUniform_blocks0UniformsType); i += 1) {
-    pointerSetAtOffset_sg_uniform_type(structPointer, sg_shader_desc_offsetof_fs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 0) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_type + (sg_uniform_type_sizeof * 0), fsUniform_blocks0UniformsType)
+    pointerSetAtOffset_sg_uniform_type(structPointer, sg_shader_desc_offsetof_fs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 0) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_type + (sg_uniform_type_sizeof * 0), fsUniform_blocks0UniformsType[i])
   }
   for (var i = 0; i < len(fsUniform_blocks0UniformsArray_count); i += 1) {
-    pointerSetAtOffset_int(structPointer, sg_shader_desc_offsetof_fs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 0) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_array_count + (int_sizeof * 0), fsUniform_blocks0UniformsArray_count)
+    pointerSetAtOffset_int(structPointer, sg_shader_desc_offsetof_fs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 0) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_array_count + (int_sizeof * 0), fsUniform_blocks0UniformsArray_count[i])
   }
   pointerSetAtOffset_size_t(structPointer, sg_shader_desc_offsetof_fs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 1) + sg_shader_uniform_block_desc_offsetof_size, fsUniform_blocks1Size)
   pointerSetAtOffset_sg_uniform_layout(structPointer, sg_shader_desc_offsetof_fs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 1) + sg_shader_uniform_block_desc_offsetof_layout, fsUniform_blocks1Layout)
   for (var i = 0; i < len(fsUniform_blocks1UniformsName); i += 1) {
-    pointerSetAtOffset_const_char_p(structPointer, sg_shader_desc_offsetof_fs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 1) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_name + (const_char_p_sizeof * 0), fsUniform_blocks1UniformsName)
+    pointerSetAtOffset_const_char_p(structPointer, sg_shader_desc_offsetof_fs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 1) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_name + (const_char_p_sizeof * 0), fsUniform_blocks1UniformsName[i])
   }
   for (var i = 0; i < len(fsUniform_blocks1UniformsType); i += 1) {
-    pointerSetAtOffset_sg_uniform_type(structPointer, sg_shader_desc_offsetof_fs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 1) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_type + (sg_uniform_type_sizeof * 0), fsUniform_blocks1UniformsType)
+    pointerSetAtOffset_sg_uniform_type(structPointer, sg_shader_desc_offsetof_fs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 1) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_type + (sg_uniform_type_sizeof * 0), fsUniform_blocks1UniformsType[i])
   }
   for (var i = 0; i < len(fsUniform_blocks1UniformsArray_count); i += 1) {
-    pointerSetAtOffset_int(structPointer, sg_shader_desc_offsetof_fs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 1) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_array_count + (int_sizeof * 0), fsUniform_blocks1UniformsArray_count)
+    pointerSetAtOffset_int(structPointer, sg_shader_desc_offsetof_fs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 1) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_array_count + (int_sizeof * 0), fsUniform_blocks1UniformsArray_count[i])
   }
   pointerSetAtOffset_size_t(structPointer, sg_shader_desc_offsetof_fs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 2) + sg_shader_uniform_block_desc_offsetof_size, fsUniform_blocks2Size)
   pointerSetAtOffset_sg_uniform_layout(structPointer, sg_shader_desc_offsetof_fs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 2) + sg_shader_uniform_block_desc_offsetof_layout, fsUniform_blocks2Layout)
   for (var i = 0; i < len(fsUniform_blocks2UniformsName); i += 1) {
-    pointerSetAtOffset_const_char_p(structPointer, sg_shader_desc_offsetof_fs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 2) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_name + (const_char_p_sizeof * 0), fsUniform_blocks2UniformsName)
+    pointerSetAtOffset_const_char_p(structPointer, sg_shader_desc_offsetof_fs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 2) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_name + (const_char_p_sizeof * 0), fsUniform_blocks2UniformsName[i])
   }
   for (var i = 0; i < len(fsUniform_blocks2UniformsType); i += 1) {
-    pointerSetAtOffset_sg_uniform_type(structPointer, sg_shader_desc_offsetof_fs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 2) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_type + (sg_uniform_type_sizeof * 0), fsUniform_blocks2UniformsType)
+    pointerSetAtOffset_sg_uniform_type(structPointer, sg_shader_desc_offsetof_fs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 2) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_type + (sg_uniform_type_sizeof * 0), fsUniform_blocks2UniformsType[i])
   }
   for (var i = 0; i < len(fsUniform_blocks2UniformsArray_count); i += 1) {
-    pointerSetAtOffset_int(structPointer, sg_shader_desc_offsetof_fs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 2) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_array_count + (int_sizeof * 0), fsUniform_blocks2UniformsArray_count)
+    pointerSetAtOffset_int(structPointer, sg_shader_desc_offsetof_fs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 2) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_array_count + (int_sizeof * 0), fsUniform_blocks2UniformsArray_count[i])
   }
   pointerSetAtOffset_size_t(structPointer, sg_shader_desc_offsetof_fs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 3) + sg_shader_uniform_block_desc_offsetof_size, fsUniform_blocks3Size)
   pointerSetAtOffset_sg_uniform_layout(structPointer, sg_shader_desc_offsetof_fs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 3) + sg_shader_uniform_block_desc_offsetof_layout, fsUniform_blocks3Layout)
   for (var i = 0; i < len(fsUniform_blocks3UniformsName); i += 1) {
-    pointerSetAtOffset_const_char_p(structPointer, sg_shader_desc_offsetof_fs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 3) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_name + (const_char_p_sizeof * 0), fsUniform_blocks3UniformsName)
+    pointerSetAtOffset_const_char_p(structPointer, sg_shader_desc_offsetof_fs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 3) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_name + (const_char_p_sizeof * 0), fsUniform_blocks3UniformsName[i])
   }
   for (var i = 0; i < len(fsUniform_blocks3UniformsType); i += 1) {
-    pointerSetAtOffset_sg_uniform_type(structPointer, sg_shader_desc_offsetof_fs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 3) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_type + (sg_uniform_type_sizeof * 0), fsUniform_blocks3UniformsType)
+    pointerSetAtOffset_sg_uniform_type(structPointer, sg_shader_desc_offsetof_fs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 3) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_type + (sg_uniform_type_sizeof * 0), fsUniform_blocks3UniformsType[i])
   }
   for (var i = 0; i < len(fsUniform_blocks3UniformsArray_count); i += 1) {
-    pointerSetAtOffset_int(structPointer, sg_shader_desc_offsetof_fs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 3) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_array_count + (int_sizeof * 0), fsUniform_blocks3UniformsArray_count)
+    pointerSetAtOffset_int(structPointer, sg_shader_desc_offsetof_fs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 3) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_array_count + (int_sizeof * 0), fsUniform_blocks3UniformsArray_count[i])
   }
   for (var i = 0; i < len(fsImagesName); i += 1) {
-    pointerSetAtOffset_const_char_p(structPointer, sg_shader_desc_offsetof_fs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_images + (sg_shader_image_desc_sizeof * i) + sg_shader_image_desc_offsetof_name + (const_char_p_sizeof * 0), fsImagesName)
+    pointerSetAtOffset_const_char_p(structPointer, sg_shader_desc_offsetof_fs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_images + (sg_shader_image_desc_sizeof * i) + sg_shader_image_desc_offsetof_name + (const_char_p_sizeof * 0), fsImagesName[i])
   }
   for (var i = 0; i < len(fsImagesImage_type); i += 1) {
-    pointerSetAtOffset_sg_image_type(structPointer, sg_shader_desc_offsetof_fs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_images + (sg_shader_image_desc_sizeof * i) + sg_shader_image_desc_offsetof_image_type + (sg_image_type_sizeof * 0), fsImagesImage_type)
+    pointerSetAtOffset_sg_image_type(structPointer, sg_shader_desc_offsetof_fs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_images + (sg_shader_image_desc_sizeof * i) + sg_shader_image_desc_offsetof_image_type + (sg_image_type_sizeof * 0), fsImagesImage_type[i])
   }
   for (var i = 0; i < len(fsImagesSampler_type); i += 1) {
-    pointerSetAtOffset_sg_sampler_type(structPointer, sg_shader_desc_offsetof_fs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_images + (sg_shader_image_desc_sizeof * i) + sg_shader_image_desc_offsetof_sampler_type + (sg_sampler_type_sizeof * 0), fsImagesSampler_type)
+    pointerSetAtOffset_sg_sampler_type(structPointer, sg_shader_desc_offsetof_fs + (sg_shader_stage_desc_sizeof * 0) + sg_shader_stage_desc_offsetof_images + (sg_shader_image_desc_sizeof * i) + sg_shader_image_desc_offsetof_sampler_type + (sg_sampler_type_sizeof * 0), fsImagesSampler_type[i])
   }
   pointerSetAtOffset_const_char_p(structPointer, sg_shader_desc_offsetof_label, label)
   pointerSetAtOffset_uint32_t(structPointer, sg_shader_desc_offsetof__end_canary, _end_canary)
@@ -1254,55 +1254,55 @@ fn sg_shader_stage_desc(
   pointerSetAtOffset_size_t(structPointer, sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 0) + sg_shader_uniform_block_desc_offsetof_size, uniform_blocks0Size)
   pointerSetAtOffset_sg_uniform_layout(structPointer, sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 0) + sg_shader_uniform_block_desc_offsetof_layout, uniform_blocks0Layout)
   for (var i = 0; i < len(uniform_blocks0UniformsName); i += 1) {
-    pointerSetAtOffset_const_char_p(structPointer, sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 0) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_name + (const_char_p_sizeof * 0), uniform_blocks0UniformsName)
+    pointerSetAtOffset_const_char_p(structPointer, sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 0) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_name + (const_char_p_sizeof * 0), uniform_blocks0UniformsName[i])
   }
   for (var i = 0; i < len(uniform_blocks0UniformsType); i += 1) {
-    pointerSetAtOffset_sg_uniform_type(structPointer, sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 0) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_type + (sg_uniform_type_sizeof * 0), uniform_blocks0UniformsType)
+    pointerSetAtOffset_sg_uniform_type(structPointer, sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 0) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_type + (sg_uniform_type_sizeof * 0), uniform_blocks0UniformsType[i])
   }
   for (var i = 0; i < len(uniform_blocks0UniformsArray_count); i += 1) {
-    pointerSetAtOffset_int(structPointer, sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 0) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_array_count + (int_sizeof * 0), uniform_blocks0UniformsArray_count)
+    pointerSetAtOffset_int(structPointer, sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 0) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_array_count + (int_sizeof * 0), uniform_blocks0UniformsArray_count[i])
   }
   pointerSetAtOffset_size_t(structPointer, sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 1) + sg_shader_uniform_block_desc_offsetof_size, uniform_blocks1Size)
   pointerSetAtOffset_sg_uniform_layout(structPointer, sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 1) + sg_shader_uniform_block_desc_offsetof_layout, uniform_blocks1Layout)
   for (var i = 0; i < len(uniform_blocks1UniformsName); i += 1) {
-    pointerSetAtOffset_const_char_p(structPointer, sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 1) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_name + (const_char_p_sizeof * 0), uniform_blocks1UniformsName)
+    pointerSetAtOffset_const_char_p(structPointer, sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 1) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_name + (const_char_p_sizeof * 0), uniform_blocks1UniformsName[i])
   }
   for (var i = 0; i < len(uniform_blocks1UniformsType); i += 1) {
-    pointerSetAtOffset_sg_uniform_type(structPointer, sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 1) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_type + (sg_uniform_type_sizeof * 0), uniform_blocks1UniformsType)
+    pointerSetAtOffset_sg_uniform_type(structPointer, sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 1) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_type + (sg_uniform_type_sizeof * 0), uniform_blocks1UniformsType[i])
   }
   for (var i = 0; i < len(uniform_blocks1UniformsArray_count); i += 1) {
-    pointerSetAtOffset_int(structPointer, sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 1) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_array_count + (int_sizeof * 0), uniform_blocks1UniformsArray_count)
+    pointerSetAtOffset_int(structPointer, sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 1) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_array_count + (int_sizeof * 0), uniform_blocks1UniformsArray_count[i])
   }
   pointerSetAtOffset_size_t(structPointer, sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 2) + sg_shader_uniform_block_desc_offsetof_size, uniform_blocks2Size)
   pointerSetAtOffset_sg_uniform_layout(structPointer, sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 2) + sg_shader_uniform_block_desc_offsetof_layout, uniform_blocks2Layout)
   for (var i = 0; i < len(uniform_blocks2UniformsName); i += 1) {
-    pointerSetAtOffset_const_char_p(structPointer, sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 2) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_name + (const_char_p_sizeof * 0), uniform_blocks2UniformsName)
+    pointerSetAtOffset_const_char_p(structPointer, sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 2) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_name + (const_char_p_sizeof * 0), uniform_blocks2UniformsName[i])
   }
   for (var i = 0; i < len(uniform_blocks2UniformsType); i += 1) {
-    pointerSetAtOffset_sg_uniform_type(structPointer, sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 2) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_type + (sg_uniform_type_sizeof * 0), uniform_blocks2UniformsType)
+    pointerSetAtOffset_sg_uniform_type(structPointer, sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 2) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_type + (sg_uniform_type_sizeof * 0), uniform_blocks2UniformsType[i])
   }
   for (var i = 0; i < len(uniform_blocks2UniformsArray_count); i += 1) {
-    pointerSetAtOffset_int(structPointer, sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 2) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_array_count + (int_sizeof * 0), uniform_blocks2UniformsArray_count)
+    pointerSetAtOffset_int(structPointer, sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 2) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_array_count + (int_sizeof * 0), uniform_blocks2UniformsArray_count[i])
   }
   pointerSetAtOffset_size_t(structPointer, sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 3) + sg_shader_uniform_block_desc_offsetof_size, uniform_blocks3Size)
   pointerSetAtOffset_sg_uniform_layout(structPointer, sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 3) + sg_shader_uniform_block_desc_offsetof_layout, uniform_blocks3Layout)
   for (var i = 0; i < len(uniform_blocks3UniformsName); i += 1) {
-    pointerSetAtOffset_const_char_p(structPointer, sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 3) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_name + (const_char_p_sizeof * 0), uniform_blocks3UniformsName)
+    pointerSetAtOffset_const_char_p(structPointer, sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 3) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_name + (const_char_p_sizeof * 0), uniform_blocks3UniformsName[i])
   }
   for (var i = 0; i < len(uniform_blocks3UniformsType); i += 1) {
-    pointerSetAtOffset_sg_uniform_type(structPointer, sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 3) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_type + (sg_uniform_type_sizeof * 0), uniform_blocks3UniformsType)
+    pointerSetAtOffset_sg_uniform_type(structPointer, sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 3) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_type + (sg_uniform_type_sizeof * 0), uniform_blocks3UniformsType[i])
   }
   for (var i = 0; i < len(uniform_blocks3UniformsArray_count); i += 1) {
-    pointerSetAtOffset_int(structPointer, sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 3) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_array_count + (int_sizeof * 0), uniform_blocks3UniformsArray_count)
+    pointerSetAtOffset_int(structPointer, sg_shader_stage_desc_offsetof_uniform_blocks + (sg_shader_uniform_block_desc_sizeof * 3) + sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_array_count + (int_sizeof * 0), uniform_blocks3UniformsArray_count[i])
   }
   for (var i = 0; i < len(imagesName); i += 1) {
-    pointerSetAtOffset_const_char_p(structPointer, sg_shader_stage_desc_offsetof_images + (sg_shader_image_desc_sizeof * i) + sg_shader_image_desc_offsetof_name + (const_char_p_sizeof * 0), imagesName)
+    pointerSetAtOffset_const_char_p(structPointer, sg_shader_stage_desc_offsetof_images + (sg_shader_image_desc_sizeof * i) + sg_shader_image_desc_offsetof_name + (const_char_p_sizeof * 0), imagesName[i])
   }
   for (var i = 0; i < len(imagesImage_type); i += 1) {
-    pointerSetAtOffset_sg_image_type(structPointer, sg_shader_stage_desc_offsetof_images + (sg_shader_image_desc_sizeof * i) + sg_shader_image_desc_offsetof_image_type + (sg_image_type_sizeof * 0), imagesImage_type)
+    pointerSetAtOffset_sg_image_type(structPointer, sg_shader_stage_desc_offsetof_images + (sg_shader_image_desc_sizeof * i) + sg_shader_image_desc_offsetof_image_type + (sg_image_type_sizeof * 0), imagesImage_type[i])
   }
   for (var i = 0; i < len(imagesSampler_type); i += 1) {
-    pointerSetAtOffset_sg_sampler_type(structPointer, sg_shader_stage_desc_offsetof_images + (sg_shader_image_desc_sizeof * i) + sg_shader_image_desc_offsetof_sampler_type + (sg_sampler_type_sizeof * 0), imagesSampler_type)
+    pointerSetAtOffset_sg_sampler_type(structPointer, sg_shader_stage_desc_offsetof_images + (sg_shader_image_desc_sizeof * i) + sg_shader_image_desc_offsetof_sampler_type + (sg_sampler_type_sizeof * 0), imagesSampler_type[i])
   }
 }
 
@@ -1319,13 +1319,13 @@ fn sg_shader_uniform_block_desc(
   pointerSetAtOffset_size_t(structPointer, sg_shader_uniform_block_desc_offsetof_size, size)
   pointerSetAtOffset_sg_uniform_layout(structPointer, sg_shader_uniform_block_desc_offsetof_layout, layout)
   for (var i = 0; i < len(uniformsName); i += 1) {
-    pointerSetAtOffset_const_char_p(structPointer, sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_name + (const_char_p_sizeof * 0), uniformsName)
+    pointerSetAtOffset_const_char_p(structPointer, sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_name + (const_char_p_sizeof * 0), uniformsName[i])
   }
   for (var i = 0; i < len(uniformsType); i += 1) {
-    pointerSetAtOffset_sg_uniform_type(structPointer, sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_type + (sg_uniform_type_sizeof * 0), uniformsType)
+    pointerSetAtOffset_sg_uniform_type(structPointer, sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_type + (sg_uniform_type_sizeof * 0), uniformsType[i])
   }
   for (var i = 0; i < len(uniformsArray_count); i += 1) {
-    pointerSetAtOffset_int(structPointer, sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_array_count + (int_sizeof * 0), uniformsArray_count)
+    pointerSetAtOffset_int(structPointer, sg_shader_uniform_block_desc_offsetof_uniforms + (sg_shader_uniform_desc_sizeof * i) + sg_shader_uniform_desc_offsetof_array_count + (int_sizeof * 0), uniformsArray_count[i])
   }
 }
 
