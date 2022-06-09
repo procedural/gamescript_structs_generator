@@ -13,6 +13,7 @@ fn pointerSetAtOffsetStringTemporaryPointer(pointer, bytesFirst, string) {
   pointerSetRaw64Bit(pointer, bytesFirst, value)
 }
 
+// NOTE(Constantine): Currently assumes 64-bit architecture, modify these later for 32-bit Android.
 fn pointerSetAtOffset_uint32_t(pointer, bytesFirst, value)          { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
 fn pointerSetAtOffset_const_void_p(pointer, bytesFirst, value)      { return pointerSetRaw64Bit(pointer, bytesFirst, value) }
 fn pointerSetAtOffset_size_t(pointer, bytesFirst, value)            { return pointerSetAtOffsetUnsignedInteger64Bit(pointer, bytesFirst, value) }
