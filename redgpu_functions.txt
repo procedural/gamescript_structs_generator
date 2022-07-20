@@ -1,0 +1,100 @@
+fn pointerSetAtOffsetStringTemporaryPointer(pointer, bytesFirst, string) {
+  let stringLength = len(string)
+  if (stringLength == 0) {
+    if (isAndroid() == true) {
+      pointerSetRaw32Bit(pointer, bytesFirst, pointerGetNull())
+    } else {
+      pointerSetRaw64Bit(pointer, bytesFirst, pointerGetNull())
+    }
+    return
+  }
+  let value = globalArrayNew8Bit("__" + numberToString(getUniqueNumber()), stringLength + 1)
+  let chars = stringToNumberArray(string)
+  for (var i = 0; i < stringLength; i += 1) {
+    pointerSetInteger8Bit(value, i, chars[i])
+  }
+  pointerSetInteger8Bit(value, stringLength, 0)
+  if (isAndroid() == true) {
+    pointerSetRaw32Bit(pointer, bytesFirst, value)
+  } else {
+    pointerSetRaw64Bit(pointer, bytesFirst, value)
+  }
+}
+
+fn pointerSetAtOffset_RedAccessBitflags(pointer, bytesFirst, value)                         { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_RedAccessStageBitflags(pointer, bytesFirst, value)                    { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_RedBarrierSplit(pointer, bytesFirst, value)                           { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_RedBlendFactor(pointer, bytesFirst, value)                            { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_RedBlendOp(pointer, bytesFirst, value)                                { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_RedBool32(pointer, bytesFirst, value)                                 { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_RedColorComponentBitflags(pointer, bytesFirst, value)                 { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_RedCompareOp(pointer, bytesFirst, value)                              { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_RedContextOptionalSettings(pointer, bytesFirst, value)                { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_RedCullMode(pointer, bytesFirst, value)                               { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_RedDriverId(pointer, bytesFirst, value)                               { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_RedEndProcedureOutputOp(pointer, bytesFirst, value)                   { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_RedFormat(pointer, bytesFirst, value)                                 { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_RedFrontFace(pointer, bytesFirst, value)                              { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_RedGpuInfoOptionalInfo(pointer, bytesFirst, value)                    { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_RedGpuType(pointer, bytesFirst, value)                                { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_RedHandleArray(pointer, bytesFirst, value)                            { return pointerSetRaw64Bit(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_RedHandleCalls(pointer, bytesFirst, value)                            { return pointerSetRaw64Bit(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_RedHandleCallsMemory(pointer, bytesFirst, value)                      { return pointerSetRaw64Bit(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_RedHandleContext(pointer, bytesFirst, value)                          { if (isAndroid() == true) { return pointerSetRaw32Bit(pointer, bytesFirst, value) } else { return pointerSetRaw64Bit(pointer, bytesFirst, value) } }
+fn pointerSetAtOffset_RedHandleGpu(pointer, bytesFirst, value)                              { if (isAndroid() == true) { return pointerSetRaw32Bit(pointer, bytesFirst, value) } else { return pointerSetRaw64Bit(pointer, bytesFirst, value) } }
+fn pointerSetAtOffset_RedHandleGpuDevice(pointer, bytesFirst, value)                        { if (isAndroid() == true) { return pointerSetRaw32Bit(pointer, bytesFirst, value) } else { return pointerSetRaw64Bit(pointer, bytesFirst, value) } }
+fn pointerSetAtOffset_RedHandleImage(pointer, bytesFirst, value)                            { return pointerSetRaw64Bit(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_RedHandleMemory(pointer, bytesFirst, value)                           { return pointerSetRaw64Bit(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_RedHandleOutput(pointer, bytesFirst, value)                           { return pointerSetRaw64Bit(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_RedHandleSampler(pointer, bytesFirst, value)                          { return pointerSetRaw64Bit(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_RedHandleStruct(pointer, bytesFirst, value)                           { return pointerSetRaw64Bit(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_RedHandleStructDeclaration(pointer, bytesFirst, value)                { return pointerSetRaw64Bit(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_RedHandleTexture(pointer, bytesFirst, value)                          { return pointerSetRaw64Bit(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_RedHandleType(pointer, bytesFirst, value)                             { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_RedImagePartBitflags(pointer, bytesFirst, value)                      { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_RedLogicOp(pointer, bytesFirst, value)                                { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_RedMultisampleCountBitflag(pointer, bytesFirst, value)                { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_RedMultisampleCountBitflags(pointer, bytesFirst, value)               { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_RedPrimitiveTopology(pointer, bytesFirst, value)                      { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_RedProcedureId(pointer, bytesFirst, value)                            { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_RedProcedureParametersHandleType(pointer, bytesFirst, value)          { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_RedProcedureStateExtension(pointer, bytesFirst, value)                { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_RedRasterizationMode(pointer, bytesFirst, value)                      { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_RedResolveMode(pointer, bytesFirst, value)                            { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_RedSetProcedureOutputOp(pointer, bytesFirst, value)                   { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_RedState(pointer, bytesFirst, value)                                  { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_RedStatus(pointer, bytesFirst, value)                                 { return pointerSetAtOffsetInteger(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_RedStencilOp(pointer, bytesFirst, value)                              { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_RedStructMemberType(pointer, bytesFirst, value)                       { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_RedVisibleToStageBitflags(pointer, bytesFirst, value)                 { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_char(pointer, bytesFirst, value)                                      { return pointerSetInteger8Bit(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_const_RedBool32_p(pointer, bytesFirst, value)                         { if (isAndroid() == true) { return pointerSetRaw32Bit(pointer, bytesFirst, value) } else { return pointerSetRaw64Bit(pointer, bytesFirst, value) } }
+fn pointerSetAtOffset_const_RedGpuInfo_p(pointer, bytesFirst, value)                        { if (isAndroid() == true) { return pointerSetRaw32Bit(pointer, bytesFirst, value) } else { return pointerSetRaw64Bit(pointer, bytesFirst, value) } }
+fn pointerSetAtOffset_const_RedHandleCalls_p(pointer, bytesFirst, value)                    { if (isAndroid() == true) { return pointerSetRaw32Bit(pointer, bytesFirst, value) } else { return pointerSetRaw64Bit(pointer, bytesFirst, value) } }
+fn pointerSetAtOffset_const_RedHandleGpuSignal_p(pointer, bytesFirst, value)                { if (isAndroid() == true) { return pointerSetRaw32Bit(pointer, bytesFirst, value) } else { return pointerSetRaw64Bit(pointer, bytesFirst, value) } }
+fn pointerSetAtOffset_const_RedHandleInfo_p(pointer, bytesFirst, value)                     { if (isAndroid() == true) { return pointerSetRaw32Bit(pointer, bytesFirst, value) } else { return pointerSetRaw64Bit(pointer, bytesFirst, value) } }
+fn pointerSetAtOffset_const_RedHandleQueue_p(pointer, bytesFirst, value)                    { if (isAndroid() == true) { return pointerSetRaw32Bit(pointer, bytesFirst, value) } else { return pointerSetRaw64Bit(pointer, bytesFirst, value) } }
+fn pointerSetAtOffset_const_RedHandleSampler_p(pointer, bytesFirst, value)                  { if (isAndroid() == true) { return pointerSetRaw32Bit(pointer, bytesFirst, value) } else { return pointerSetRaw64Bit(pointer, bytesFirst, value) } }
+fn pointerSetAtOffset_const_RedImageFormatFeatures_p(pointer, bytesFirst, value)            { if (isAndroid() == true) { return pointerSetRaw32Bit(pointer, bytesFirst, value) } else { return pointerSetRaw64Bit(pointer, bytesFirst, value) } }
+fn pointerSetAtOffset_const_RedImageFormatLimits_p(pointer, bytesFirst, value)              { if (isAndroid() == true) { return pointerSetRaw32Bit(pointer, bytesFirst, value) } else { return pointerSetRaw64Bit(pointer, bytesFirst, value) } }
+fn pointerSetAtOffset_const_RedMemoryHeap_p(pointer, bytesFirst, value)                     { if (isAndroid() == true) { return pointerSetRaw32Bit(pointer, bytesFirst, value) } else { return pointerSetRaw64Bit(pointer, bytesFirst, value) } }
+fn pointerSetAtOffset_const_RedMemoryType_p(pointer, bytesFirst, value)                     { if (isAndroid() == true) { return pointerSetRaw32Bit(pointer, bytesFirst, value) } else { return pointerSetRaw64Bit(pointer, bytesFirst, value) } }
+fn pointerSetAtOffset_const_RedOutputMembersResolveTargets_p(pointer, bytesFirst, value)    { if (isAndroid() == true) { return pointerSetRaw32Bit(pointer, bytesFirst, value) } else { return pointerSetRaw64Bit(pointer, bytesFirst, value) } }
+fn pointerSetAtOffset_const_RedOutputMembers_p(pointer, bytesFirst, value)                  { if (isAndroid() == true) { return pointerSetRaw32Bit(pointer, bytesFirst, value) } else { return pointerSetRaw64Bit(pointer, bytesFirst, value) } }
+fn pointerSetAtOffset_const_RedProcedureParametersHandleArray_p(pointer, bytesFirst, value) { if (isAndroid() == true) { return pointerSetRaw32Bit(pointer, bytesFirst, value) } else { return pointerSetRaw64Bit(pointer, bytesFirst, value) } }
+fn pointerSetAtOffset_const_RedQueueCopyLimits_p(pointer, bytesFirst, value)                { if (isAndroid() == true) { return pointerSetRaw32Bit(pointer, bytesFirst, value) } else { return pointerSetRaw64Bit(pointer, bytesFirst, value) } }
+fn pointerSetAtOffset_const_RedStatuses_p(pointer, bytesFirst, value)                       { if (isAndroid() == true) { return pointerSetRaw32Bit(pointer, bytesFirst, value) } else { return pointerSetRaw64Bit(pointer, bytesFirst, value) } }
+fn pointerSetAtOffset_const_RedStructMemberArray_p(pointer, bytesFirst, value)              { if (isAndroid() == true) { return pointerSetRaw32Bit(pointer, bytesFirst, value) } else { return pointerSetRaw64Bit(pointer, bytesFirst, value) } }
+fn pointerSetAtOffset_const_RedStructMemberTexture_p(pointer, bytesFirst, value)            { if (isAndroid() == true) { return pointerSetRaw32Bit(pointer, bytesFirst, value) } else { return pointerSetRaw64Bit(pointer, bytesFirst, value) } }
+fn pointerSetAtOffset_const_char_p(pointer, bytesFirst, value)                              { return pointerSetAtOffsetStringTemporaryPointer(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_const_char_pp(pointer, bytesFirst, value)                             { if (isAndroid() == true) { return pointerSetRaw32Bit(pointer, bytesFirst, value) } else { return pointerSetRaw64Bit(pointer, bytesFirst, value) } }
+fn pointerSetAtOffset_const_unsigned_p(pointer, bytesFirst, value)                          { if (isAndroid() == true) { return pointerSetRaw32Bit(pointer, bytesFirst, value) } else { return pointerSetRaw64Bit(pointer, bytesFirst, value) } }
+fn pointerSetAtOffset_const_void_p(pointer, bytesFirst, value)                              { if (isAndroid() == true) { return pointerSetRaw32Bit(pointer, bytesFirst, value) } else { return pointerSetRaw64Bit(pointer, bytesFirst, value) } }
+fn pointerSetAtOffset_float(pointer, bytesFirst, value)                                     { return pointerSetAtOffsetNumber(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_int(pointer, bytesFirst, value)                                       { return pointerSetAtOffsetInteger(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_size_t(pointer, bytesFirst, value)                                    { if (isAndroid() == true) { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) } else { return pointerSetAtOffsetUnsignedInteger64Bit(pointer, bytesFirst, value) } }
+fn pointerSetAtOffset_uint64_t(pointer, bytesFirst, value)                                  { return pointerSetAtOffsetUnsignedInteger64Bit(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_unsigned(pointer, bytesFirst, value)                                  { return pointerSetAtOffsetUnsignedInteger(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_unsigned_char(pointer, bytesFirst, value)                             { return pointerSetUnsignedInteger8Bit(pointer, bytesFirst, value) }
+fn pointerSetAtOffset_void_p(pointer, bytesFirst, value)                                    { if (isAndroid() == true) { return pointerSetRaw32Bit(pointer, bytesFirst, value) } else { return pointerSetRaw64Bit(pointer, bytesFirst, value) } }
+
