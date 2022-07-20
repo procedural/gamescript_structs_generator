@@ -19,7 +19,52 @@ typedef struct Structure {
   std::vector<StructureMember> members;
 } Structure;
 
+typedef struct Sizeof {
+  std::string structure;
+} Sizeof;
+
+typedef struct Offsetof {
+  std::string structure;
+  std::string structureMember;
+} Offsetof;
+
 std::map<std::string, Structure> gStructs;
+std::map<std::string, unsigned>  gUniquePointerSetTypes;
+std::map<std::string, Sizeof>    gUniqueSizeofs;
+std::map<std::string, Offsetof>  gUniqueOffsetofs;
+
+void SizeofSet(
+  std::string structure
+)
+{
+  std::string key;
+  key += structure;
+  key += std::string("_sizeof");
+
+  Sizeof value;
+  value.structure = structure;
+
+  gUniqueSizeofs[key] = value;
+}
+
+void OffsetofSet(
+  std::string structure,
+  std::string structureMember
+)
+{
+  SizeofSet(structure);
+
+  std::string key;
+  key += structure;
+  key += std::string("_offsetof_");
+  key += structureMember;
+
+  Offsetof value;
+  value.structure       = structure;
+  value.structureMember = structureMember;
+
+  gUniqueOffsetofs[key] = value;
+}
 
 int TypeIsStruct(std::string type) {
   Structure structure = gStructs[type];
@@ -53,7 +98,9 @@ std::string MemberTypeToScriptType(std::string memberType) {
 }
 
 std::string MemberTypeToPointerSetCall(std::string memberType) {
-  return std::string("pointerSetAtOffset_") + memberType;
+  std::string type = std::string("pointerSetAtOffset_") + memberType;
+  gUniquePointerSetTypes[type] = 0;
+  return type;
 }
 
 typedef struct ParentStructure {
@@ -131,8 +178,12 @@ void PrintStructureMembersRecursively(std::vector<ParentStructure> parentStructs
             printf("    %s(structPointer, ", MemberTypeToPointerSetCall(member.type).c_str());
             for (size_t i = 0; i < parentStructs.size() - 1; i += 1) {
               printf("%s_offsetof_%s + (%s_sizeof * %s) + ", parentStructs[i].type.c_str(), parentStructs[i + 1].name.c_str(), parentStructs[i + 1].type.c_str(), parentStructs[i + 1].index == -1 ? "i" : std::to_string(parentStructs[i + 1].index).c_str());
+              OffsetofSet(parentStructs[i].type.c_str(), parentStructs[i + 1].name.c_str());
+              SizeofSet(parentStructs[i + 1].type.c_str());
             }
             printf("%s_offsetof_%s + (%s_sizeof * %s)", parentStructs.back().type.c_str(), member.name.c_str(), member.type.c_str(), (member.count1*member.count2) > 1 ? "i" : "0");
+            OffsetofSet(parentStructs.back().type.c_str(), member.name.c_str());
+            SizeofSet(member.type.c_str());
             printf(", ");
             printf("%s[i]", name.c_str());
             printf(")\n");
@@ -144,8 +195,11 @@ void PrintStructureMembersRecursively(std::vector<ParentStructure> parentStructs
             printf("  %s(structPointer, ", MemberTypeToPointerSetCall(member.type).c_str());
             for (size_t i = 0; i < parentStructs.size() - 1; i += 1) {
               printf("%s_offsetof_%s + (%s_sizeof * %s) + ", parentStructs[i].type.c_str(), parentStructs[i + 1].name.c_str(), parentStructs[i + 1].type.c_str(), parentStructs[i + 1].index == -1 ? "0" : std::to_string(parentStructs[i + 1].index).c_str());
+              OffsetofSet(parentStructs[i].type.c_str(), parentStructs[i + 1].name.c_str());
+              SizeofSet(parentStructs[i + 1].type.c_str());
             }
             printf("%s_offsetof_%s", parentStructs.back().type.c_str(), member.name.c_str());
+            OffsetofSet(parentStructs.back().type.c_str(), member.name.c_str());
             printf(", ");
             printf("%s", name.c_str());
             printf(")\n");
@@ -189,6 +243,32 @@ int main() {
       printf("}\n");
       printf("\n");
     }
+  }
+
+  // Generate constants prototypes
+  {
+    for (const auto & pair : gUniqueSizeofs) {
+      std::string key   = pair.first;
+      Sizeof      value = pair.second;
+      printf("let %s = SIZEOF(\"%s\")\n", key.c_str(), value.structure.c_str());
+    }
+    printf("\n");
+    for (const auto & pair : gUniqueOffsetofs) {
+      std::string key   = pair.first;
+      Offsetof    value = pair.second;
+      printf("let %s = OFFSETOF(\"%s\", \"%s\")\n", key.c_str(), value.structure.c_str(), value.structureMember.c_str());
+    }
+    printf("\n");
+  }
+
+  // Generate pointer set functions prototypes
+  {
+    for (const auto & pair : gUniquePointerSetTypes) {
+      std::string pointerSetType = pair.first;
+      unsigned    ignored        = pair.second;
+      printf("fn %s(pointer, bytesFirst, value) { return pointerSetAtOffset(pointer, bytesFirst, value) }\n", pointerSetType.c_str());
+    }
+    printf("\n");
   }
 
   return 0;
