@@ -745,7 +745,7 @@ fn RedGpuTimeline(
   calls, // Number calls
   signalGpuSignalsCount, // Number signalGpuSignalsCount
   signalGpuSignals, // Number signalGpuSignals
-  setTo0 // Number setTo0
+  setTo00 // Number setTo00
 )
 {
   pointerSetAtOffset_unsigned(structPointer, RedGpuTimeline_offsetof_setTo4, setTo4)
@@ -870,7 +870,7 @@ fn RedMappableMemoryRange(
   mappableMemory, // Number mappableMemory
   mappableMemoryRangeBytesFirst, // Number mappableMemoryRangeBytesFirst
   mappableMemoryRangeBytesCount, // Number mappableMemoryRangeBytesCount
-  setTo0 // Number setTo0
+  setTo00 // Number setTo00
 )
 {
   pointerSetAtOffset_unsigned(structPointer, RedMappableMemoryRange_offsetof_setTo6, setTo6)
@@ -895,15 +895,15 @@ fn RedMemoryArray(
   structPointer, // Number structPointer
   setTo1000157000, // Number setTo1000157000
   setTo0, // Number setTo0
-  array, // Number array
+  _array, // Number array
   memory, // Number memory
   memoryBytesFirst, // Number memoryBytesFirst
-  setTo0 // Number setTo0
+  setTo00 // Number setTo00
 )
 {
   pointerSetAtOffset_unsigned(structPointer, RedMemoryArray_offsetof_setTo1000157000, setTo1000157000)
   pointerSetAtOffset_size_t(structPointer, RedMemoryArray_offsetof_setTo0, setTo0)
-  pointerSetAtOffset_RedHandleArray(structPointer, RedMemoryArray_offsetof_array, array)
+  pointerSetAtOffset_RedHandleArray(structPointer, RedMemoryArray_offsetof_array, _array)
   pointerSetAtOffset_RedHandleMemory(structPointer, RedMemoryArray_offsetof_memory, memory)
   pointerSetAtOffset_uint64_t(structPointer, RedMemoryArray_offsetof_memoryBytesFirst, memoryBytesFirst)
 }
@@ -914,7 +914,7 @@ fn RedMemoryBudget(
   setTo0, // Number setTo0
   memoryHeapsBudget, // Number memoryHeapsBudget [16]
   memoryHeapsUsage, // Number memoryHeapsUsage [16]
-  setTo0 // Number setTo0
+  setTo00 // Number setTo00
 )
 {
   pointerSetAtOffset_unsigned(structPointer, RedMemoryBudget_offsetof_setTo1000237000, setTo1000237000)
@@ -945,7 +945,7 @@ fn RedMemoryImage(
   image, // Number image
   memory, // Number memory
   memoryBytesFirst, // Number memoryBytesFirst
-  setTo0 // Number setTo0
+  setTo00 // Number setTo00
 )
 {
   pointerSetAtOffset_unsigned(structPointer, RedMemoryImage_offsetof_setTo1000157001, setTo1000157001)
@@ -1119,9 +1119,9 @@ fn RedProcedureParametersHandle(
   setTo1, // Number setTo1
   type, // Number type
   setTo0000, // Number setTo0000
-  array, // Number array
+  _array, // Number array
   setTo00000, // Number setTo00000
-  setTo0 // Number setTo0
+  setTo000000 // Number setTo000000
 )
 {
   pointerSetAtOffset_unsigned(structPointer, RedProcedureParametersHandle_offsetof_setTo35, setTo35)
@@ -1132,19 +1132,19 @@ fn RedProcedureParametersHandle(
   pointerSetAtOffset_unsigned(structPointer, RedProcedureParametersHandle_offsetof_setTo1, setTo1)
   pointerSetAtOffset_RedProcedureParametersHandleType(structPointer, RedProcedureParametersHandle_offsetof_type, type)
   pointerSetAtOffset_size_t(structPointer, RedProcedureParametersHandle_offsetof_setTo0000, setTo0000)
-  pointerSetAtOffset_const_RedProcedureParametersHandleArray_p(structPointer, RedProcedureParametersHandle_offsetof_array, array)
+  pointerSetAtOffset_const_RedProcedureParametersHandleArray_p(structPointer, RedProcedureParametersHandle_offsetof_array, _array)
   pointerSetAtOffset_size_t(structPointer, RedProcedureParametersHandle_offsetof_setTo00000, setTo00000)
 }
 
 fn RedProcedureParametersHandleArray(
   structPointer, // Number structPointer
-  array, // Number array
+  _array, // Number array
   setTo0, // Number setTo0
   setToMaxValue, // Number setToMaxValue
-  setTo0 // Number setTo0
+  setTo00 // Number setTo00
 )
 {
-  pointerSetAtOffset_RedHandleArray(structPointer, RedProcedureParametersHandleArray_offsetof_array, array)
+  pointerSetAtOffset_RedHandleArray(structPointer, RedProcedureParametersHandleArray_offsetof_array, _array)
   pointerSetAtOffset_uint64_t(structPointer, RedProcedureParametersHandleArray_offsetof_setTo0, setTo0)
   pointerSetAtOffset_uint64_t(structPointer, RedProcedureParametersHandleArray_offsetof_setToMaxValue, setToMaxValue)
 }
@@ -1406,20 +1406,20 @@ fn RedStructMember(
   setTo0, // Number setTo0
   structure, // Number structure
   slot, // Number slot
-  first, // Number first
+  _first, // Number first
   count, // Number count
   type, // Number type
   textures, // Number textures
   arrays, // Number arrays
   setTo00, // Number setTo00
-  setTo0 // Number setTo0
+  setTo000 // Number setTo000
 )
 {
   pointerSetAtOffset_unsigned(structPointer, RedStructMember_offsetof_setTo35, setTo35)
   pointerSetAtOffset_size_t(structPointer, RedStructMember_offsetof_setTo0, setTo0)
   pointerSetAtOffset_RedHandleStruct(structPointer, RedStructMember_offsetof_structure, structure)
   pointerSetAtOffset_unsigned(structPointer, RedStructMember_offsetof_slot, slot)
-  pointerSetAtOffset_unsigned(structPointer, RedStructMember_offsetof_first, first)
+  pointerSetAtOffset_unsigned(structPointer, RedStructMember_offsetof_first, _first)
   pointerSetAtOffset_unsigned(structPointer, RedStructMember_offsetof_count, count)
   pointerSetAtOffset_RedStructMemberType(structPointer, RedStructMember_offsetof_type, type)
   pointerSetAtOffset_const_RedStructMemberTexture_p(structPointer, RedStructMember_offsetof_textures, textures)
@@ -1429,13 +1429,13 @@ fn RedStructMember(
 
 fn RedStructMemberArray(
   structPointer, // Number structPointer
-  array, // Number array
+  _array, // Number array
   arrayRangeBytesFirst, // Number arrayRangeBytesFirst
   arrayRangeBytesCount, // Number arrayRangeBytesCount
   setTo0 // Number setTo0
 )
 {
-  pointerSetAtOffset_RedHandleArray(structPointer, RedStructMemberArray_offsetof_array, array)
+  pointerSetAtOffset_RedHandleArray(structPointer, RedStructMemberArray_offsetof_array, _array)
   pointerSetAtOffset_uint64_t(structPointer, RedStructMemberArray_offsetof_arrayRangeBytesFirst, arrayRangeBytesFirst)
   pointerSetAtOffset_uint64_t(structPointer, RedStructMemberArray_offsetof_arrayRangeBytesCount, arrayRangeBytesCount)
 }
@@ -1479,7 +1479,7 @@ fn RedUsageArray(
   newAccess, // Number newAccess
   queueFamilyIndexSource, // Number queueFamilyIndexSource
   queueFamilyIndexTarget, // Number queueFamilyIndexTarget
-  array, // Number array
+  _array, // Number array
   arrayBytesFirst, // Number arrayBytesFirst
   arrayBytesCount, // Number arrayBytesCount
   setTo0 // Number setTo0
@@ -1492,7 +1492,7 @@ fn RedUsageArray(
   pointerSetAtOffset_RedAccessBitflags(structPointer, RedUsageArray_offsetof_newAccess, newAccess)
   pointerSetAtOffset_unsigned(structPointer, RedUsageArray_offsetof_queueFamilyIndexSource, queueFamilyIndexSource)
   pointerSetAtOffset_unsigned(structPointer, RedUsageArray_offsetof_queueFamilyIndexTarget, queueFamilyIndexTarget)
-  pointerSetAtOffset_RedHandleArray(structPointer, RedUsageArray_offsetof_array, array)
+  pointerSetAtOffset_RedHandleArray(structPointer, RedUsageArray_offsetof_array, _array)
   pointerSetAtOffset_uint64_t(structPointer, RedUsageArray_offsetof_arrayBytesFirst, arrayBytesFirst)
   pointerSetAtOffset_uint64_t(structPointer, RedUsageArray_offsetof_arrayBytesCount, arrayBytesCount)
 }
