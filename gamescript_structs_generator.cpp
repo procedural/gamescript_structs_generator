@@ -137,7 +137,7 @@ void PrintStructureMembersRecursively(std::vector<ParentStructure> parentStructs
             printf("%s[i]", name.c_str());
             printf(")\n");
           }
-          printf("  }\n", std::to_string(memberCount));
+          printf("  }\n");
         } else {
           // Copy-paste
           {
@@ -166,7 +166,7 @@ int main() {
 
 #include "structs.inl"
 
-  // Now generate struct script functions
+  // Generate struct script functions
   {
     for (const auto & structPair : gStructs) {
       std::string structureType = structPair.first;
