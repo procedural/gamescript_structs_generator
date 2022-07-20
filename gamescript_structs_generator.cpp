@@ -1,4 +1,5 @@
 // cl gamescript_structs_generator.cpp && gamescript_structs_generator.exe > structs.txt
+// c++ -std=c++14 gamescript_structs_generator.cpp -o gamescript_structs_generator && ./gamescript_structs_generator > structs.txt
 
 #include <map>
 #include <string>
